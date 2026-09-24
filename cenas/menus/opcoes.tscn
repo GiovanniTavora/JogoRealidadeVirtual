@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjpxwwvc6v3lu"]
 
 [ext_resource type="Script" uid="uid://y4rmhksk25l1" path="res://codigos/opcoes.gd" id="1_bvo4q"]
-[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://BridgeParapet.ttf" id="2_85pbk"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="2_85pbk"]
 
 [node name="opcoes" type="Control" unique_id=734104582]
 layout_mode = 3

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bko8ekct74bsr"
-path="res://.godot/imported/BridgeParapet.ttf-6ca46e190cedb535d582c21d9d0b8090.fontdata"
+path="res://.godot/imported/BridgeParapet.ttf-d164f2ad6af7f2b22a80603531c97c95.fontdata"
 
 [deps]
 
-source_file="res://BridgeParapet.ttf"
-dest_files=["res://.godot/imported/BridgeParapet.ttf-6ca46e190cedb535d582c21d9d0b8090.fontdata"]
+source_file="res://fontes/BridgeParapet.ttf"
+dest_files=["res://.godot/imported/BridgeParapet.ttf-d164f2ad6af7f2b22a80603531c97c95.fontdata"]
 
 [params]
 
