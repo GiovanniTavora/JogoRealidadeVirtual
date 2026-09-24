@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bjpxwwvc6v3lu"]
+
+[ext_resource type="Script" uid="uid://y4rmhksk25l1" path="res://codigos/opcoes.gd" id="1_bvo4q"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://BridgeParapet.ttf" id="2_85pbk"]
+
+[node name="opcoes" type="Control" unique_id=734104582]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bvo4q")
+
+[node name="voltar" type="Button" parent="." unique_id=819092910]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 454.0
+offset_right = 663.0
+offset_bottom = 541.0
+theme_override_fonts/font = ExtResource("2_85pbk")
+theme_override_font_sizes/font_size = 45
+text = "Voltar"
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
