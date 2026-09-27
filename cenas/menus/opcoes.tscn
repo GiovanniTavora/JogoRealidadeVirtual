@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://y4rmhksk25l1" path="res://codigos/opcoes.gd" id="1_bvo4q"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="2_85pbk"]
+[ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="3_vmjtc"]
 
 [node name="opcoes" type="Control" unique_id=734104582]
 layout_mode = 3
@@ -21,5 +22,9 @@ offset_bottom = 541.0
 theme_override_fonts/font = ExtResource("2_85pbk")
 theme_override_font_sizes/font_size = 45
 text = "Voltar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2116663550]
+stream = ExtResource("3_vmjtc")
+autoplay = true
 
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

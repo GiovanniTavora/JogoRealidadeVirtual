@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_4c7ao"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="2_bt7ct"]
 [ext_resource type="Texture2D" uid="uid://cedqds2n3dp5p" path="res://fundo pc.png" id="2_ytc80"]
+[ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_l1ug3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbunc"]
 texture = ExtResource("2_ytc80")
@@ -81,6 +82,10 @@ theme_override_font_sizes/font_size = 154
 text = "SYSTEM FIXER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1397725600]
+stream = ExtResource("4_l1ug3")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="VBoxContainer/opcoes" to="." method="_on_opcoes_pressed"]
