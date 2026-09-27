@@ -19,5 +19,8 @@ func _on_opcoes_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/menus/opcoes.tscn")
 
 
+func _on_creditos_pressed() -> void:
+	get_tree().change_scene_to_file("res://cenas/menus/creditos.tscn")
+
 func _on_sair_pressed() -> void:
 	get_tree().quit()

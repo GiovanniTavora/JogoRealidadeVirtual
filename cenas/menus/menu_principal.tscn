@@ -56,6 +56,12 @@ theme_override_fonts/font = ExtResource("2_bt7ct")
 theme_override_font_sizes/font_size = 45
 text = "Opções"
 
+[node name="creditos" type="Button" parent="VBoxContainer" unique_id=122916958]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_font_sizes/font_size = 45
+text = "Créditos"
+
 [node name="sair" type="Button" parent="VBoxContainer" unique_id=1501864952]
 layout_mode = 2
 size_flags_vertical = 3
@@ -89,4 +95,5 @@ autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="VBoxContainer/opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="VBoxContainer/creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]

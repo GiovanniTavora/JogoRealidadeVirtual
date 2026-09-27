@@ -15,10 +15,10 @@ script = ExtResource("1_bvo4q")
 
 [node name="voltar" type="Button" parent="." unique_id=819092910]
 layout_mode = 0
-offset_left = 493.0
-offset_top = 454.0
-offset_right = 663.0
-offset_bottom = 541.0
+offset_left = 847.0
+offset_top = 839.0
+offset_right = 1017.0
+offset_bottom = 926.0
 theme_override_fonts/font = ExtResource("2_85pbk")
 theme_override_font_sizes/font_size = 45
 text = "Voltar"

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c5gqw1m01cqb5"]
+
+[ext_resource type="Script" uid="uid://sxe0857vqxsr" path="res://codigos/creditos.gd" id="1_3uj8d"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="1_iqmjr"]
+[ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="3_codfy"]
+
+[node name="Creditos" type="Control" unique_id=1866475859]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3uj8d")
+
+[node name="voltar_creditos" type="Button" parent="." unique_id=1456930243]
+layout_mode = 0
+offset_left = 847.0
+offset_top = 839.0
+offset_right = 1017.0
+offset_bottom = 926.0
+theme_override_fonts/font = ExtResource("1_iqmjr")
+theme_override_font_sizes/font_size = 45
+text = "Voltar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=512399212]
+stream = ExtResource("3_codfy")
+autoplay = true
+
+[connection signal="pressed" from="voltar_creditos" to="." method="_on_voltar_creditos_pressed"]
