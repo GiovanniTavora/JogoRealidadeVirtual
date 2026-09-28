@@ -9,6 +9,12 @@
 texture = ExtResource("2_0lrb8")
 modulate_color = Color(0.12093342, 0.20266509, 0.07786942, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hwmp"]
+bg_color = Color(0.8788597, 0.18719241, 0.003146596, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrb8"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="creditos" type="Control" unique_id=1866475859]
 layout_mode = 3
 anchors_preset = 15
@@ -71,6 +77,7 @@ offset_bottom = 852.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_iqmjr")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_7hwmp")
 text = "Voltar"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=512399212]
@@ -100,5 +107,23 @@ Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
 \"PS1/PSX retro PC/computer\" - Shayno (itch.io)"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="titulo" type="Label" parent="." unique_id=1004933947]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -332.5
+offset_top = 30.0
+offset_right = 332.5
+offset_bottom = 162.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.972549, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmjr")
+theme_override_font_sizes/font_size = 154
+theme_override_styles/normal = SubResource("StyleBoxFlat_0lrb8")
+text = "-CRÉDITOS-"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="voltar_creditos" to="." method="_on_voltar_creditos_pressed"]

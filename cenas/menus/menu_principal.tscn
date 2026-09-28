@@ -9,6 +9,9 @@
 texture = ExtResource("2_ytc80")
 modulate_color = Color(0.8474744, 0.84747446, 0.84747446, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrb8"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="menu_principal" type="Control" unique_id=507066232]
 layout_mode = 3
 anchors_preset = 15
@@ -73,7 +76,7 @@ theme_override_font_sizes/font_size = 45
 text = "Sair"
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="." unique_id=830911695]
+[node name="titulo" type="Label" parent="." unique_id=830911695]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -89,6 +92,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.972549, 1, 1)
 theme_override_fonts/font = ExtResource("2_bt7ct")
 theme_override_font_sizes/font_size = 154
+theme_override_styles/normal = SubResource("StyleBoxFlat_0lrb8")
 text = "SYSTEM FIXER"
 horizontal_alignment = 1
 vertical_alignment = 1

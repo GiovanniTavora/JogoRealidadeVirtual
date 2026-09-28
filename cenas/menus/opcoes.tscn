@@ -7,7 +7,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edwde"]
 texture = ExtResource("2_6vhai")
-modulate_color = Color(0.8474744, 0.84747446, 0.84747446, 1)
+modulate_color = Color(0.44812912, 0.005158606, 0.43609944, 1)
 
 [node name="opcoes" type="Control" unique_id=734104582]
 layout_mode = 3
