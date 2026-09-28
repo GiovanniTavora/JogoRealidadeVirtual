@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://bjpxwwvc6v3lu"]
 
 [ext_resource type="Script" uid="uid://y4rmhksk25l1" path="res://codigos/opcoes.gd" id="1_bvo4q"]
+[ext_resource type="Texture2D" uid="uid://cedqds2n3dp5p" path="res://fundo pc.png" id="2_6vhai"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="2_85pbk"]
 [ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="3_vmjtc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edwde"]
+texture = ExtResource("2_6vhai")
+modulate_color = Color(0.8474744, 0.84747446, 0.84747446, 1)
 
 [node name="opcoes" type="Control" unique_id=734104582]
 layout_mode = 3
@@ -13,12 +18,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bvo4q")
 
+[node name="Panel" type="Panel" parent="." unique_id=200968035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_edwde")
+
 [node name="voltar" type="Button" parent="." unique_id=819092910]
-layout_mode = 0
-offset_left = 847.0
-offset_top = 839.0
-offset_right = 1017.0
-offset_bottom = 926.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = 793.0
+offset_right = 85.0
+offset_bottom = 880.0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_85pbk")
 theme_override_font_sizes/font_size = 45
 text = "Voltar"
