@@ -34,9 +34,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -252.0
+offset_left = -701.0
 offset_top = -310.0
-offset_right = 252.0
+offset_right = -197.0
 offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -45,10 +45,10 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmjr")
 theme_override_font_sizes/font_size = 45
-text = "-Líder de Projeto-
+text = "-Líder de Projeto, Game Designer-
 Giovanni Távora Pereira Negrão
 
--Vice-Líder, Música-
+-Vice-Líder, Música, Narrative Designer-
 Pedro Arthur Ramos Dutra da Silva
 
 -Design-
@@ -76,5 +76,29 @@ text = "Voltar"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=512399212]
 stream = ExtResource("3_codfy")
 autoplay = true
+
+[node name="box_assets" type="VBoxContainer" parent="." unique_id=1472543938]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 267.0
+offset_top = -310.0
+offset_right = 771.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="creditos_assets" type="Label" parent="box_assets" unique_id=1660175179]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmjr")
+theme_override_font_sizes/font_size = 45
+text = "-Assets Utilizados-
+Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
+\"PS1/PSX retro PC/computer\" - Shayno (itch.io)"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="voltar_creditos" to="." method="_on_voltar_creditos_pressed"]
