@@ -42,7 +42,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_tbunc")
 metadata/_edit_lock_ = true
 
 [node name="botoes_principais" type="VBoxContainer" parent="." unique_id=786962666]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -120,6 +119,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="painel_opcoes" type="Panel" parent="." unique_id=1883572479]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
