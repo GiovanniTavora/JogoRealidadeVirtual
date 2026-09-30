@@ -88,12 +88,14 @@ offset_left = 627.5
 offset_top = 135.0
 offset_right = 1292.5
 offset_bottom = 267.0
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer" unique_id=255751917]
 texture_filter = 1
 position = Vector2(752, 51)
 scale = Vector2(5.825, 5.825)
 texture = ExtResource("5_6ul2r")
+metadata/_edit_lock_ = true
 
 [node name="titulo" type="Label" parent="HBoxContainer" unique_id=415653588]
 layout_mode = 2

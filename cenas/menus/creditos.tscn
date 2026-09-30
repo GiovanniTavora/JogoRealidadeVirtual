@@ -46,12 +46,13 @@ offset_right = -197.0
 offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="creditos_dev" type="Label" parent="box_desenvolvedores" unique_id=656686918]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmjr")
 theme_override_font_sizes/font_size = 45
-text = "-Líder de Projeto, Game Designer-
+text = "-Líder de Projeto, Game Designe, Pixel-Art-
 Giovanni Távora Pereira Negrão
 
 -Vice-Líder, Música, História, Character Design-
@@ -63,7 +64,6 @@ Andryelly Silva de Castro
 -Level Designer-
 Arthur Alexandre Alves"
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="voltar_creditos" type="Button" parent="." unique_id=1456930243]
 layout_mode = 1
