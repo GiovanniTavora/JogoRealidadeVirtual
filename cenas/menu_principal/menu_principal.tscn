@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cf333muffdx1p"]
 
-[ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_4c7ao"]
-[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="2_bt7ct"]
-[ext_resource type="Texture2D" uid="uid://cedqds2n3dp5p" path="res://fundo pc.png" id="2_ytc80"]
-[ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_l1ug3"]
-[ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/Robo404.png" id="5_6ul2r"]
-[ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menus/volume_audio.gd" id="6_axbaj"]
-[ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menus/botao_tela_cheia.gd" id="7_syidc"]
+[ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_ck6fg"]
+[ext_resource type="Texture2D" uid="uid://cedqds2n3dp5p" path="res://fundo pc.png" id="2_1qcsy"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
+[ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_7lo7m"]
+[ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/robo/Robo404.png" id="5_pphy0"]
+[ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="6_wnitp"]
+[ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menu_principal/botao_tela_cheia.gd" id="7_ystp5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbunc"]
-texture = ExtResource("2_ytc80")
+texture = ExtResource("2_1qcsy")
 modulate_color = Color(0.8474744, 0.84747446, 0.84747446, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrb8"]
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4c7ao")
+script = ExtResource("1_ck6fg")
 
 [node name="painel_principal" type="Panel" parent="." unique_id=1040301984]
 layout_mode = 1
@@ -60,7 +60,7 @@ metadata/_edit_lock_ = true
 [node name="novo_jogo" type="Button" parent="botoes_principais" unique_id=145509671]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "Novo Jogo"
 metadata/_edit_lock_ = true
@@ -68,14 +68,14 @@ metadata/_edit_lock_ = true
 [node name="opcoes" type="Button" parent="botoes_principais" unique_id=2013525078]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "Opções"
 metadata/_edit_lock_ = true
 
 [node name="creditos" type="Button" parent="botoes_principais" unique_id=122916958]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "Créditos"
 metadata/_edit_lock_ = true
@@ -83,12 +83,12 @@ metadata/_edit_lock_ = true
 [node name="sair" type="Button" parent="botoes_principais" unique_id=1501864952]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "Sair"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1397725600]
-stream = ExtResource("4_l1ug3")
+stream = ExtResource("4_7lo7m")
 autoplay = true
 bus = &"Music"
 
@@ -104,13 +104,13 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 position = Vector2(752, 51)
 scale = Vector2(5.825, 5.825)
-texture = ExtResource("5_6ul2r")
+texture = ExtResource("5_pphy0")
 metadata/_edit_lock_ = true
 
 [node name="titulo" type="Label" parent="HBoxContainer" unique_id=415653588]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.972549, 1, 1)
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 154
 theme_override_styles/normal = SubResource("StyleBoxFlat_0lrb8")
 text = "SYSTEM FIXER"
@@ -139,7 +139,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 46.5
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "Opções"
 horizontal_alignment = 1
@@ -152,7 +152,7 @@ offset_top = 111.5
 offset_right = 90.0
 offset_bottom = -218.5
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "Volume:"
 horizontal_alignment = 1
@@ -165,7 +165,7 @@ offset_top = 342.5
 offset_bottom = 389.5
 grow_horizontal = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "Voltar"
 
@@ -182,7 +182,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_axbaj")
 max_value = 1.0
 step = 0.05
 value = 1.0
-script = ExtResource("6_axbaj")
+script = ExtResource("6_wnitp")
 audio_bus_name = "Music"
 
 [node name="botao_tela_cheia" type="CheckButton" parent="painel_opcoes" unique_id=2072439346]
@@ -192,10 +192,10 @@ anchor_right = 1.0
 offset_top = 252.5
 offset_bottom = 299.5
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_bt7ct")
+theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "Tela cheia"
-script = ExtResource("7_syidc")
+script = ExtResource("7_ystp5")
 
 [connection signal="pressed" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="botoes_principais/opcoes" to="." method="_on_opcoes_pressed"]

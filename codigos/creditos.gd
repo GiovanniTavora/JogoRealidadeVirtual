@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_voltar_creditos_pressed() -> void:
-	get_tree().change_scene_to_file("res://cenas/menus/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://cenas/menu_principal/menu_principal.tscn")

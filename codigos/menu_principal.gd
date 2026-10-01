@@ -8,20 +8,19 @@ func _ready() -> void:
 	botoes_principais.visible = true
 	painel_opcoes.visible = false
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _on_novo_jogo_pressed() -> void:
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
 
 func _on_opcoes_pressed() -> void:
 	botoes_principais.visible = false
 	painel_opcoes.visible = true
 
 func _on_creditos_pressed() -> void:
-	get_tree().change_scene_to_file("res://cenas/menus/creditos.tscn")
+	get_tree().change_scene_to_file("res://cenas/menu_principal/creditos.tscn")
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()

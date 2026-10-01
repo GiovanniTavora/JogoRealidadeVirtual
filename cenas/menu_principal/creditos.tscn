@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://c5gqw1m01cqb5"]
 
-[ext_resource type="Script" uid="uid://sxe0857vqxsr" path="res://codigos/creditos.gd" id="1_3uj8d"]
-[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="1_iqmjr"]
-[ext_resource type="Texture2D" uid="uid://cedqds2n3dp5p" path="res://fundo pc.png" id="2_0lrb8"]
-[ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="3_codfy"]
+[ext_resource type="Script" uid="uid://sxe0857vqxsr" path="res://codigos/creditos.gd" id="1_wijra"]
+[ext_resource type="Texture2D" uid="uid://cedqds2n3dp5p" path="res://fundo pc.png" id="2_t0cdq"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_8taon"]
+[ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_5wita"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7hwmp"]
-texture = ExtResource("2_0lrb8")
+texture = ExtResource("2_t0cdq")
 modulate_color = Color(0.12093342, 0.20266509, 0.07786942, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hwmp"]
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3uj8d")
+script = ExtResource("1_wijra")
 
 [node name="Panel" type="Panel" parent="." unique_id=1413721137]
 layout_mode = 1
@@ -50,7 +50,7 @@ metadata/_edit_lock_ = true
 
 [node name="creditos_dev" type="Label" parent="box_desenvolvedores" unique_id=656686918]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmjr")
+theme_override_fonts/font = ExtResource("3_8taon")
 theme_override_font_sizes/font_size = 45
 text = "-Líder de Projeto, Game Designer, Pixel-Art-
 Giovanni Távora Pereira Negrão
@@ -75,13 +75,13 @@ offset_top = 765.0
 offset_right = 85.0
 offset_bottom = 852.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_iqmjr")
+theme_override_fonts/font = ExtResource("3_8taon")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_7hwmp")
 text = "Voltar"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=512399212]
-stream = ExtResource("3_codfy")
+stream = ExtResource("4_5wita")
 autoplay = true
 
 [node name="box_assets" type="VBoxContainer" parent="." unique_id=1472543938]
@@ -97,16 +97,18 @@ offset_right = 771.0
 offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="creditos_assets" type="Label" parent="box_assets" unique_id=1660175179]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmjr")
+theme_override_fonts/font = ExtResource("3_8taon")
 theme_override_font_sizes/font_size = 45
 text = "-Assets Utilizados-
 Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
-\"PS1/PSX retro PC/computer\" - Shayno (itch.io)"
+\"PS1/PSX retro PC/computer\" - Shayno (itch.io)
+\"Computer Icons Asset Pack\" - DampSquib (itch.io)
+\"Retro Windows GUI\" - Comp-3 Interactive (itch.io)"
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="titulo" type="Label" parent="." unique_id=1004933947]
 layout_mode = 1
@@ -119,7 +121,7 @@ offset_right = 332.5
 offset_bottom = 162.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.972549, 1, 1)
-theme_override_fonts/font = ExtResource("1_iqmjr")
+theme_override_fonts/font = ExtResource("3_8taon")
 theme_override_font_sizes/font_size = 154
 theme_override_styles/normal = SubResource("StyleBoxFlat_0lrb8")
 text = "-CRÉDITOS-"
