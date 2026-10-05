@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="9_cs8od"]
 [ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="11_cs8od"]
 [ext_resource type="Texture2D" uid="uid://v3ec4osr3tmy" path="res://sprites/desktop/icones/file_icons.png" id="13_k25gi"]
+[ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/robo/Robo404.png" id="14_pxgom"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ungyi"]
 shader = ExtResource("7_31k1a")
@@ -74,9 +75,16 @@ texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o85c1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbunc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxgom"]
 atlas = ExtResource("13_k25gi")
 region = Rect2(33.15663, 32.771175, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pg7fa"]
+load_path = "res://.godot/imported/file_icons.png-5f34927eba2da23dd6eea1728d173e2a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x46sc"]
+atlas = SubResource("CompressedTexture2D_pg7fa")
+region = Rect2(126.463425, 2.7532043, 32, 32)
 
 [node name="desktop" type="Control" unique_id=467746139]
 layout_mode = 3
@@ -183,7 +191,6 @@ oversampling_override = 1.0
 initial_position = 3
 size = Vector2i(1100, 600)
 current_screen = 0
-visible = false
 borderless = true
 theme_override_constants/close_h_offset = 17
 theme_override_constants/close_v_offset = 23
@@ -223,7 +230,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 85
-text = "WELCOME"
+text = "BEM-VINDO!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -243,6 +250,32 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_k41lo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cs8od")
 theme_override_styles/hover = SubResource("StyleBoxTexture_s8abh")
+
+[node name="Panel" type="Panel" parent="Window/Cabecalho" unique_id=103619177]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 565.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Window/Cabecalho/Panel" unique_id=980895714]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 64.0
+offset_bottom = 289.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 85
+text = "Bem-vindo ao System Fixer!
+Basta clicar em um dos ícones para
+ser levado ao minigame!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="programa_janela" type="PanelContainer" parent="." unique_id=27947344]
 layout_mode = 0
@@ -277,10 +310,10 @@ metadata/_edit_lock_ = true
 
 [node name="minigame_arquivo" type="PanelContainer" parent="." unique_id=1868302682]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 188.0
-offset_right = 434.0
-offset_bottom = 342.0
+offset_left = 164.0
+offset_top = 199.0
+offset_right = 415.0
+offset_bottom = 353.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="minigame_arquivo" unique_id=1381909338]
@@ -288,12 +321,13 @@ layout_mode = 2
 theme_override_constants/separation = -9
 metadata/_edit_lock_ = true
 
-[node name="TextureButton" type="TextureButton" parent="minigame_arquivo/VBoxContainer" unique_id=1655211219]
+[node name="IconeMinigameArquivo" type="TextureButton" parent="minigame_arquivo/VBoxContainer" unique_id=1655211219]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_tbunc")
+texture_normal = SubResource("AtlasTexture_pxgom")
 stretch_mode = 5
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="minigame_arquivo/VBoxContainer" unique_id=268992729]
 layout_mode = 2
@@ -304,6 +338,43 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_trim_flags = 128
 metadata/_edit_lock_ = true
+
+[node name="programa_opcoes" type="PanelContainer" parent="." unique_id=6477704]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 586.0
+offset_right = 428.0
+offset_bottom = 740.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="programa_opcoes" unique_id=554431824]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="programa_opcoes/VBoxContainer" unique_id=748698974]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_x46sc")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="programa_opcoes/VBoxContainer" unique_id=496342118]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+text = "Configurações"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="robo" type="Sprite2D" parent="." unique_id=357497149]
+texture_filter = 1
+position = Vector2(1575.9999, 826.99994)
+scale = Vector2(5.825, 5.825)
+texture = ExtResource("14_pxgom")
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
