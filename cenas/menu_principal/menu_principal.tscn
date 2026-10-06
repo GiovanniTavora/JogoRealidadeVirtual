@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://cf333muffdx1p"]
 
 [ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_ck6fg"]
-[ext_resource type="Texture2D" uid="uid://cedqds2n3dp5p" path="res://fundo pc.png" id="2_1qcsy"]
+[ext_resource type="Texture2D" uid="uid://c8v8ork68stv6" path="res://Fundo System Fixer.png" id="2_ck6fg"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
 [ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_7lo7m"]
-[ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/robo/Robo404.png" id="5_pphy0"]
 [ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="6_wnitp"]
 [ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menu_principal/botao_tela_cheia.gd" id="7_ystp5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbunc"]
-texture = ExtResource("2_1qcsy")
-modulate_color = Color(0.8474744, 0.84747446, 0.84747446, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vmig"]
+texture = ExtResource("2_ck6fg")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrb8"]
 bg_color = Color(0, 0, 0, 1)
@@ -38,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_tbunc")
+theme_override_styles/panel = SubResource("StyleBoxTexture_5vmig")
 metadata/_edit_lock_ = true
 
 [node name="botoes_principais" type="VBoxContainer" parent="." unique_id=786962666]
@@ -48,14 +46,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -218.0
-offset_top = -101.0
-offset_right = 218.0
-offset_bottom = 101.0
+offset_left = 376.0
+offset_top = -116.5
+offset_right = 812.0
+offset_bottom = 116.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
-metadata/_edit_lock_ = true
 
 [node name="novo_jogo" type="Button" parent="botoes_principais" unique_id=145509671]
 layout_mode = 2
@@ -94,19 +91,18 @@ autoplay = true
 bus = &"Music"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1305948305]
-layout_mode = 0
-offset_left = 627.5
-offset_top = 135.0
-offset_right = 1292.5
-offset_bottom = 267.0
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer" unique_id=255751917]
-texture_filter = 1
-position = Vector2(752, 51)
-scale = Vector2(5.825, 5.825)
-texture = ExtResource("5_pphy0")
-metadata/_edit_lock_ = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.5
+offset_top = -443.0
+offset_right = 332.5
+offset_bottom = -311.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="titulo" type="Label" parent="HBoxContainer" unique_id=415653588]
 layout_mode = 2
