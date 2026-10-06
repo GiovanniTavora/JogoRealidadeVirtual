@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://v3ec4osr3tmy" path="res://sprites/desktop/icones/file_icons.png" id="13_k25gi"]
 [ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/robo/Robo404.png" id="14_pxgom"]
 [ext_resource type="Texture2D" uid="uid://5bmp5eullhxc" path="res://sprites/robo/robo_up.png" id="15_pg7fa"]
+[ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="15_x46sc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ungyi"]
 shader = ExtResource("7_31k1a")
@@ -134,6 +135,13 @@ data = PackedByteArray("cW9hZgA71yYCALuAFAAQKAAAAAAAAAAAAAAAAOAAQAAAAAAAAAAAAAAA
 format = 3
 mix_rate = 48000
 stereo = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2vts5"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2h3j"]
+bg_color = Color(0.5388762, 0.6314932, 0.97940415, 1)
 
 [node name="desktop" type="Control" unique_id=467746139]
 layout_mode = 3
@@ -367,10 +375,10 @@ metadata/_edit_lock_ = true
 
 [node name="minigame_arquivo" type="PanelContainer" parent="." unique_id=1868302682]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 230.0
-offset_right = 439.0
-offset_bottom = 384.0
+offset_left = 183.0
+offset_top = 218.0
+offset_right = 434.0
+offset_bottom = 372.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="minigame_arquivo" unique_id=1381909338]
@@ -410,7 +418,7 @@ layout_mode = 2
 theme_override_constants/separation = -9
 metadata/_edit_lock_ = true
 
-[node name="TextureButton" type="TextureButton" parent="programa_opcoes/VBoxContainer" unique_id=748698974]
+[node name="TextureButtonConfig" type="TextureButton" parent="programa_opcoes/VBoxContainer" unique_id=748698974]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -532,6 +540,124 @@ stream = SubResource("AudioStreamWAV_pxgom")
 autoplay = true
 bus = &"Music"
 
+[node name="Window_Config" type="Window" parent="." unique_id=1817058534]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(1100, 600)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("5_4j4gs")
+theme_override_icons/close_pressed = ExtResource("6_v6ts4")
+
+[node name="Base" type="NinePatchRect" parent="Window_Config" unique_id=80407867]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_f81va")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="Window_Config" unique_id=1344799850]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("9_cs8od")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="Window_Config/Cabecalho" unique_id=2033232613]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 85
+text = "Configurações"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sair_janela" type="Button" parent="Window_Config/Cabecalho" unique_id=826261488]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -37.0
+offset_right = -31.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_k41lo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cs8od")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s8abh")
+
+[node name="Panel" type="Panel" parent="Window_Config/Cabecalho" unique_id=579518559]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 565.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Window_Config/Cabecalho/Panel" unique_id=2131787085]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 64.0
+offset_bottom = 289.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 85
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="volume_audio" type="HSlider" parent="Window_Config/Cabecalho/Panel" unique_id=1532452189]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 92.0
+offset_bottom = 180.5
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_2vts5")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_u2h3j")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_u2h3j")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("15_x46sc")
+audio_bus_name = "Music"
+
+[node name="Label2" type="Label" parent="Window_Config/Cabecalho/Panel" unique_id=446115730]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 74.0
+offset_right = 98.0
+offset_bottom = -273.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 95
+text = "Volume:"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
@@ -539,5 +665,8 @@ bus = &"Music"
 [connection signal="pressed" from="programa_janela/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="." method="_on_icone_minigame_arquivo_pressed"]
 [connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
+[connection signal="pressed" from="programa_opcoes/VBoxContainer/TextureButtonConfig" to="." method="_on_texture_button_config_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="pressed" from="Window_Config/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="value_changed" from="Window_Config/Cabecalho/Panel/volume_audio" to="Window_Config/Cabecalho/Panel/volume_audio" method="_on_value_changed"]

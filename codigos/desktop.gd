@@ -21,3 +21,8 @@ func _on_icone_minigame_arquivo_pressed() -> void:
 
 func _on_sair_janela_pressed() -> void:
 	$Window_Minigame_Arquivos.hide()
+	$Window_Config.hide()
+
+
+func _on_texture_button_config_pressed() -> void:
+	$Window_Config.popup_centered()
