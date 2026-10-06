@@ -104,7 +104,8 @@ Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
 \"PS1/PSX retro PC/computer\" - Shayno (itch.io)
 \"Computer Icons Asset Pack\" - DampSquib (itch.io)
 \"Retro Windows GUI\" - Comp-3 Interactive (itch.io)
-\"Essential Game Music Pack\" - Bell Kalengar (itch.io)"
+\"Essential Game Music Pack\" - Bell Kalengar (itch.io)
+\"PSX Textures Free\" - heyheythere (itch.io) "
 horizontal_alignment = 1
 
 [node name="titulo" type="Label" parent="." unique_id=1004933947]

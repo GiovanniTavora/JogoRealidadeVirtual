@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cf333muffdx1p"]
 
 [ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_ck6fg"]
-[ext_resource type="Texture2D" uid="uid://c8v8ork68stv6" path="res://Fundo System Fixer.png" id="2_ck6fg"]
+[ext_resource type="Texture2D" uid="uid://ckdpstuufdh60" path="res://Fundo PC tijolo.png" id="2_5xvxb"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
 [ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_7lo7m"]
 [ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="6_wnitp"]
 [ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menu_principal/botao_tela_cheia.gd" id="7_ystp5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vmig"]
-texture = ExtResource("2_ck6fg")
+texture = ExtResource("2_5xvxb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrb8"]
 bg_color = Color(0, 0, 0, 1)
