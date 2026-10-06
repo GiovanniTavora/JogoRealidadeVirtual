@@ -9,9 +9,6 @@
 texture = ExtResource("2_t0cdq")
 modulate_color = Color(0.12093342, 0.20266509, 0.07786942, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hwmp"]
-bg_color = Color(0.8788597, 0.18719241, 0.003146596, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrb8"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -77,7 +74,6 @@ offset_bottom = 852.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_8taon")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_7hwmp")
 text = "Voltar"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=512399212]
@@ -107,7 +103,8 @@ text = "-Assets Utilizados-
 Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
 \"PS1/PSX retro PC/computer\" - Shayno (itch.io)
 \"Computer Icons Asset Pack\" - DampSquib (itch.io)
-\"Retro Windows GUI\" - Comp-3 Interactive (itch.io)"
+\"Retro Windows GUI\" - Comp-3 Interactive (itch.io)
+\"Essential Game Music Pack\" - Bell Kalengar (itch.io)"
 horizontal_alignment = 1
 
 [node name="titulo" type="Label" parent="." unique_id=1004933947]
