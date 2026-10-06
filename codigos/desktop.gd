@@ -16,10 +16,6 @@ func _on_button_pressed_x() -> void:
 func _on_texture_button_pressed() -> void:
 	$Window.popup_centered()
 
-func _on_IconeMinigameArquivo_pressed_x() -> void:
-	$Window_Minigame_Arquivos.hide()
-
-
 func _on_icone_minigame_arquivo_pressed() -> void:
 	$Window_Minigame_Arquivos.popup_centered()
 

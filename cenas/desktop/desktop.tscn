@@ -189,7 +189,7 @@ theme_override_font_sizes/font_size = 115
 theme_override_styles/normal = SubResource("StyleBoxTexture_tu8j1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pfd1l")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pfd1l")
-text = "Voltar"
+text = "Sair"
 icon = SubResource("AtlasTexture_k25gi")
 expand_icon = true
 
@@ -532,12 +532,12 @@ stream = SubResource("AudioStreamWAV_pxgom")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="pressed" from="Window/Cabecalho/Button" to="." method="_on_button_pressed_x"]
 [connection signal="pressed" from="programa_janela/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="." method="_on_icone_minigame_arquivo_pressed"]
 [connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
-[connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
