@@ -75,6 +75,7 @@ var partida_encerrada := false
 @onready var painel_resultado: PanelContainer = $PainelResultado
 @onready var label_pontuacao_final: Label = $PainelResultado/Centralizador/Conteudo/LabelPontuacaoFinal
 @onready var botao_continuar: Button = $PainelResultado/Centralizador/Conteudo/BotaoContinuar
+@onready var musica: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -92,7 +93,7 @@ func _process(_delta: float) -> void:
 func _ao_tempo_esgotado() -> void:
 	partida_encerrada = true
 	label_tempo.text = "Tempo: 0s"
-	
+	$AudioStreamPlayer.stop()
 	label_pontuacao_final.text = "Pontuação final: %d" % pontuacao
 	painel_resultado.visible = true
 	for janela in area_jogo.get_children():

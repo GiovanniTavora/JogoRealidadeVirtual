@@ -122,4 +122,4 @@ text = "Voltar ao menu"
 stream = ExtResource("5_66t6w")
 autoplay = true
 bus = &"Music"
-parameters/looping = false
+parameters/looping = true
