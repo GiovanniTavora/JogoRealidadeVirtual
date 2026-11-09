@@ -42,7 +42,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_iyy68")
 theme_override_font_sizes/font_size = 40
-text = "Deseja acessar:"
+text = "deseja acessar:"
 horizontal_alignment = 1
 
 [node name="LabelDescricao" type="Label" parent="Margem/Conteudo" unique_id=1155643079]

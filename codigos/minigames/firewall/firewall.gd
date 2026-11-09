@@ -63,9 +63,41 @@ var solicitacoes = [
 	"aplicativo": "Editor de Texto",
 	"recurso": "arquivos pessoais",
 	"permitir_correto": false
-}
-]
+},
+# --- Novas (permitir) ---
+	{"aplicativo": "Reprodutor de Música", "recurso": "alto-falantes", "permitir_correto": true},
+	{"aplicativo": "Antivírus", "recurso": "arquivos do sistema", "permitir_correto": true},
+	{"aplicativo": "Cliente de E-mail", "recurso": "internet", "permitir_correto": true},
+	{"aplicativo": "Gerenciador de Impressão", "recurso": "impressora", "permitir_correto": true},
+	{"aplicativo": "Gerenciador de Senhas", "recurso": "senhas salvas", "permitir_correto": true},
+	{"aplicativo": "Jogo Online", "recurso": "internet", "permitir_correto": true},
 
+	# --- Novas (negar) ---
+	{"aplicativo": "Bloco de Notas", "recurso": "webcam", "permitir_correto": false},
+	{"aplicativo": "Cassino Online", "recurso": "CPF", "permitir_correto": false},
+	{"aplicativo": "Paciência", "recurso": "microfone", "permitir_correto": false},
+	{"aplicativo": "Protetor de Tela", "recurso": "arquivos pessoais", "permitir_correto": false},
+	{"aplicativo": "Leitor de PDF", "recurso": "localização", "permitir_correto": false},
+	{"aplicativo": "Driver do Mouse", "recurso": "câmera", "permitir_correto": false},
+	{"aplicativo": "PREMIO_GANHADOR.EXE", "recurso": "senhas salvas", "permitir_correto": false},
+	{"aplicativo": "Atualizador_Flash_FALSO.exe", "recurso": "acesso de administrador", "permitir_correto": false},
+	{"aplicativo": "Programa de Backup", "recurso": "arquivos pessoais", "permitir_correto": true},
+	{"aplicativo": "Assistente de Voz", "recurso": "microfone", "permitir_correto": true},
+	{"aplicativo": "Editor de Vídeo", "recurso": "placa de vídeo", "permitir_correto": true},
+	{"aplicativo": "Gerenciador de Arquivos", "recurso": "pasta de documentos", "permitir_correto": true},
+	{"aplicativo": "Teclado Virtual", "recurso": "teclado", "permitir_correto": true},
+	{"aplicativo": "Aplicativo de Chat", "recurso": "notificações", "permitir_correto": true},
+	{"aplicativo": "Gravador de Tela", "recurso": "tela", "permitir_correto": true},
+	{"aplicativo": "Calendário", "recurso": "webcam", "permitir_correto": false},
+	{"aplicativo": "Relógio", "recurso": "arquivos pessoais", "permitir_correto": false},
+	{"aplicativo": "Papel de Parede Animado", "recurso": "teclado", "permitir_correto": false},
+	{"aplicativo": "Campo Minado", "recurso": "senhas salvas", "permitir_correto": false},
+	{"aplicativo": "BAIXE_MAIS_RAM.exe", "recurso": "arquivos do sistema", "permitir_correto": false},
+	{"aplicativo": "Microsoft Paint", "recurso": "contatos", "permitir_correto": false},
+	{"aplicativo": "Minecraft_Oficial.EXE", "recurso": "fotos da ex", "permitir_correto": false},
+	{"aplicativo": "Galeria", "recurso": "microfone", "permitir_correto": false}
+]
+var solicitacoes_disponiveis = []
 var partida_encerrada := false
 
 @onready var timer_partida: Timer = $TimerPartida
@@ -82,6 +114,7 @@ var partida_encerrada := false
 
 func _ready() -> void:
 	randomize()
+	solicitacoes_disponiveis = solicitacoes.duplicate()
 	_atualizar_pontuacao()
 	timer_partida.start()
 	timer_partida.timeout.connect(_ao_tempo_esgotado)
@@ -103,7 +136,7 @@ func _ao_tempo_esgotado() -> void:
 
 
 func _criar_solicitacao() -> void:
-	if partida_encerrada:
+	if partida_encerrada or solicitacoes_disponiveis.is_empty():
 		return
 	var janela = cena_solicitacao.instantiate()
 	area_jogo.add_child(janela)
@@ -118,8 +151,9 @@ func _criar_solicitacao() -> void:
 		randf_range(0.0, limite_y)
 	)
 
-	var indice = randi_range(0, solicitacoes.size() - 1)
-	var solicitacao = solicitacoes [indice]
+	var indice = randi_range(0, solicitacoes_disponiveis.size() - 1)
+	var solicitacao = solicitacoes_disponiveis[indice]
+	solicitacoes_disponiveis.remove_at(indice)
 	
 	janela.configurar_solicitacao(
 		solicitacao["aplicativo"],
