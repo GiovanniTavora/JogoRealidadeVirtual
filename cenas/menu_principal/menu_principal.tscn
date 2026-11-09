@@ -1,17 +1,11 @@
 [gd_scene format=3 uid="uid://cf333muffdx1p"]
 
 [ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_ck6fg"]
-[ext_resource type="Texture2D" uid="uid://ckdpstuufdh60" path="res://Fundo PC tijolo.png" id="2_5xvxb"]
+[ext_resource type="PackedScene" uid="uid://djp0hubtbpvvr" path="res://cenario.glb" id="2_5xvxb"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
 [ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_7lo7m"]
 [ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="6_wnitp"]
 [ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menu_principal/botao_tela_cheia.gd" id="7_ystp5"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vmig"]
-texture = ExtResource("2_5xvxb")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrb8"]
-bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_6ul2r"]
 color = Color(1, 1, 1, 1)
@@ -19,6 +13,67 @@ thickness = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axbaj"]
 bg_color = Color(0.5388762, 0.6314932, 0.97940415, 1)
+
+[sub_resource type="Animation" id="Animation_5xvxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-175.40643, 25.759771, -1292.0063)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.007930457, 2.1411108e-06, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ck6fg"]
+resource_name = "zoom_monitor"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-175.40643, 25.759771, -1292.0063), Vector3(-169.89145, 29.209547, -1361.9895)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.007930457, 2.1411108e-06, 0), Vector3(0.057517882, -0.026172077, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1qcsy"]
+_data = {
+&"RESET": SubResource("Animation_5xvxb"),
+&"zoom_monitor": SubResource("Animation_ck6fg")
+}
 
 [node name="menu_principal" type="Control" unique_id=507066232]
 layout_mode = 3
@@ -36,8 +91,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_5vmig")
 metadata/_edit_lock_ = true
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1926673203]
+
+[node name="cenario" parent="Node3D" unique_id=1672619187 instance=ExtResource("2_5xvxb")]
+transform = Transform3D(19.99992, 0.035920925, 0.044655558, -0.032796223, 19.953533, -1.3621483, -0.046998296, 1.3620696, 19.953512, -153.86513, 0, -1398.761)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D" unique_id=1794795631]
+light_energy = 0.15
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=332718095]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1179396103]
+handle_input_locally = false
+msaa_2d = 3
+msaa_3d = 3
+use_taa = true
+use_debanding = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1927677626]
+transform = Transform3D(0.99999994, -1.6979808e-08, 2.1410433e-06, 0, 0.99996847, 0.007930373, -2.1411106e-06, -0.007930373, 0.99996847, -175.40643, 25.759771, -1292.0063)
+current = true
+fov = 60.0
 
 [node name="botoes_principais" type="VBoxContainer" parent="." unique_id=786962666]
 layout_mode = 1
@@ -46,10 +130,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 376.0
-offset_top = -116.5
-offset_right = 812.0
-offset_bottom = 116.5
+offset_left = 469.0
+offset_top = -133.0
+offset_right = 835.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
@@ -59,7 +143,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
-text = "Novo Jogo"
+text = "Iniciar"
 metadata/_edit_lock_ = true
 
 [node name="opcoes" type="Button" parent="botoes_principais" unique_id=2013525078]
@@ -97,10 +181,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -332.5
-offset_top = -443.0
-offset_right = 332.5
-offset_bottom = -311.0
+offset_left = -335.0
+offset_top = -453.0
+offset_right = 330.0
+offset_bottom = -321.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -109,7 +193,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.972549, 1, 1)
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 154
-theme_override_styles/normal = SubResource("StyleBoxFlat_0lrb8")
 text = "SYSTEM FIXER"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -194,6 +277,9 @@ theme_override_font_sizes/font_size = 45
 text = "Tela cheia"
 script = ExtResource("7_ystp5")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1075652627]
+libraries/ = SubResource("AnimationLibrary_1qcsy")
+
 [connection signal="pressed" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="botoes_principais/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="botoes_principais/creditos" to="." method="_on_creditos_pressed"]
@@ -201,3 +287,4 @@ script = ExtResource("7_ystp5")
 [connection signal="pressed" from="painel_opcoes/voltar" to="." method="_on_voltar_pressed"]
 [connection signal="value_changed" from="painel_opcoes/volume_audio" to="painel_opcoes/volume_audio" method="_on_value_changed"]
 [connection signal="toggled" from="painel_opcoes/botao_tela_cheia" to="painel_opcoes/botao_tela_cheia" method="_on_toggled"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
