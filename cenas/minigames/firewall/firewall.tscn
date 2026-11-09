@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jblmn8adjtlo" path="res://cenas/minigames/firewall/janela_solicitacao.tscn" id="2_nlcc7"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_8dgsm"]
 [ext_resource type="Shader" uid="uid://bqyxafdgjegc7" path="res://cenas/desktop/desktop.gdshader" id="3_gc8uk"]
+[ext_resource type="AudioStream" uid="uid://dep2r5sedd0r6" path="res://musicas/freesound_community-026491_pixel-song-8-72675.mp3" id="5_66t6w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
@@ -118,3 +119,7 @@ layout_mode = 2
 text = "Voltar ao menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=887185746]
+stream = ExtResource("5_66t6w")
+autoplay = true
+bus = &"Music"
+parameters/looping = false
