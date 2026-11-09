@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_novo_jogo_pressed() -> void:
-	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
+	$AnimationPlayer.play("zoom_monitor")
 
 func _on_opcoes_pressed() -> void:
 	botoes_principais.visible = false
@@ -27,3 +27,7 @@ func _on_sair_pressed() -> void:
 
 func _on_voltar_pressed() -> void:
 	_ready()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
