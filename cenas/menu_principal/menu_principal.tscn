@@ -91,7 +91,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_lock_ = true
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1926673203]
 
@@ -199,7 +198,6 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="painel_opcoes" type="Panel" parent="." unique_id=1883572479]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -277,6 +275,71 @@ theme_override_font_sizes/font_size = 45
 text = "Tela cheia"
 script = ExtResource("7_ystp5")
 
+[node name="painel_creditos" type="Panel" parent="." unique_id=2142888647]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -999.0
+offset_bottom = -189.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="painel_creditos" unique_id=422338771]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 155
+text = "CRÉDITOS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="painel_creditos" unique_id=1623183683]
+layout_mode = 0
+offset_top = 137.0
+offset_right = 900.0
+offset_bottom = 947.0
+
+[node name="Label" type="Label" parent="painel_creditos/VBoxContainer" unique_id=826187623]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 40
+text = "-Líder de Projeto, Game Designer, Pixel-Art-
+Giovanni Távora Pereira Negrão
+
+-Vice-Líder, Música, Pixel Art, Minigame Designer-
+Pedro Arthur Ramos Dutra da Silva
+
+-Pixel Art, Minigame Designer-
+Andryelly Silva de Castro
+
+-Modelagem 3D, Minigame Designer-
+Arthur Alexandre Alves"
+metadata/_edit_lock_ = true
+
+[node name="voltar_creditos" type="Button" parent="painel_creditos" unique_id=586332802]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -287.0
+offset_top = -89.0
+offset_right = 295.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 45
+text = "Voltar"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1075652627]
 libraries/ = SubResource("AnimationLibrary_1qcsy")
 
@@ -287,4 +350,5 @@ libraries/ = SubResource("AnimationLibrary_1qcsy")
 [connection signal="pressed" from="painel_opcoes/voltar" to="." method="_on_voltar_pressed"]
 [connection signal="value_changed" from="painel_opcoes/volume_audio" to="painel_opcoes/volume_audio" method="_on_value_changed"]
 [connection signal="toggled" from="painel_opcoes/botao_tela_cheia" to="painel_opcoes/botao_tela_cheia" method="_on_toggled"]
+[connection signal="pressed" from="painel_creditos/voltar_creditos" to="." method="_on_voltar_creditos_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

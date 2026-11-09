@@ -2,11 +2,13 @@ extends Control
 
 @onready var botoes_principais: VBoxContainer = $botoes_principais
 @onready var painel_opcoes: Panel = $painel_opcoes
+@onready var painel_creditos: Panel = $painel_creditos
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	botoes_principais.visible = true
 	painel_opcoes.visible = false
+	painel_creditos.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -20,7 +22,8 @@ func _on_opcoes_pressed() -> void:
 	painel_opcoes.visible = true
 
 func _on_creditos_pressed() -> void:
-	get_tree().change_scene_to_file("res://cenas/menu_principal/creditos.tscn")
+	botoes_principais.visible = false
+	painel_creditos.visible = true
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()
@@ -28,6 +31,8 @@ func _on_sair_pressed() -> void:
 func _on_voltar_pressed() -> void:
 	_ready()
 
+func _on_voltar_creditos_pressed() -> void:
+	_ready()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
