@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7krrcwmqx6cn"
+path="res://.godot/imported/u_o8xh7gwsrj-flower_pickup_positive-476369.mp3-534d50aafbe38c86b1311e3016d37fe8.mp3str"
+
+[deps]
+
+source_file="res://efeitos sonoros/firewall/u_o8xh7gwsrj-flower_pickup_positive-476369.mp3"
+dest_files=["res://.godot/imported/u_o8xh7gwsrj-flower_pickup_positive-476369.mp3-534d50aafbe38c86b1311e3016d37fe8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

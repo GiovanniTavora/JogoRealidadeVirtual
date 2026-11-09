@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="9_ystp5"]
 [ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="10_dsa2e"]
 [ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="11_g28pe"]
-[ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/arnav_geddada-ui-sound-374228.mp3" id="12_wnitp"]
+[ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/firewall/arnav_geddada-ui-sound-374228.mp3" id="12_wnitp"]
 [ext_resource type="AudioStream" uid="uid://ctvdb6xg0r2gj" path="res://efeitos sonoros/litupsubway-ui-close-sfx-513359.mp3" id="13_ystp5"]
 
 [sub_resource type="Animation" id="Animation_5xvxb"]
@@ -169,7 +169,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1927677626]
-transform = Transform3D(0.99999994, -1.6979808e-08, 2.1410433e-06, 0, 0.9999684, 0.007930373, -2.1411106e-06, -0.007930373, 0.9999684, -175.40643, 25.759771, -1292.0063)
+transform = Transform3D(0.99999994, -1.6979806e-08, 2.141043e-06, 0, 0.99996835, 0.007930372, -2.1411106e-06, -0.007930372, 0.99996835, -175.40643, 25.759771, -1292.0063)
 current = true
 fov = 60.0
 

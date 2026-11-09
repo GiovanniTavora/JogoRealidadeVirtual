@@ -5,7 +5,13 @@
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_8dgsm"]
 [ext_resource type="Shader" uid="uid://bqyxafdgjegc7" path="res://cenas/desktop/desktop.gdshader" id="3_gc8uk"]
 [ext_resource type="AudioStream" uid="uid://dep2r5sedd0r6" path="res://musicas/freesound_community-026491_pixel-song-8-72675.mp3" id="5_66t6w"]
-[ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/arnav_geddada-ui-sound-374228.mp3" id="6_f27lk"]
+[ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/firewall/arnav_geddada-ui-sound-374228.mp3" id="6_f27lk"]
+[ext_resource type="AudioStream" uid="uid://7krrcwmqx6cn" path="res://efeitos sonoros/firewall/u_o8xh7gwsrj-flower_pickup_positive-476369.mp3" id="7_m4rgs"]
+[ext_resource type="AudioStream" uid="uid://bdwnpuv3oxcam" path="res://efeitos sonoros/firewall/soundshelfstudio-ui-error-pop-515668.mp3" id="8_yy7ca"]
+[ext_resource type="Texture2D" uid="uid://kch7jk5vt5rb" path="res://sprites/desktop/CloseRegular.png" id="9_oktwg"]
+[ext_resource type="Texture2D" uid="uid://exxf00s6bs6s" path="res://sprites/desktop/ClosePressed.png" id="10_ttykc"]
+[ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="11_sxg1o"]
+[ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="12_pph8i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
@@ -111,14 +117,6 @@ layout_mode = 2
 layout_mode = 2
 text = "Fim de jogo!"
 
-[node name="LabelPontuacaoFinal" type="Label" parent="PainelResultado/Centralizador/Conteudo" unique_id=309966648]
-layout_mode = 2
-text = "Pontuação final: 0"
-
-[node name="BotaoContinuar" type="Button" parent="PainelResultado/Centralizador/Conteudo" unique_id=416054947]
-layout_mode = 2
-text = "Voltar ao menu"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=887185746]
 stream = ExtResource("5_66t6w")
 volume_db = -4.0
@@ -129,3 +127,119 @@ parameters/looping = true
 [node name="Popup" type="AudioStreamPlayer" parent="." unique_id=1838744494]
 stream = ExtResource("6_f27lk")
 bus = &"SFX"
+
+[node name="SomPositivo" type="AudioStreamPlayer" parent="." unique_id=77530308]
+stream = ExtResource("7_m4rgs")
+bus = &"SFX"
+
+[node name="SomNegativo" type="AudioStreamPlayer" parent="." unique_id=758086447]
+stream = ExtResource("8_yy7ca")
+bus = &"SFX"
+
+[node name="Window_Resultado" type="Window" parent="." unique_id=790199002]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(1100, 600)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("9_oktwg")
+theme_override_icons/close_pressed = ExtResource("10_ttykc")
+
+[node name="Base" type="NinePatchRect" parent="Window_Resultado" unique_id=2096440626]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_sxg1o")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="Window_Resultado" unique_id=857784179]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("12_pph8i")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="Window_Resultado/Cabecalho" unique_id=2042068926]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 85
+text = "Fim de jogo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Window_Resultado/Cabecalho" unique_id=856761465]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 565.0
+grow_horizontal = 2
+
+[node name="ResultadoFirewall" type="Label" parent="Window_Resultado/Cabecalho/Panel" unique_id=349061870]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 105.0
+offset_right = 1071.0
+offset_bottom = -114.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 95
+text = "Parabéns, você bateu a meta de 
+pontos desse minigame!"
+horizontal_alignment = 1
+
+[node name="LabelPontuacaoFinal" type="Label" parent="Window_Resultado/Cabecalho/Panel" unique_id=309966648]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -187.0
+offset_right = 285.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 95
+text = "Pontuação final: 0"
+
+[node name="BotaoContinuar" type="Button" parent="Window_Resultado/Cabecalho/Panel" unique_id=416054947]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.5
+offset_top = 92.0
+offset_right = 196.5
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 80
+text = "Voltar ao menu"

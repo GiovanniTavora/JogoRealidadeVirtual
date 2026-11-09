@@ -62,7 +62,7 @@ var solicitacoes = [
 {
 	"aplicativo": "Editor de Texto",
 	"recurso": "arquivos pessoais",
-	"permitir_correto": true
+	"permitir_correto": false
 }
 ]
 
@@ -72,11 +72,13 @@ var partida_encerrada := false
 @onready var label_tempo: Label = $HUD/Tempo
 @onready var area_jogo: Control = $AreaJogo
 @onready var label_pontuacao: Label = $HUD/Pontuacao
-@onready var painel_resultado: PanelContainer = $PainelResultado
-@onready var label_pontuacao_final: Label = $PainelResultado/Centralizador/Conteudo/LabelPontuacaoFinal
-@onready var botao_continuar: Button = $PainelResultado/Centralizador/Conteudo/BotaoContinuar
+#@onready var painel_resultado: PanelContainer = $PainelResultado
+@onready var label_pontuacao_final: Label = $Window_Resultado/Cabecalho/Panel/LabelPontuacaoFinal
+@onready var botao_continuar: Button = $Window_Resultado/Cabecalho/Panel/BotaoContinuar
 @onready var musica: AudioStreamPlayer = $AudioStreamPlayer
 @onready var popup: AudioStreamPlayer = $Popup
+@onready var som_positivo: AudioStreamPlayer = $SomPositivo
+@onready var som_negativo: AudioStreamPlayer = $SomNegativo
 
 
 func _ready() -> void:
@@ -96,7 +98,7 @@ func _ao_tempo_esgotado() -> void:
 	label_tempo.text = "Tempo: 0s"
 	$AudioStreamPlayer.stop()
 	label_pontuacao_final.text = "Pontuação final: %d" % pontuacao
-	painel_resultado.visible = true
+	$Window_Resultado.visible = true
 	for janela in area_jogo.get_children():
 		janela.queue_free()
 
@@ -131,7 +133,11 @@ func _criar_solicitacao() -> void:
 func _ao_resolver_solicitacao(acertou: bool) -> void:
 	if acertou:
 		pontuacao += 1
+		som_positivo.play()
+	else:
+		som_negativo.play()
 	_atualizar_pontuacao()
+	
 	if partida_encerrada:
 		return
 
