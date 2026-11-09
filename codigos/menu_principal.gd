@@ -17,10 +17,12 @@ func _on_novo_jogo_pressed() -> void:
 
 func _on_opcoes_pressed() -> void:
 	$Window_Opcoes.popup_centered()
+	$Click.play()
 
 
 func _on_creditos_pressed() -> void:
 	$Window_Creditos.popup_centered()
+	$Click.play()
 
 
 func _on_sair_pressed() -> void:

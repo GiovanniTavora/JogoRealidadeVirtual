@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="9_ystp5"]
 [ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="10_dsa2e"]
 [ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="11_g28pe"]
+[ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/arnav_geddada-ui-sound-374228.mp3" id="12_wnitp"]
 
 [sub_resource type="Animation" id="Animation_5xvxb"]
 length = 0.001
@@ -358,7 +359,8 @@ Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
 \"Retro Windows GUI\" - Comp-3 Interactive (itch.io)
 \"Essential Game Music Pack\" - Bell Kalengar (itch.io)
 \"PSX Textures Free\" - heyheythere (itch.io) 
-\"90s Desktop PC - PSX\" - visualdiscette (sketchfab.com)"
+\"90s Desktop PC - PSX\" - visualdiscette (sketchfab.com)
+\"UI sound 2\" - Arnav_Geddada (pixabay.com)"
 
 [node name="Window_Opcoes" type="Window" parent="." unique_id=1759926072]
 oversampling_override = 1.0
@@ -478,7 +480,7 @@ offset_bottom = -251.5
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 95
-text = "Volume:"
+text = "Música:"
 horizontal_alignment = 1
 
 [node name="botao_tela_cheia" type="CheckButton" parent="Window_Opcoes/Cabecalho/Panel" unique_id=2072439346]
@@ -494,6 +496,9 @@ theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 95
 text = "Tela cheia:"
 script = ExtResource("7_ystp5")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=884032011]
+stream = ExtResource("12_wnitp")
 
 [connection signal="pressed" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="botoes_principais/opcoes" to="." method="_on_opcoes_pressed"]
