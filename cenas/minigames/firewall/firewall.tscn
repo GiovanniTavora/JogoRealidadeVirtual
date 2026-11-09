@@ -97,26 +97,6 @@ metadata/_edit_lock_ = true
 wait_time = 60.0
 one_shot = true
 
-[node name="PainelResultado" type="PanelContainer" parent="." unique_id=1045762780]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Centralizador" type="CenterContainer" parent="PainelResultado" unique_id=529935960]
-layout_mode = 2
-offset_transform_enabled = true
-
-[node name="Conteudo" type="VBoxContainer" parent="PainelResultado/Centralizador" unique_id=1548072551]
-layout_mode = 2
-
-[node name="LabelTitulo" type="Label" parent="PainelResultado/Centralizador/Conteudo" unique_id=2109048284]
-layout_mode = 2
-text = "Fim de jogo!"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=887185746]
 stream = ExtResource("5_66t6w")
 volume_db = -4.0

@@ -72,7 +72,6 @@ var partida_encerrada := false
 @onready var label_tempo: Label = $HUD/Tempo
 @onready var area_jogo: Control = $AreaJogo
 @onready var label_pontuacao: Label = $HUD/Pontuacao
-#@onready var painel_resultado: PanelContainer = $PainelResultado
 @onready var label_pontuacao_final: Label = $Window_Resultado/Cabecalho/Panel/LabelPontuacaoFinal
 @onready var botao_continuar: Button = $Window_Resultado/Cabecalho/Panel/BotaoContinuar
 @onready var musica: AudioStreamPlayer = $AudioStreamPlayer
