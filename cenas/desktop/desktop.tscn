@@ -660,7 +660,7 @@ offset_bottom = -251.5
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 95
-text = "Volume:"
+text = "Música:"
 horizontal_alignment = 1
 
 [node name="minigame_firewall" type="PanelContainer" parent="." unique_id=1064164909]

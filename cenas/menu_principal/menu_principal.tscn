@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_ck6fg"]
 [ext_resource type="PackedScene" uid="uid://djp0hubtbpvvr" path="res://cenario.glb" id="2_5xvxb"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
-[ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_7lo7m"]
+[ext_resource type="AudioStream" uid="uid://b652xtr8vwtcw" path="res://musicas/WAV_Moments.wav" id="4_ystp5"]
 [ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="6_wnitp"]
 [ext_resource type="Texture2D" uid="uid://kch7jk5vt5rb" path="res://sprites/desktop/CloseRegular.png" id="7_pphy0"]
 [ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menu_principal/botao_tela_cheia.gd" id="7_ystp5"]
@@ -220,7 +220,7 @@ text = "Sair"
 metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1397725600]
-stream = ExtResource("4_7lo7m")
+stream = ExtResource("4_ystp5")
 autoplay = true
 bus = &"Music"
 
@@ -440,27 +440,14 @@ offset_right = -23.0
 offset_bottom = 565.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="Window_Opcoes/Cabecalho/Panel" unique_id=598986634]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 64.0
-offset_bottom = 289.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_4n3ki")
-theme_override_font_sizes/font_size = 85
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="volume_audio" type="HSlider" parent="Window_Opcoes/Cabecalho/Panel" unique_id=1047057911]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 5.0
-offset_top = 92.0
+offset_top = 47.0
 offset_right = -12.0
-offset_bottom = 180.5
+offset_bottom = 135.5
 grow_horizontal = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_dsa2e")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g28pe")
@@ -476,9 +463,9 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 14.0
-offset_top = 52.5
-offset_right = 222.0
-offset_bottom = -251.5
+offset_top = 8.0
+offset_right = 228.0
+offset_bottom = -296.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 95
@@ -490,20 +477,54 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = -4.0
-offset_top = 222.0
+offset_top = 288.0
 offset_right = -592.5
-offset_bottom = 312.0
+offset_bottom = 378.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 95
 text = "Tela cheia:"
 script = ExtResource("7_ystp5")
 
+[node name="Label3" type="Label" parent="Window_Opcoes/Cabecalho/Panel" unique_id=656806601]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 140.0
+offset_right = 513.0
+offset_bottom = -164.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 95
+text = "Efeitos Sonoros:"
+horizontal_alignment = 1
+
+[node name="volume_SFX" type="HSlider" parent="Window_Opcoes/Cabecalho/Panel" unique_id=708873477]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 207.0
+offset_right = -12.0
+offset_bottom = 295.5
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_dsa2e")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g28pe")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g28pe")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("6_wnitp")
+audio_bus_name = "SFX"
+
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=884032011]
 stream = ExtResource("12_wnitp")
+bus = &"SFX"
 
 [node name="Close" type="AudioStreamPlayer" parent="." unique_id=1058393772]
 stream = ExtResource("13_ystp5")
+bus = &"SFX"
 
 [connection signal="pressed" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="botoes_principais/opcoes" to="." method="_on_opcoes_pressed"]
@@ -514,3 +535,4 @@ stream = ExtResource("13_ystp5")
 [connection signal="pressed" from="Window_Opcoes/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="value_changed" from="Window_Opcoes/Cabecalho/Panel/volume_audio" to="Window_Opcoes/Cabecalho/Panel/volume_audio" method="_on_value_changed"]
 [connection signal="toggled" from="Window_Opcoes/Cabecalho/Panel/botao_tela_cheia" to="Window_Opcoes/Cabecalho/Panel/botao_tela_cheia" method="_on_toggled"]
+[connection signal="value_changed" from="Window_Opcoes/Cabecalho/Panel/volume_SFX" to="Window_Opcoes/Cabecalho/Panel/volume_SFX" method="_on_value_changed"]
