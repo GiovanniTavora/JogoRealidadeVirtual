@@ -1,8 +1,6 @@
 extends Control
 
 @onready var botoes_principais: VBoxContainer = $botoes_principais
-@onready var painel_opcoes: Panel = $painel_opcoes
-@onready var painel_creditos: Panel = $painel_creditos
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
