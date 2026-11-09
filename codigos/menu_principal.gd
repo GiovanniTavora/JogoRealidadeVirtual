@@ -7,8 +7,6 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	botoes_principais.visible = true
-	painel_opcoes.visible = false
-	painel_creditos.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,13 +17,11 @@ func _on_novo_jogo_pressed() -> void:
 
 func _on_opcoes_pressed() -> void:
 	$Window_Opcoes.popup_centered()
-	#botoes_principais.visible = false
-	#painel_opcoes.visible = true
+
 
 func _on_creditos_pressed() -> void:
 	$Window_Creditos.popup_centered()
-	#botoes_principais.visible = false
-	#painel_creditos.visible = true
+
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()
