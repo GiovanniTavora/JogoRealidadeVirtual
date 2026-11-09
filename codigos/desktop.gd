@@ -11,6 +11,7 @@ func _on_botao_voltar_pressed() -> void:
 
 func _on_button_pressed_x() -> void:
 	$Window.hide()
+	$Close.play()
 
 func _on_texture_button_pressed() -> void:
 	$Window.popup_centered()
