@@ -101,6 +101,34 @@ texture_margin_top = 2.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pphy0"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnitp"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ystp5"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dsa2e"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g28pe"]
+bg_color = Color(0.5388762, 0.6314932, 0.97940415, 1)
+
 [node name="menu_principal" type="Control" unique_id=507066232]
 layout_mode = 3
 anchors_preset = 15
@@ -117,6 +145,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1926673203]
 
@@ -290,18 +319,6 @@ step = 0.05
 value = 1.0
 script = ExtResource("6_wnitp")
 audio_bus_name = "Music"
-
-[node name="botao_tela_cheia" type="CheckButton" parent="painel_opcoes" unique_id=2072439346]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 252.5
-offset_bottom = 299.5
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_4n3ki")
-theme_override_font_sizes/font_size = 45
-text = "Tela cheia"
-script = ExtResource("7_ystp5")
 
 [node name="painel_creditos" type="Panel" parent="." unique_id=2142888647]
 visible = false
@@ -496,13 +513,150 @@ Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
 \"PSX Textures Free\" - heyheythere (itch.io) 
 \"90s Desktop PC - PSX\" - visualdiscette (sketchfab.com)"
 
+[node name="Window_Opcoes" type="Window" parent="." unique_id=1759926072]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(1100, 600)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("7_pphy0")
+theme_override_icons/close_pressed = ExtResource("8_wnitp")
+
+[node name="Base" type="NinePatchRect" parent="Window_Opcoes" unique_id=660723735]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ystp5")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="Window_Opcoes" unique_id=1886009067]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("10_dsa2e")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="Window_Opcoes/Cabecalho" unique_id=1497876299]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 85
+text = "Configurações"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sair_janela" type="Button" parent="Window_Opcoes/Cabecalho" unique_id=1574359575]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -37.0
+offset_right = -31.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_pphy0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wnitp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ystp5")
+
+[node name="Panel" type="Panel" parent="Window_Opcoes/Cabecalho" unique_id=1723183934]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 565.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Window_Opcoes/Cabecalho/Panel" unique_id=598986634]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 64.0
+offset_bottom = 289.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 85
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="volume_audio" type="HSlider" parent="Window_Opcoes/Cabecalho/Panel" unique_id=1047057911]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 92.0
+offset_right = -12.0
+offset_bottom = 180.5
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_dsa2e")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g28pe")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g28pe")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("6_wnitp")
+audio_bus_name = "Music"
+
+[node name="Label2" type="Label" parent="Window_Opcoes/Cabecalho/Panel" unique_id=1990633911]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 52.5
+offset_right = 222.0
+offset_bottom = -251.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 95
+text = "Volume:"
+horizontal_alignment = 1
+
+[node name="botao_tela_cheia" type="CheckButton" parent="Window_Opcoes/Cabecalho/Panel" unique_id=2072439346]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -4.0
+offset_top = 222.0
+offset_right = -592.5
+offset_bottom = 312.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 95
+text = "Tela cheia:"
+script = ExtResource("7_ystp5")
+
 [connection signal="pressed" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="botoes_principais/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="botoes_principais/creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="botoes_principais/sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="painel_opcoes/voltar" to="." method="_on_voltar_pressed"]
 [connection signal="value_changed" from="painel_opcoes/volume_audio" to="painel_opcoes/volume_audio" method="_on_value_changed"]
-[connection signal="toggled" from="painel_opcoes/botao_tela_cheia" to="painel_opcoes/botao_tela_cheia" method="_on_toggled"]
 [connection signal="pressed" from="painel_creditos/voltar_creditos" to="." method="_on_voltar_creditos_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Window_Creditos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="pressed" from="Window_Opcoes/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="value_changed" from="Window_Opcoes/Cabecalho/Panel/volume_audio" to="Window_Opcoes/Cabecalho/Panel/volume_audio" method="_on_value_changed"]
+[connection signal="toggled" from="Window_Opcoes/Cabecalho/Panel/botao_tela_cheia" to="Window_Opcoes/Cabecalho/Panel/botao_tela_cheia" method="_on_toggled"]

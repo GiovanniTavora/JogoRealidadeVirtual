@@ -18,8 +18,9 @@ func _on_novo_jogo_pressed() -> void:
 	$AnimationPlayer.play("zoom_monitor")
 
 func _on_opcoes_pressed() -> void:
-	botoes_principais.visible = false
-	painel_opcoes.visible = true
+	$Window_Opcoes.popup_centered()
+	#botoes_principais.visible = false
+	#painel_opcoes.visible = true
 
 func _on_creditos_pressed() -> void:
 	$Window_Creditos.popup_centered()
@@ -41,3 +42,4 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_sair_janela_pressed() -> void:
 	$Window_Creditos.hide()
+	$Window_Opcoes.hide()
