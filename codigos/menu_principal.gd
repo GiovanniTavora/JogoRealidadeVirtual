@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_novo_jogo_pressed() -> void:
+	botoes_principais.visible = false
+	$HBoxContainer/titulo.visible = false
 	$AnimationPlayer.play("zoom_monitor")
 
 func _on_opcoes_pressed() -> void:
@@ -37,5 +39,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_sair_janela_pressed() -> void:
+	$Close.play()
 	$Window_Creditos.hide()
 	$Window_Opcoes.hide()
