@@ -22,8 +22,9 @@ func _on_opcoes_pressed() -> void:
 	painel_opcoes.visible = true
 
 func _on_creditos_pressed() -> void:
-	botoes_principais.visible = false
-	painel_creditos.visible = true
+	$Window_Creditos.popup_centered()
+	#botoes_principais.visible = false
+	#painel_creditos.visible = true
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()
@@ -36,3 +37,7 @@ func _on_voltar_creditos_pressed() -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
+
+
+func _on_sair_janela_pressed() -> void:
+	$Window_Creditos.hide()

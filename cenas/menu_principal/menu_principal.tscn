@@ -5,7 +5,12 @@
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
 [ext_resource type="AudioStream" uid="uid://bpo25f3bo6mlc" path="res://musicas/musica menu principal.wav" id="4_7lo7m"]
 [ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="6_wnitp"]
+[ext_resource type="Texture2D" uid="uid://kch7jk5vt5rb" path="res://sprites/desktop/CloseRegular.png" id="7_pphy0"]
 [ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menu_principal/botao_tela_cheia.gd" id="7_ystp5"]
+[ext_resource type="Texture2D" uid="uid://exxf00s6bs6s" path="res://sprites/desktop/ClosePressed.png" id="8_wnitp"]
+[ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="9_ystp5"]
+[ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="10_dsa2e"]
+[ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="11_g28pe"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_6ul2r"]
 color = Color(1, 1, 1, 1)
@@ -75,6 +80,27 @@ _data = {
 &"zoom_monitor": SubResource("Animation_ck6fg")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0hcw"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijetr"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oncfw"]
+texture = ExtResource("11_g28pe")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
 [node name="menu_principal" type="Control" unique_id=507066232]
 layout_mode = 3
 anchors_preset = 15
@@ -107,6 +133,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1179396103]
 handle_input_locally = false
@@ -324,7 +351,6 @@ Andryelly Silva de Castro
 
 -Modelagem 3D, Minigame Designer-
 Arthur Alexandre Alves"
-metadata/_edit_lock_ = true
 
 [node name="creditos_assets" type="Label" parent="painel_creditos/VBoxContainer" unique_id=1058005063]
 layout_mode = 2
@@ -359,6 +385,117 @@ text = "Voltar"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1075652627]
 libraries/ = SubResource("AnimationLibrary_1qcsy")
 
+[node name="Window_Creditos" type="Window" parent="." unique_id=223783212]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(1875, 717)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("7_pphy0")
+theme_override_icons/close_pressed = ExtResource("8_wnitp")
+
+[node name="Base" type="NinePatchRect" parent="Window_Creditos" unique_id=1201125748]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ystp5")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="Window_Creditos" unique_id=1140203296]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("10_dsa2e")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="Window_Creditos/Cabecalho" unique_id=1939432457]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 85
+text = "Créditos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sair_janela" type="Button" parent="Window_Creditos/Cabecalho" unique_id=1307845663]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -37.0
+offset_right = -31.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_i0hcw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ijetr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oncfw")
+
+[node name="Panel" type="Panel" parent="Window_Creditos/Cabecalho" unique_id=1394836318]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 690.0
+grow_horizontal = 2
+
+[node name="creditos_dev" type="Label" parent="Window_Creditos/Cabecalho/Panel" unique_id=415018031]
+layout_mode = 0
+offset_left = 59.0
+offset_right = 889.0
+offset_bottom = 415.0
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 40
+text = "-Líder de Projeto, Game Designer, Pixel-Art-
+Giovanni Távora Pereira Negrão
+
+-Vice-Líder, Música, Pixel Art, Minigame Designer-
+Pedro Arthur Ramos Dutra da Silva
+
+-Pixel Art, Minigame Designer-
+Andryelly Silva de Castro
+
+-Modelagem 3D, Minigame Designer-
+Arthur Alexandre Alves"
+
+[node name="creditos_assets" type="Label" parent="Window_Creditos/Cabecalho/Panel" unique_id=1355309132]
+layout_mode = 0
+offset_left = 1007.0
+offset_right = 1837.0
+offset_bottom = 333.0
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 45
+text = "                  -Assets Utilizados-
+Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
+\"PS1/PSX retro PC/computer\" - Shayno (itch.io)
+\"Computer Icons Asset Pack\" - DampSquib (itch.io)
+\"Retro Windows GUI\" - Comp-3 Interactive (itch.io)
+\"Essential Game Music Pack\" - Bell Kalengar (itch.io)
+\"PSX Textures Free\" - heyheythere (itch.io) 
+\"90s Desktop PC - PSX\" - visualdiscette (sketchfab.com)"
+
 [connection signal="pressed" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="botoes_principais/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="botoes_principais/creditos" to="." method="_on_creditos_pressed"]
@@ -368,3 +505,4 @@ libraries/ = SubResource("AnimationLibrary_1qcsy")
 [connection signal="toggled" from="painel_opcoes/botao_tela_cheia" to="painel_opcoes/botao_tela_cheia" method="_on_toggled"]
 [connection signal="pressed" from="painel_creditos/voltar_creditos" to="." method="_on_voltar_creditos_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Window_Creditos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
