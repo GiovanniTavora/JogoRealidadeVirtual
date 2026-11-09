@@ -76,6 +76,7 @@ var partida_encerrada := false
 @onready var label_pontuacao_final: Label = $PainelResultado/Centralizador/Conteudo/LabelPontuacaoFinal
 @onready var botao_continuar: Button = $PainelResultado/Centralizador/Conteudo/BotaoContinuar
 @onready var musica: AudioStreamPlayer = $AudioStreamPlayer
+@onready var popup: AudioStreamPlayer = $Popup
 
 
 func _ready() -> void:
@@ -104,9 +105,8 @@ func _criar_solicitacao() -> void:
 	if partida_encerrada:
 		return
 	var janela = cena_solicitacao.instantiate()
-
 	area_jogo.add_child(janela)
-
+	$Popup.play()
 	janela.size = janela.get_combined_minimum_size()
 
 	var limite_x = maxf(0.0, area_jogo.size.x - janela.size.x)
@@ -139,7 +139,7 @@ func _ao_resolver_solicitacao(acertou: bool) -> void:
 	_criar_solicitacao()
 
 func _atualizar_pontuacao() -> void:
-	label_pontuacao.text = "Pontos: %d" % pontuacao
+	label_pontuacao.text = "Pontuação: %d" % pontuacao
 
 func _ao_clicar_continuar() -> void:
 	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")

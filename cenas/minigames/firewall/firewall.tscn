@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_8dgsm"]
 [ext_resource type="Shader" uid="uid://bqyxafdgjegc7" path="res://cenas/desktop/desktop.gdshader" id="3_gc8uk"]
 [ext_resource type="AudioStream" uid="uid://dep2r5sedd0r6" path="res://musicas/freesound_community-026491_pixel-song-8-72675.mp3" id="5_66t6w"]
+[ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/arnav_geddada-ui-sound-374228.mp3" id="6_f27lk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
@@ -73,7 +74,7 @@ text = "Tempo: 1:00"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8dgsm")
 theme_override_font_sizes/font_size = 45
-text = "Pontos: 0"
+text = "Pontuação: 0"
 
 [node name="AreaJogo" type="Control" parent="." unique_id=2072031580]
 layout_mode = 1
@@ -120,6 +121,11 @@ text = "Voltar ao menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=887185746]
 stream = ExtResource("5_66t6w")
+volume_db = -4.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="Popup" type="AudioStreamPlayer" parent="." unique_id=1838744494]
+stream = ExtResource("6_f27lk")
+bus = &"SFX"

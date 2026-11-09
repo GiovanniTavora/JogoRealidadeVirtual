@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://jblmn8adjtlo"]
 
 [ext_resource type="Script" uid="uid://cddx2jstr0sgf" path="res://codigos/minigames/firewall/janela_solicitacao.gd" id="1_lhy6r"]
+[ext_resource type="Texture2D" uid="uid://dxp6ykqeau7fq" path="res://sprites/desktop/button confirm.png" id="2_iva60"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="2_iyy68"]
+[ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="3_iyy68"]
 
 [node name="JanelaSolicitacao" type="PanelContainer" unique_id=1058460002]
 offset_right = 409.0
@@ -23,21 +26,29 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Margem/Conteudo/BarraTitulo" unique_id=1738674449]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 30
 text = "Nova Solicitação!"
 horizontal_alignment = 1
 
 [node name="LabelAplicacao" type="Label" parent="Margem/Conteudo" unique_id=475080447]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 45
 text = "Webcam"
 horizontal_alignment = 1
 
 [node name="LabelDesejaAcessar" type="Label" parent="Margem/Conteudo" unique_id=106772440]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 40
 text = "Deseja acessar:"
 horizontal_alignment = 1
 
 [node name="LabelDescricao" type="Label" parent="Margem/Conteudo" unique_id=1155643079]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iyy68")
+theme_override_font_sizes/font_size = 45
 text = "Microfone"
 horizontal_alignment = 1
 
@@ -48,16 +59,17 @@ horizontal_alignment = 1
 
 [node name="Botoes" type="HBoxContainer" parent="Margem/Conteudo" unique_id=1259652759]
 layout_mode = 2
+alignment = 1
 
-[node name="BotaoPermitir" type="Button" parent="Margem/Conteudo/Botoes" unique_id=28047101]
+[node name="BotaoPermitir" type="TextureButton" parent="Margem/Conteudo/Botoes" unique_id=250576686]
 custom_minimum_size = Vector2(10, 32)
 layout_mode = 2
-text = "Permitir"
+texture_normal = ExtResource("2_iva60")
 
-[node name="BotaoRecusar" type="Button" parent="Margem/Conteudo/Botoes" unique_id=873288296]
+[node name="BotaoRecusar" type="TextureButton" parent="Margem/Conteudo/Botoes" unique_id=1427011118]
 custom_minimum_size = Vector2(10, 32)
 layout_mode = 2
-text = "Recusar"
+texture_normal = ExtResource("3_iyy68")
 
 [node name="TimerSolicitacao" type="Timer" parent="." unique_id=627902694]
 wait_time = 8.0
