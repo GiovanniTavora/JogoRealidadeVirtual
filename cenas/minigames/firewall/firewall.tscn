@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://riubert6m7yo" path="res://codigos/minigames/firewall/firewall.gd" id="1_qwxdp"]
 [ext_resource type="PackedScene" uid="uid://jblmn8adjtlo" path="res://cenas/minigames/firewall/janela_solicitacao.tscn" id="2_nlcc7"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_8dgsm"]
+[ext_resource type="Shader" uid="uid://bqyxafdgjegc7" path="res://cenas/desktop/desktop.gdshader" id="3_gc8uk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
+shader = ExtResource("3_gc8uk")
+shader_parameter/SCREEN_HEIGHT = 240.0
 
 [node name="Firewall" type="Control" unique_id=1178059765]
 layout_mode = 3
@@ -13,6 +18,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qwxdp")
 cena_solicitacao = ExtResource("2_nlcc7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=489297000]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.014107027, 0.3588146, 0.4116642, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=423667183]
+material = SubResource("ShaderMaterial_66t6w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="FundoDesktop" type="TextureRect" parent="." unique_id=1946337699]
 layout_mode = 1
@@ -92,3 +116,5 @@ text = "Pontuação final: 0"
 [node name="BotaoContinuar" type="Button" parent="PainelResultado/Centralizador/Conteudo" unique_id=416054947]
 layout_mode = 2
 text = "Voltar ao menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=887185746]

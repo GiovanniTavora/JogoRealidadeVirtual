@@ -74,6 +74,7 @@ var partida_encerrada := false
 @onready var label_pontuacao: Label = $HUD/Pontuacao
 @onready var painel_resultado: PanelContainer = $PainelResultado
 @onready var label_pontuacao_final: Label = $PainelResultado/Centralizador/Conteudo/LabelPontuacaoFinal
+@onready var botao_continuar: Button = $PainelResultado/Centralizador/Conteudo/BotaoContinuar
 
 
 func _ready() -> void:
@@ -81,6 +82,7 @@ func _ready() -> void:
 	_atualizar_pontuacao()
 	timer_partida.start()
 	timer_partida.timeout.connect(_ao_tempo_esgotado)
+	botao_continuar.pressed.connect(_ao_clicar_continuar)
 	call_deferred("_criar_solicitacao")
 
 func _process(_delta: float) -> void:
@@ -137,4 +139,6 @@ func _ao_resolver_solicitacao(acertou: bool) -> void:
 
 func _atualizar_pontuacao() -> void:
 	label_pontuacao.text = "Pontos: %d" % pontuacao
-	
+
+func _ao_clicar_continuar() -> void:
+	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
