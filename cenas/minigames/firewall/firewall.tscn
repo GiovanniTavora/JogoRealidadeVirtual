@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://sy18lvnjfcms"]
+
+[ext_resource type="Script" uid="uid://riubert6m7yo" path="res://codigos/minigames/firewall/firewall.gd" id="1_qwxdp"]
+[ext_resource type="PackedScene" uid="uid://jblmn8adjtlo" path="res://cenas/minigames/firewall/janela_solicitacao.tscn" id="2_nlcc7"]
+
+[node name="Firewall" type="Control" unique_id=1178059765]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwxdp")
+cena_solicitacao = ExtResource("2_nlcc7")
+
+[node name="FundoDesktop" type="TextureRect" parent="." unique_id=1946337699]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HUD" type="HBoxContainer" parent="." unique_id=141296504]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+offset_transform_enabled = true
+
+[node name="Tempo" type="Label" parent="HUD" unique_id=1129036181]
+layout_mode = 2
+text = "Tempo: 1:00"
+
+[node name="Pontuacao" type="Label" parent="HUD" unique_id=1755464531]
+layout_mode = 2
+text = "Pontos: 0"
+
+[node name="AreaJogo" type="Control" parent="." unique_id=2072031580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+mouse_filter = 1
+
+[node name="TimerPartida" type="Timer" parent="." unique_id=1319005056]
+wait_time = 60.0
+one_shot = true
+
+[node name="PainelResultado" type="PanelContainer" parent="." unique_id=1045762780]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Centralizador" type="CenterContainer" parent="PainelResultado" unique_id=529935960]
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="Conteudo" type="VBoxContainer" parent="PainelResultado/Centralizador" unique_id=1548072551]
+layout_mode = 2
+
+[node name="LabelTitulo" type="Label" parent="PainelResultado/Centralizador/Conteudo" unique_id=2109048284]
+layout_mode = 2
+text = "Fim de jogo!"
+
+[node name="LabelPontuacaoFinal" type="Label" parent="PainelResultado/Centralizador/Conteudo" unique_id=309966648]
+layout_mode = 2
+text = "Pontuação final: 0"
+
+[node name="BotaoContinuar" type="Button" parent="PainelResultado/Centralizador/Conteudo" unique_id=416054947]
+layout_mode = 2
+text = "Voltar ao menu"

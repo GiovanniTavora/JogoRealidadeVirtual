@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://jblmn8adjtlo"]
+
+[ext_resource type="Script" uid="uid://cddx2jstr0sgf" path="res://codigos/minigames/firewall/janela_solicitacao.gd" id="1_lhy6r"]
+
+[node name="JanelaSolicitacao" type="PanelContainer" unique_id=1058460002]
+offset_right = 409.0
+offset_bottom = 180.0
+script = ExtResource("1_lhy6r")
+
+[node name="Margem" type="MarginContainer" parent="." unique_id=921749051]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Conteudo" type="VBoxContainer" parent="Margem" unique_id=1098790991]
+layout_mode = 2
+alignment = 1
+
+[node name="BarraTitulo" type="PanelContainer" parent="Margem/Conteudo" unique_id=1424757080]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margem/Conteudo/BarraTitulo" unique_id=1738674449]
+layout_mode = 2
+text = "Nova Solicitação!"
+horizontal_alignment = 1
+
+[node name="LabelAplicacao" type="Label" parent="Margem/Conteudo" unique_id=475080447]
+layout_mode = 2
+text = "Webcam"
+horizontal_alignment = 1
+
+[node name="LabelDesejaAcessar" type="Label" parent="Margem/Conteudo" unique_id=106772440]
+layout_mode = 2
+text = "Deseja acessar:"
+horizontal_alignment = 1
+
+[node name="LabelDescricao" type="Label" parent="Margem/Conteudo" unique_id=1155643079]
+layout_mode = 2
+text = "Microfone"
+horizontal_alignment = 1
+
+[node name="LabelTimer" type="Label" parent="Margem/Conteudo" unique_id=101677903]
+layout_mode = 2
+text = "8s"
+horizontal_alignment = 1
+
+[node name="Botoes" type="HBoxContainer" parent="Margem/Conteudo" unique_id=1259652759]
+layout_mode = 2
+
+[node name="BotaoPermitir" type="Button" parent="Margem/Conteudo/Botoes" unique_id=28047101]
+custom_minimum_size = Vector2(10, 32)
+layout_mode = 2
+text = "Permitir"
+
+[node name="BotaoRecusar" type="Button" parent="Margem/Conteudo/Botoes" unique_id=873288296]
+custom_minimum_size = Vector2(10, 32)
+layout_mode = 2
+text = "Recusar"
+
+[node name="TimerSolicitacao" type="Timer" parent="." unique_id=627902694]
+wait_time = 8.0
+one_shot = true

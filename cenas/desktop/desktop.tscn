@@ -676,7 +676,7 @@ layout_mode = 2
 theme_override_constants/separation = -9
 metadata/_edit_lock_ = true
 
-[node name="IconeMinigameFirewall" type="TextureButton" parent="minigame_firewall/VBoxContainer" unique_id=1553410640]
+[node name="IconeFirewall" type="TextureButton" parent="minigame_firewall/VBoxContainer" unique_id=1553410640]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -706,5 +706,6 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="pressed" from="Window_Config/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="value_changed" from="Window_Config/Cabecalho/Panel/volume_audio" to="Window_Config/Cabecalho/Panel/volume_audio" method="_on_value_changed"]
-[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeMinigameFirewall" to="." method="_on_icone_minigame_firewall_pressed"]
-[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeMinigameFirewall" to="minigame_firewall/VBoxContainer/IconeMinigameFirewall" method="_on_pressed"]
+[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_minigame_firewall_pressed"]
+[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_firewall_pressed"]
+[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="minigame_firewall/VBoxContainer/IconeFirewall" method="_on_pressed"]
