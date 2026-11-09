@@ -198,6 +198,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="painel_opcoes" type="Panel" parent="." unique_id=1883572479]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -300,13 +301,15 @@ theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 155
 text = "CRÉDITOS"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="painel_creditos" unique_id=1623183683]
+[node name="VBoxContainer" type="HBoxContainer" parent="painel_creditos" unique_id=1654879167]
 layout_mode = 0
-offset_top = 137.0
-offset_right = 900.0
-offset_bottom = 947.0
+offset_left = 40.0
+offset_top = 59.0
+offset_right = 1939.0
+offset_bottom = 869.0
+theme_override_constants/separation = 400
 
-[node name="Label" type="Label" parent="painel_creditos/VBoxContainer" unique_id=826187623]
+[node name="creditos_dev" type="Label" parent="painel_creditos/VBoxContainer" unique_id=826187623]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 40
@@ -322,6 +325,19 @@ Andryelly Silva de Castro
 -Modelagem 3D, Minigame Designer-
 Arthur Alexandre Alves"
 metadata/_edit_lock_ = true
+
+[node name="creditos_assets" type="Label" parent="painel_creditos/VBoxContainer" unique_id=1058005063]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4n3ki")
+theme_override_font_sizes/font_size = 45
+text = "                  -Assets Utilizados-
+Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
+\"PS1/PSX retro PC/computer\" - Shayno (itch.io)
+\"Computer Icons Asset Pack\" - DampSquib (itch.io)
+\"Retro Windows GUI\" - Comp-3 Interactive (itch.io)
+\"Essential Game Music Pack\" - Bell Kalengar (itch.io)
+\"PSX Textures Free\" - heyheythere (itch.io) 
+\"90s Desktop PC - PSX\" - visualdiscette (sketchfab.com)"
 
 [node name="voltar_creditos" type="Button" parent="painel_creditos" unique_id=586332802]
 layout_mode = 1
