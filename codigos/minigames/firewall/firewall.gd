@@ -30,7 +30,7 @@ var solicitacoes = [
 	"permitir_correto": true
 },
 {
-	"aplicativo": "Aplicativo de Mapas",
+	"aplicativo": "Google Maps",
 	"recurso": "localização",
 	"permitir_correto": true
 },
@@ -64,15 +64,12 @@ var solicitacoes = [
 	"recurso": "arquivos pessoais",
 	"permitir_correto": false
 },
-# --- Novas (permitir) ---
 	{"aplicativo": "Reprodutor de Música", "recurso": "alto-falantes", "permitir_correto": true},
 	{"aplicativo": "Antivírus", "recurso": "arquivos do sistema", "permitir_correto": true},
 	{"aplicativo": "Cliente de E-mail", "recurso": "internet", "permitir_correto": true},
 	{"aplicativo": "Gerenciador de Impressão", "recurso": "impressora", "permitir_correto": true},
 	{"aplicativo": "Gerenciador de Senhas", "recurso": "senhas salvas", "permitir_correto": true},
 	{"aplicativo": "Jogo Online", "recurso": "internet", "permitir_correto": true},
-
-	# --- Novas (negar) ---
 	{"aplicativo": "Bloco de Notas", "recurso": "webcam", "permitir_correto": false},
 	{"aplicativo": "Cassino Online", "recurso": "CPF", "permitir_correto": false},
 	{"aplicativo": "Paciência", "recurso": "microfone", "permitir_correto": false},
