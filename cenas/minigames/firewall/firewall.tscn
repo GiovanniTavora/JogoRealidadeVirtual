@@ -13,10 +13,46 @@
 [ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="11_sxg1o"]
 [ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="12_pph8i"]
 [ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="13_ttykc"]
+[ext_resource type="Texture2D" uid="uid://dke51btudqf4u" path="res://sprites/desktop/PatchRegular.png" id="14_4mo76"]
+[ext_resource type="Texture2D" uid="uid://b0rvjnpfci72y" path="res://sprites/desktop/PatchInverted.png" id="15_1mon5"]
+[ext_resource type="Texture2D" uid="uid://dpytwvxsfv3cg" path="res://sprites/desktop/botoes/buttons.png" id="16_dllp2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
 shader_parameter/SCREEN_HEIGHT = 240.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjoyg"]
+bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lic2h"]
+texture = ExtResource("14_4mo76")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wreh7"]
+texture = ExtResource("15_1mon5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olahq"]
+atlas = ExtResource("16_dllp2")
+region = Rect2(256.86853, 0, 63.63159, 63.236885)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4x52"]
+draw_center = false
+border_width_top = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5c1px"]
+texture = ExtResource("15_1mon5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sxg1o"]
 texture = ExtResource("13_ttykc")
@@ -76,6 +112,78 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=397936634]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -183.0
+offset_bottom = 1.4399414
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xjoyg")
+
+[node name="botao_voltar" type="Button" parent="Panel" unique_id=401862417]
+texture_filter = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 13.0
+offset_right = 382.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 115
+theme_override_styles/normal = SubResource("StyleBoxTexture_lic2h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wreh7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wreh7")
+text = "Sair"
+icon = SubResource("AtlasTexture_olahq")
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=1262388671]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c4x52")
+
+[node name="Panel2" type="Panel" parent="Panel" unique_id=1116270491]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -160.43994
+offset_right = -18.0
+offset_bottom = -73.43994
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_5c1px")
+
+[node name="Label" type="Label" parent="Panel/Panel2" unique_id=1839247797]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 52
+text = "12:30
+30/09/2026"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="HUD" type="VBoxContainer" parent="." unique_id=1674870069]
 layout_mode = 1
@@ -249,3 +357,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_sxg1o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ttykc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pph8i")
 text = "Voltar"
+
+[connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
