@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="11_g28pe"]
 [ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/firewall/arnav_geddada-ui-sound-374228.mp3" id="12_wnitp"]
 [ext_resource type="AudioStream" uid="uid://ctvdb6xg0r2gj" path="res://efeitos sonoros/litupsubway-ui-close-sfx-513359.mp3" id="13_ystp5"]
+[ext_resource type="AudioStream" uid="uid://ddfwqy4p7vnsn" path="res://efeitos sonoros/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="15_g28pe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dsa2e"]
 texture = ExtResource("4_dsa2e")
@@ -556,9 +557,17 @@ bus = &"SFX"
 stream = ExtResource("13_ystp5")
 bus = &"SFX"
 
+[node name="SomHover" type="AudioStreamPlayer" parent="." unique_id=1710892300]
+stream = ExtResource("15_g28pe")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_mouse_entered"]
 [connection signal="pressed" from="botoes_principais/novo_jogo" to="." method="_on_novo_jogo_pressed"]
+[connection signal="mouse_entered" from="botoes_principais/opcoes" to="." method="_on_opcoes_mouse_entered"]
 [connection signal="pressed" from="botoes_principais/opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="mouse_entered" from="botoes_principais/creditos" to="." method="_on_creditos_mouse_entered"]
 [connection signal="pressed" from="botoes_principais/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="mouse_entered" from="botoes_principais/sair" to="." method="_on_sair_mouse_entered"]
 [connection signal="pressed" from="botoes_principais/sair" to="." method="_on_sair_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Window_Creditos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
