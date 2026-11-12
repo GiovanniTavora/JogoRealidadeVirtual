@@ -71,7 +71,7 @@ var solicitacoes = [
 	{"aplicativo": "Gerenciador de Senhas", "recurso": "senhas salvas", "permitir_correto": true},
 	{"aplicativo": "Jogo Online", "recurso": "internet", "permitir_correto": true},
 	{"aplicativo": "Bloco de Notas", "recurso": "webcam", "permitir_correto": false},
-	{"aplicativo": "Cassino Online", "recurso": "CPF", "permitir_correto": false},
+	{"aplicativo": "Cassino Ilegal", "recurso": "CPF", "permitir_correto": false},
 	{"aplicativo": "Paciência", "recurso": "microfone", "permitir_correto": false},
 	{"aplicativo": "Protetor de Tela", "recurso": "arquivos pessoais", "permitir_correto": false},
 	{"aplicativo": "Leitor de PDF", "recurso": "localização", "permitir_correto": false},
@@ -91,7 +91,7 @@ var solicitacoes = [
 	{"aplicativo": "Campo Minado", "recurso": "senhas salvas", "permitir_correto": false},
 	{"aplicativo": "BAIXE_MAIS_RAM.exe", "recurso": "arquivos do sistema", "permitir_correto": false},
 	{"aplicativo": "Microsoft Paint", "recurso": "contatos", "permitir_correto": false},
-	{"aplicativo": "Minecraft_Oficial.EXE", "recurso": "fotos da ex", "permitir_correto": false},
+	{"aplicativo": "Minecraft_Oficial.EXE", "recurso": "fotos da sua ex", "permitir_correto": false},
 	{"aplicativo": "Galeria", "recurso": "microfone", "permitir_correto": false}
 ]
 var solicitacoes_disponiveis = []

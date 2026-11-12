@@ -204,7 +204,7 @@ offset_transform_enabled = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8dgsm")
 theme_override_font_sizes/font_size = 45
-text = "Tempo: 1:00"
+text = "Tempo: 1:10"
 
 [node name="Pontuacao" type="Label" parent="HUD" unique_id=1755464531]
 layout_mode = 2
@@ -224,7 +224,7 @@ mouse_filter = 1
 metadata/_edit_lock_ = true
 
 [node name="TimerPartida" type="Timer" parent="." unique_id=1319005056]
-wait_time = 60.0
+wait_time = 70.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=887185746]
