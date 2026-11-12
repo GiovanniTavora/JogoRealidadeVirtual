@@ -183,3 +183,6 @@ func _ao_clicar_continuar() -> void:
 
 func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
+
+func _on_botao_continuar_mouse_entered() -> void:
+	$SomHover.play()

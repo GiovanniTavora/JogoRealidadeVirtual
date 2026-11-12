@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dpytwvxsfv3cg" path="res://sprites/desktop/botoes/buttons.png" id="16_dllp2"]
 [ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/robo/Robo404.png" id="17_dllp2"]
 [ext_resource type="Texture2D" uid="uid://5bmp5eullhxc" path="res://sprites/robo/robo_up.png" id="18_xjoyg"]
+[ext_resource type="AudioStream" uid="uid://ddfwqy4p7vnsn" path="res://efeitos sonoros/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="19_xjoyg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
@@ -385,4 +386,9 @@ scale = Vector2(5.825, 5.825)
 sprite_frames = SubResource("SpriteFrames_lic2h")
 animation = &"robo_idle"
 
+[node name="SomHover" type="AudioStreamPlayer" parent="." unique_id=1924214411]
+stream = ExtResource("19_xjoyg")
+bus = &"SFX"
+
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="mouse_entered" from="Window_Resultado/Cabecalho/Panel/BotaoContinuar" to="." method="_on_botao_continuar_mouse_entered"]
