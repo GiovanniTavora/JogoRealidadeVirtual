@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://dke51btudqf4u" path="res://sprites/desktop/PatchRegular.png" id="14_4mo76"]
 [ext_resource type="Texture2D" uid="uid://b0rvjnpfci72y" path="res://sprites/desktop/PatchInverted.png" id="15_1mon5"]
 [ext_resource type="Texture2D" uid="uid://dpytwvxsfv3cg" path="res://sprites/desktop/botoes/buttons.png" id="16_dllp2"]
+[ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/robo/Robo404.png" id="17_dllp2"]
+[ext_resource type="Texture2D" uid="uid://5bmp5eullhxc" path="res://sprites/robo/robo_up.png" id="18_xjoyg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
@@ -74,6 +76,31 @@ texture_margin_left = 3.0
 texture_margin_top = 10.0
 texture_margin_right = 2.0
 texture_margin_bottom = 10.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lic2h"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("17_dllp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xjoyg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_dllp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xjoyg")
+}],
+"loop": 1,
+"name": &"robo_idle",
+"speed": 2.0
+}]
 
 [node name="Firewall" type="Control" unique_id=1178059765]
 layout_mode = 3
@@ -350,5 +377,12 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_sxg1o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ttykc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pph8i")
 text = "Voltar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1575448245]
+texture_filter = 1
+position = Vector2(1576, 806)
+scale = Vector2(5.825, 5.825)
+sprite_frames = SubResource("SpriteFrames_lic2h")
+animation = &"robo_idle"
 
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]

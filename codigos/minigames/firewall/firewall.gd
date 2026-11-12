@@ -137,6 +137,7 @@ func _criar_solicitacao() -> void:
 		return
 	var janela = cena_solicitacao.instantiate()
 	area_jogo.add_child(janela)
+	janela.z_index = 10
 	$Popup.play()
 	janela.size = janela.get_combined_minimum_size().max(Vector2(409, 251))
 
