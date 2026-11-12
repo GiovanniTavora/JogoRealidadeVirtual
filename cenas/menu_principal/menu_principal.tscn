@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_ck6fg"]
 [ext_resource type="PackedScene" uid="uid://djp0hubtbpvvr" path="res://cenario.glb" id="2_5xvxb"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
+[ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="4_dsa2e"]
 [ext_resource type="AudioStream" uid="uid://b652xtr8vwtcw" path="res://musicas/WAV_Moments.wav" id="4_ystp5"]
 [ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="6_wnitp"]
 [ext_resource type="Texture2D" uid="uid://kch7jk5vt5rb" path="res://sprites/desktop/CloseRegular.png" id="7_pphy0"]
@@ -13,6 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/button x.png" id="11_g28pe"]
 [ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/firewall/arnav_geddada-ui-sound-374228.mp3" id="12_wnitp"]
 [ext_resource type="AudioStream" uid="uid://ctvdb6xg0r2gj" path="res://efeitos sonoros/litupsubway-ui-close-sfx-513359.mp3" id="13_ystp5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dsa2e"]
+texture = ExtResource("4_dsa2e")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
 
 [sub_resource type="Animation" id="Animation_5xvxb"]
 length = 0.001
@@ -180,42 +188,62 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 469.0
+offset_left = 504.0
 offset_top = -133.0
-offset_right = 835.0
+offset_right = 870.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
 [node name="novo_jogo" type="Button" parent="botoes_principais" unique_id=145509671]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dsa2e")
 text = "Iniciar"
 metadata/_edit_lock_ = true
 
 [node name="opcoes" type="Button" parent="botoes_principais" unique_id=2013525078]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dsa2e")
 text = "Opções"
 metadata/_edit_lock_ = true
 
 [node name="creditos" type="Button" parent="botoes_principais" unique_id=122916958]
+texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dsa2e")
 text = "Créditos"
 metadata/_edit_lock_ = true
 
 [node name="sair" type="Button" parent="botoes_principais" unique_id=1501864952]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dsa2e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dsa2e")
 text = "Sair"
 metadata/_edit_lock_ = true
 
