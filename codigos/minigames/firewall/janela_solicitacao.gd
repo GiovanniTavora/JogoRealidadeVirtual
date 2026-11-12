@@ -29,7 +29,7 @@ func _ready() -> void:
 
 func configurar_solicitacao(aplicativo: String, recurso: String, resposta_correta: bool) -> void:
 	label_aplicativo.text = aplicativo
-	label_deseja_acessar.text = "Deseja acessar:"
+	label_deseja_acessar.text = "deseja acessar:"
 	label_descricao.text = recurso
 	permitir_correto = resposta_correta
 
