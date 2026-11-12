@@ -12,10 +12,32 @@
 [ext_resource type="Texture2D" uid="uid://exxf00s6bs6s" path="res://sprites/desktop/ClosePressed.png" id="10_ttykc"]
 [ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="11_sxg1o"]
 [ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="12_pph8i"]
+[ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="13_ttykc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
 shader_parameter/SCREEN_HEIGHT = 240.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sxg1o"]
+texture = ExtResource("13_ttykc")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttykc"]
+texture = ExtResource("13_ttykc")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pph8i"]
+texture = ExtResource("13_ttykc")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
 
 [node name="Firewall" type="Control" unique_id=1178059765]
 layout_mode = 3
@@ -215,11 +237,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -196.5
-offset_top = 92.0
-offset_right = 196.5
-offset_bottom = 169.0
+offset_top = 86.0
+offset_right = 198.5
+offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8dgsm")
 theme_override_font_sizes/font_size = 80
-text = "Voltar ao menu"
+theme_override_styles/normal = SubResource("StyleBoxTexture_sxg1o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ttykc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pph8i")
+text = "Voltar"

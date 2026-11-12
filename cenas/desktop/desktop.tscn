@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://5bmp5eullhxc" path="res://sprites/robo/robo_up.png" id="15_pg7fa"]
 [ext_resource type="Script" uid="uid://cx2giuqxi1hay" path="res://cenas/menu_principal/volume_audio.gd" id="15_x46sc"]
 [ext_resource type="AudioStream" uid="uid://ctvdb6xg0r2gj" path="res://efeitos sonoros/litupsubway-ui-close-sfx-513359.mp3" id="16_x46sc"]
+[ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="17_2vts5"]
+[ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/firewall/arnav_geddada-ui-sound-374228.mp3" id="18_u2h3j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ungyi"]
 shader = ExtResource("7_31k1a")
@@ -150,6 +152,13 @@ bg_color = Color(0.5388762, 0.6314932, 0.97940415, 1)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg7fa"]
 atlas = ExtResource("6_k25gi")
 region = Rect2(128.16855, 1.57341, 65.174484, 57.643204)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2h3j"]
+texture = ExtResource("17_2vts5")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
 
 [node name="desktop" type="Control" unique_id=467746139]
 layout_mode = 3
@@ -299,7 +308,7 @@ text = "BEM-VINDO!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="Window/Cabecalho" unique_id=750790679]
+[node name="sair_janela" type="Button" parent="Window/Cabecalho" unique_id=750790679]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -696,10 +705,133 @@ metadata/_edit_lock_ = true
 stream = ExtResource("16_x46sc")
 bus = &"SFX"
 
+[node name="WindowFirewall" type="Window" parent="." unique_id=1513667915]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(1276, 680)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("5_4j4gs")
+theme_override_icons/close_pressed = ExtResource("6_v6ts4")
+
+[node name="Base" type="NinePatchRect" parent="WindowFirewall" unique_id=1930406179]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_f81va")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="WindowFirewall" unique_id=552606343]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("9_cs8od")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="WindowFirewall/Cabecalho" unique_id=710376274]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 85
+text = "FIREWALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sair_janela" type="Button" parent="WindowFirewall/Cabecalho" unique_id=129198659]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -37.0
+offset_right = -31.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_k41lo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cs8od")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s8abh")
+
+[node name="Panel" type="Panel" parent="WindowFirewall/Cabecalho" unique_id=1000247357]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 651.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="WindowFirewall/Cabecalho/Panel" unique_id=952302078]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 17.0
+offset_bottom = 302.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 52
+text = "Analise as solicitações de acesso 
+dos aplicativos e decida quais permissões devem ser
+ concedidas ou bloqueadas. 
+
+Cuidado: uma escolha errada 
+pode comprometer a segurança do sistema!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IniciarFirewall" type="Button" parent="WindowFirewall/Cabecalho/Panel" unique_id=1202776577]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = 134.0
+offset_right = 183.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_u2h3j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u2h3j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u2h3j")
+text = "Vamos lá!"
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=842747466]
+stream = ExtResource("18_u2h3j")
+bus = &"SFX"
+
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
-[connection signal="pressed" from="Window/Cabecalho/Button" to="." method="_on_button_pressed_x"]
+[connection signal="pressed" from="Window/Cabecalho/sair_janela" to="." method="_on_button_pressed_x"]
+[connection signal="pressed" from="Window/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="." method="_on_icone_minigame_arquivo_pressed"]
 [connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
 [connection signal="pressed" from="programa_opcoes/VBoxContainer/TextureButtonConfig" to="." method="_on_texture_button_config_pressed"]
@@ -711,3 +843,5 @@ bus = &"SFX"
 [connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_minigame_firewall_pressed"]
 [connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_firewall_pressed"]
 [connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="minigame_firewall/VBoxContainer/IconeFirewall" method="_on_pressed"]
+[connection signal="pressed" from="WindowFirewall/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
