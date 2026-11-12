@@ -30,3 +30,9 @@ func _on_icone_firewall_pressed() -> void:
 
 func _on_iniciar_firewall_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/minigames/firewall/firewall.tscn")
+
+func _on_botao_voltar_mouse_entered() -> void:
+	$SomHover.play()
+
+func _on_iniciar_firewall_mouse_entered() -> void:
+	$SomHover.play()

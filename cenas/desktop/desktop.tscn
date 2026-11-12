@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://ctvdb6xg0r2gj" path="res://efeitos sonoros/litupsubway-ui-close-sfx-513359.mp3" id="16_x46sc"]
 [ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="17_2vts5"]
 [ext_resource type="AudioStream" uid="uid://dsx0us83fn2uf" path="res://efeitos sonoros/firewall/arnav_geddada-ui-sound-374228.mp3" id="18_u2h3j"]
+[ext_resource type="AudioStream" uid="uid://ddfwqy4p7vnsn" path="res://efeitos sonoros/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="19_3a0gk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ungyi"]
 shader = ExtResource("7_31k1a")
@@ -827,6 +828,11 @@ text = "Vamos lá!"
 stream = ExtResource("18_u2h3j")
 bus = &"SFX"
 
+[node name="SomHover" type="AudioStreamPlayer" parent="." unique_id=333472989]
+stream = ExtResource("19_3a0gk")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
@@ -844,4 +850,5 @@ bus = &"SFX"
 [connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_firewall_pressed"]
 [connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="minigame_firewall/VBoxContainer/IconeFirewall" method="_on_pressed"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="mouse_entered" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_mouse_entered"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
