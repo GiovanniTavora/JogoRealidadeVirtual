@@ -27,7 +27,7 @@ func _on_texture_button_config_pressed() -> void:
 	$Click.play()
 
 func _on_icone_firewall_pressed() -> void:
-	$WindowFirewall.show()
+	$WindowFirewall.popup_centered()
 	$Click.play()
 
 func _on_iniciar_firewall_pressed() -> void:
@@ -40,5 +40,21 @@ func _on_iniciar_firewall_mouse_entered() -> void:
 	$SomHover.play()
 
 func _on_icone_meta_pressed() -> void:
-	$WindowMeta.show()
+	atualizar_progresso()
+	$WindowMeta.popup_centered()
 	$Click.play()
+
+func atualizar_progresso() -> void:
+	$WindowMeta/Cabecalho/Panel/LabelPontuacoes.text = "Caça-Arquivos: %d/20\nFirewall: %d/20\nInterrupção: %d/20" % [
+		ProgressoJogo.pontuacao_minigame2,
+		ProgressoJogo.pontuacao_firewall,
+		ProgressoJogo.pontuacao_minigame3
+	]
+
+	var total = (
+		ProgressoJogo.pontuacao_firewall +
+		ProgressoJogo.pontuacao_minigame2 +
+		ProgressoJogo.pontuacao_minigame3
+	)
+
+	$WindowMeta/Cabecalho/Panel/LabelTotal.text = "Meta total: %d/60 pontos" % total
