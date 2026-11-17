@@ -161,6 +161,10 @@ texture_margin_top = 10.0
 texture_margin_right = 2.0
 texture_margin_bottom = 10.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a0gk"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(159.45027, 63.765255, 32, 32)
+
 [node name="desktop" type="Control" unique_id=467746139]
 layout_mode = 3
 anchors_preset = 15
@@ -355,9 +359,9 @@ vertical_alignment = 1
 [node name="minigame_arquivo" type="PanelContainer" parent="." unique_id=1868302682]
 layout_mode = 0
 offset_left = 590.0
-offset_top = 525.0
+offset_top = 484.0
 offset_right = 841.0
-offset_bottom = 679.0
+offset_bottom = 638.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="minigame_arquivo" unique_id=1381909338]
@@ -832,6 +836,38 @@ bus = &"SFX"
 stream = ExtResource("19_3a0gk")
 bus = &"SFX"
 
+[node name="minigame_interrupcao" type="PanelContainer" parent="." unique_id=684464098]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 484.0
+offset_right = 1283.0
+offset_bottom = 638.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="minigame_interrupcao" unique_id=1214364758]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="IconeMinigameArquivo" type="TextureButton" parent="minigame_interrupcao/VBoxContainer" unique_id=2113277600]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_3a0gk")
+stretch_mode = 5
+script = SubResource("GDScript_pg7fa")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="minigame_interrupcao/VBoxContainer" unique_id=895326107]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+text = "Interrupção!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
 [connection signal="mouse_entered" from="Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
@@ -852,3 +888,4 @@ bus = &"SFX"
 [connection signal="pressed" from="WindowFirewall/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="mouse_entered" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_mouse_entered"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
+[connection signal="pressed" from="minigame_interrupcao/VBoxContainer/IconeMinigameArquivo" to="minigame_interrupcao/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
