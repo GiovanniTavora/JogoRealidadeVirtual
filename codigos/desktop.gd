@@ -45,8 +45,6 @@ func _on_icone_meta_pressed() -> void:
 	$Click.play()
 
 func atualizar_progresso() -> void:
-	push_warning("A função atualizar_progresso foi executada!")
-	push_warning("Pontuação Firewall: " + str(ProgressoJogo.pontuacao_firewall))
 	$WindowMeta/Cabecalho/Panel/LabelPontuacoes.text = "Caça-Arquivos: %d/20\nFirewall: %d/20\nInterrupção: %d/20" % [
 		min(ProgressoJogo.pontuacao_minigame2, 20),
 		min(ProgressoJogo.pontuacao_firewall, 20),
