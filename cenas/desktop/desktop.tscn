@@ -101,9 +101,21 @@ func _process(delta: float) -> void:
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pg7fa"]
 load_path = "res://.godot/imported/file_icons.png-5f34927eba2da23dd6eea1728d173e2a.ctex"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gedv"]
+atlas = SubResource("CompressedTexture2D_pg7fa")
+region = Rect2(127.73573, 1.9050074, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg7fa"]
+atlas = ExtResource("6_k25gi")
+region = Rect2(128.16855, 1.57341, 65.174484, 57.643204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a0gk"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(159.45027, 63.765255, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_x46sc"]
 atlas = SubResource("CompressedTexture2D_pg7fa")
-region = Rect2(126.463425, 2.7532043, 32, 32)
+region = Rect2(62.42469, 97.32698, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tbunc"]
 animations = [{
@@ -150,20 +162,12 @@ thickness = 6
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vts5"]
 bg_color = Color(0.5388762, 0.6314932, 0.97940415, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pg7fa"]
-atlas = ExtResource("6_k25gi")
-region = Rect2(128.16855, 1.57341, 65.174484, 57.643204)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2h3j"]
 texture = ExtResource("17_2vts5")
 texture_margin_left = 3.0
 texture_margin_top = 10.0
 texture_margin_right = 2.0
 texture_margin_bottom = 10.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3a0gk"]
-atlas = ExtResource("13_k25gi")
-region = Rect2(159.45027, 63.765255, 32, 32)
 
 [node name="desktop" type="Control" unique_id=467746139]
 layout_mode = 3
@@ -270,6 +274,7 @@ oversampling_override = 1.0
 initial_position = 3
 size = Vector2i(1100, 600)
 current_screen = 0
+visible = false
 borderless = true
 theme_override_constants/close_h_offset = 17
 theme_override_constants/close_v_offset = 23
@@ -405,7 +410,7 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_x46sc")
+texture_normal = SubResource("AtlasTexture_4gedv")
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
@@ -414,6 +419,102 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 55
 text = "Configurações"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="minigame_firewall" type="PanelContainer" parent="." unique_id=1064164909]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 330.0
+offset_right = 1075.0
+offset_bottom = 484.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="minigame_firewall" unique_id=694142880]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="IconeFirewall" type="TextureButton" parent="minigame_firewall/VBoxContainer" unique_id=1553410640]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_pg7fa")
+stretch_mode = 5
+script = SubResource("GDScript_pg7fa")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="minigame_firewall/VBoxContainer" unique_id=769842402]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+text = " Firewall"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="minigame_interrupcao" type="PanelContainer" parent="." unique_id=684464098]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 484.0
+offset_right = 1283.0
+offset_bottom = 638.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="minigame_interrupcao" unique_id=1214364758]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="IconeMinigameArquivo" type="TextureButton" parent="minigame_interrupcao/VBoxContainer" unique_id=2113277600]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_3a0gk")
+stretch_mode = 5
+script = SubResource("GDScript_pg7fa")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="minigame_interrupcao/VBoxContainer" unique_id=895326107]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+text = "Interrupção!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa_meta" type="PanelContainer" parent="." unique_id=715677320]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 706.0
+offset_right = 1046.0
+offset_bottom = 860.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="programa_meta" unique_id=77397369]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="IconeMeta" type="TextureButton" parent="programa_meta/VBoxContainer" unique_id=1242628986]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_x46sc")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="programa_meta/VBoxContainer" unique_id=1088454931]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+text = "Meta dos 
+Pontos"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_trim_flags = 128
@@ -674,42 +775,6 @@ value = 1.0
 script = ExtResource("15_x46sc")
 audio_bus_name = "SFX"
 
-[node name="minigame_firewall" type="PanelContainer" parent="." unique_id=1064164909]
-layout_mode = 0
-offset_left = 824.0
-offset_top = 330.0
-offset_right = 1075.0
-offset_bottom = 484.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="minigame_firewall" unique_id=694142880]
-layout_mode = 2
-theme_override_constants/separation = -9
-metadata/_edit_lock_ = true
-
-[node name="IconeFirewall" type="TextureButton" parent="minigame_firewall/VBoxContainer" unique_id=1553410640]
-texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_pg7fa")
-stretch_mode = 5
-script = SubResource("GDScript_pg7fa")
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="minigame_firewall/VBoxContainer" unique_id=769842402]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 55
-text = " Firewall"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_trim_flags = 128
-metadata/_edit_lock_ = true
-
-[node name="Close" type="AudioStreamPlayer" parent="." unique_id=1047237565]
-stream = ExtResource("16_x46sc")
-bus = &"SFX"
-
 [node name="WindowFirewall" type="Window" parent="." unique_id=1513667915]
 oversampling_override = 1.0
 initial_position = 3
@@ -828,6 +893,119 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_u2h3j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_u2h3j")
 text = "Vamos lá!"
 
+[node name="WindowMeta" type="Window" parent="." unique_id=656892139]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1100, 600)
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("5_4j4gs")
+theme_override_icons/close_pressed = ExtResource("6_v6ts4")
+
+[node name="Base" type="NinePatchRect" parent="WindowMeta" unique_id=575638192]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_f81va")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+metadata/_edit_lock_ = true
+
+[node name="Cabecalho" type="NinePatchRect" parent="WindowMeta" unique_id=1095797426]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("9_cs8od")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="WindowMeta/Cabecalho" unique_id=397304947]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 85
+text = "Meta de Pontos"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="sair_janela" type="Button" parent="WindowMeta/Cabecalho" unique_id=1335177692]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -37.0
+offset_right = -31.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_k41lo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cs8od")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s8abh")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="WindowMeta/Cabecalho" unique_id=319347393]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 565.0
+grow_horizontal = 2
+metadata/_edit_lock_ = true
+
+[node name="LabelPontuacoes" type="Label" parent="WindowMeta/Cabecalho/Panel" unique_id=1662147310]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 34.0
+offset_bottom = 335.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 85
+text = "Caça-Arquivos: 0/20
+Firewall: 0/20
+Interrupção: 0/20
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="LabelTotal" type="Label" parent="WindowMeta/Cabecalho/Panel" unique_id=886136569]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 137.0
+offset_bottom = 438.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 85
+text = "
+Meta Total: 0/60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=842747466]
 stream = ExtResource("18_u2h3j")
 bus = &"SFX"
@@ -836,37 +1014,9 @@ bus = &"SFX"
 stream = ExtResource("19_3a0gk")
 bus = &"SFX"
 
-[node name="minigame_interrupcao" type="PanelContainer" parent="." unique_id=684464098]
-layout_mode = 0
-offset_left = 1032.0
-offset_top = 484.0
-offset_right = 1283.0
-offset_bottom = 638.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="minigame_interrupcao" unique_id=1214364758]
-layout_mode = 2
-theme_override_constants/separation = -9
-metadata/_edit_lock_ = true
-
-[node name="IconeMinigameArquivo" type="TextureButton" parent="minigame_interrupcao/VBoxContainer" unique_id=2113277600]
-texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_3a0gk")
-stretch_mode = 5
-script = SubResource("GDScript_pg7fa")
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="minigame_interrupcao/VBoxContainer" unique_id=895326107]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 55
-text = "Interrupção!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_trim_flags = 128
-metadata/_edit_lock_ = true
+[node name="Close" type="AudioStreamPlayer" parent="." unique_id=1047237565]
+stream = ExtResource("16_x46sc")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_button_pressed"]
@@ -877,15 +1027,17 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="." method="_on_icone_minigame_arquivo_pressed"]
 [connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
 [connection signal="pressed" from="programa_opcoes/VBoxContainer/TextureButtonConfig" to="." method="_on_texture_button_config_pressed"]
+[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_minigame_firewall_pressed"]
+[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_firewall_pressed"]
+[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="minigame_firewall/VBoxContainer/IconeFirewall" method="_on_pressed"]
+[connection signal="pressed" from="minigame_interrupcao/VBoxContainer/IconeMinigameArquivo" to="minigame_interrupcao/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
+[connection signal="pressed" from="programa_meta/VBoxContainer/IconeMeta" to="." method="_on_icone_meta_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="pressed" from="Window_Config/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="value_changed" from="Window_Config/Cabecalho/Panel/volume_audio" to="Window_Config/Cabecalho/Panel/volume_audio" method="_on_value_changed"]
 [connection signal="value_changed" from="Window_Config/Cabecalho/Panel/volume_SFX" to="Window_Config/Cabecalho/Panel/volume_SFX" method="_on_value_changed"]
-[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_minigame_firewall_pressed"]
-[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_firewall_pressed"]
-[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="minigame_firewall/VBoxContainer/IconeFirewall" method="_on_pressed"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="mouse_entered" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_mouse_entered"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
-[connection signal="pressed" from="minigame_interrupcao/VBoxContainer/IconeMinigameArquivo" to="minigame_interrupcao/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
+[connection signal="pressed" from="WindowMeta/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]

@@ -19,10 +19,12 @@ func _on_sair_janela_pressed() -> void:
 	$Window_Minigame_Arquivos.hide()
 	$Window_Config.hide()
 	$WindowFirewall.hide()
+	$WindowMeta.hide()
 	$Close.play()
 
 func _on_texture_button_config_pressed() -> void:
 	$Window_Config.popup_centered()
+	$Click.play()
 
 func _on_icone_firewall_pressed() -> void:
 	$WindowFirewall.show()
@@ -36,3 +38,7 @@ func _on_botao_voltar_mouse_entered() -> void:
 
 func _on_iniciar_firewall_mouse_entered() -> void:
 	$SomHover.play()
+
+func _on_icone_meta_pressed() -> void:
+	$WindowMeta.show()
+	$Click.play()

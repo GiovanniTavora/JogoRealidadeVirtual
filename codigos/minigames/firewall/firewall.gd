@@ -124,13 +124,16 @@ func _process(_delta: float) -> void:
 
 func _ao_tempo_esgotado() -> void:
 	partida_encerrada = true
+	ProgressoJogo.registrar_firewall(pontuacao)
 	label_tempo.text = "Tempo: 0s"
 	$AudioStreamPlayer.stop()
-	label_pontuacao_final.text = "Pontuação final: %d" % pontuacao
+	if pontuacao >= ProgressoJogo.META_POR_MINIGAME:
+		label_pontuacao_final.text = "Meta atingida! %d/20 pontos" % pontuacao
+	else:
+		label_pontuacao_final.text = "Meta não alcançada... Tente novamente!" % pontuacao
 	$Window_Resultado.visible = true
 	for janela in area_jogo.get_children():
 		janela.queue_free()
-
 
 func _criar_solicitacao() -> void:
 	if partida_encerrada or solicitacoes_disponiveis.is_empty():
