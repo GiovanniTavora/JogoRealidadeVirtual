@@ -794,7 +794,7 @@ theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 52
 text = "Analise as solicitações de acesso 
 dos aplicativos e decida quais permissões devem ser
- concedidas ou bloqueadas. 
+ concedidas ou bloqueadas. Tente bater a meta de 20 pontos!
 
 Cuidado: uma escolha errada 
 pode comprometer a segurança do sistema!"
