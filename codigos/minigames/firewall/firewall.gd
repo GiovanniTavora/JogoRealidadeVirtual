@@ -110,6 +110,7 @@ var partida_encerrada := false
 
 
 func _ready() -> void:
+	$AnimatedSprite2D.play("robo_idle")
 	randomize()
 	solicitacoes_disponiveis = solicitacoes.duplicate()
 	_atualizar_pontuacao()
