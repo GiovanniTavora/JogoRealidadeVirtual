@@ -98,9 +98,9 @@ var solicitacoes_disponiveis = []
 var partida_encerrada := false
 
 @onready var timer_partida: Timer = $TimerPartida
-@onready var label_tempo: Label = $HUD/Tempo
+@onready var label_tempo: Label = $PanelContainer/HUD/Tempo
 @onready var area_jogo: Control = $AreaJogo
-@onready var label_pontuacao: Label = $HUD/Pontuacao
+@onready var label_pontuacao: Label = $PanelContainer/HUD/Pontuacao
 @onready var label_pontuacao_final: Label = $Window_Resultado/Cabecalho/Panel/LabelPontuacaoFinal
 @onready var botao_continuar: Button = $Window_Resultado/Cabecalho/Panel/BotaoContinuar
 @onready var musica: AudioStreamPlayer = $AudioStreamPlayer

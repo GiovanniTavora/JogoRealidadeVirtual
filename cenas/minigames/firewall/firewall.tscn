@@ -209,6 +209,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c4x52")
+metadata/_edit_lock_ = true
 
 [node name="Panel2" type="Panel" parent="Panel" unique_id=1116270491]
 layout_mode = 1
@@ -224,6 +225,7 @@ offset_bottom = -73.43994
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_5c1px")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Panel/Panel2" unique_id=1839247797]
 layout_mode = 1
@@ -248,28 +250,17 @@ offset_top = 515.0
 offset_right = 1088.0
 offset_bottom = 597.0
 
-[node name="HUD" type="VBoxContainer" parent="." unique_id=1674870069]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -25.0
-offset_right = 218.0
-offset_bottom = 57.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HUD" type="VBoxContainer" parent="PanelContainer" unique_id=1674870069]
+layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Tempo" type="Label" parent="HUD" unique_id=1129036181]
+[node name="Tempo" type="Label" parent="PanelContainer/HUD" unique_id=1129036181]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8dgsm")
 theme_override_font_sizes/font_size = 45
 text = "Tempo: 1:10"
 
-[node name="Pontuacao" type="Label" parent="HUD" unique_id=1755464531]
+[node name="Pontuacao" type="Label" parent="PanelContainer/HUD" unique_id=1755464531]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8dgsm")
 theme_override_font_sizes/font_size = 45
@@ -284,6 +275,7 @@ grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="TimerPartida" type="Timer" parent="." unique_id=1319005056]
 wait_time = 70.0

@@ -178,7 +178,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1927677626]
-transform = Transform3D(0.99999994, -1.6979802e-08, 2.1410426e-06, 0, 0.9999681, 0.00793037, -2.1411106e-06, -0.00793037, 0.9999681, -175.40643, 25.759771, -1292.0063)
+transform = Transform3D(0.99999994, -1.69798e-08, 2.1410426e-06, 0, 0.99996805, 0.00793037, -2.1411106e-06, -0.00793037, 0.99996805, -175.40643, 25.759771, -1292.0063)
 current = true
 fov = 60.0
 
@@ -283,9 +283,8 @@ libraries/ = SubResource("AnimationLibrary_1qcsy")
 [node name="Window_Creditos" type="Window" parent="." unique_id=223783212]
 oversampling_override = 1.0
 initial_position = 3
-size = Vector2i(1875, 717)
+size = Vector2i(1188, 717)
 current_screen = 0
-visible = false
 borderless = true
 theme_override_constants/close_h_offset = 17
 theme_override_constants/close_v_offset = 23
@@ -356,15 +355,29 @@ offset_right = -23.0
 offset_bottom = 690.0
 grow_horizontal = 2
 
-[node name="creditos_dev" type="Label" parent="Window_Creditos/Cabecalho/Panel" unique_id=415018031]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 25.0
-offset_right = 889.0
-offset_bottom = 440.0
+[node name="ScrollContainer" type="ScrollContainer" parent="Window_Creditos/Cabecalho/Panel" unique_id=2096899298]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = -241.0
+offset_right = 419.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="creditos" type="Label" parent="Window_Creditos/Cabecalho/Panel/ScrollContainer" unique_id=1355309132]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3_4n3ki")
-theme_override_font_sizes/font_size = 40
-text = "-Líder de Projeto, Game Designer, Pixel-Art-
+theme_override_font_sizes/font_size = 45
+text = "-DESENVOLVEDORES-
+-Líder de Projeto, Game Designer, Pixel-Art-
 Giovanni Távora Pereira Negrão
 
 -Vice-Líder, Pixel Art, Minigame Designer-
@@ -374,17 +387,9 @@ Pedro Arthur Ramos Dutra da Silva
 Andryelly Silva de Castro
 
 -Modelagem 3D, Minigame Designer-
-Arthur Alexandre Alves"
+Arthur Alexandre Alves
 
-[node name="creditos_assets" type="Label" parent="Window_Creditos/Cabecalho/Panel" unique_id=1355309132]
-layout_mode = 0
-offset_left = 1007.0
-offset_top = 18.0
-offset_right = 1837.0
-offset_bottom = 435.0
-theme_override_fonts/font = ExtResource("3_4n3ki")
-theme_override_font_sizes/font_size = 45
-text = "                  -Assets Utilizados-
+-ASSETS UTILIZADOS-
 Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
 \"Computer Icons Asset Pack\" - DampSquib (itch.io)
 \"Retro Windows GUI\" - Comp-3 Interactive (itch.io)
@@ -394,7 +399,10 @@ Fonte \"Bridge Parapet\" - vaalribbok (itch.io)
 \"UI Close SFX\" - LitUpSubway (pixabay.com)
 \"026491_Pixel Song #8\" - Freesound Community
 \"Casual Click Pop UI 2\" - floraphonic (pixabay.com)
-\"Pixel UI Sound Effects Pack\" - JDSherbert (itch.io)"
+\"Pixel UI Sound Effects Pack\" - JDSherbert (itch.io)
+\"Pixel Art Animated Star\" - Narik (itch.io)"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Window_Opcoes" type="Window" parent="." unique_id=1759926072]
 oversampling_override = 1.0
