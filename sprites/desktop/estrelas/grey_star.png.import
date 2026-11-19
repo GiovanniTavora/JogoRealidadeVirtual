@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxp6ykqeau7fq"
-path="res://.godot/imported/button confirm.png-d5921302aeca1780f5cb76251d519906.ctex"
+uid="uid://bqi1v7qg0dkp3"
+path="res://.godot/imported/grey_star.png-a14743b552d27b04ef2512af51e43832.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/desktop/button confirm.png"
-dest_files=["res://.godot/imported/button confirm.png-d5921302aeca1780f5cb76251d519906.ctex"]
+source_file="res://sprites/desktop/estrelas/grey_star.png"
+dest_files=["res://.godot/imported/grey_star.png-a14743b552d27b04ef2512af51e43832.ctex"]
 
 [params]
 
