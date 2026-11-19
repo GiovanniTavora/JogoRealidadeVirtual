@@ -54,3 +54,7 @@ func atualizar_progresso() -> void:
 		estrela_firewall.stop()
 		estrela_firewall.animation = "apagada"
 		estrela_firewall.frame = 0
+
+
+func _on_iniciar_caca_arquivo_pressed() -> void:
+	pass # Replace with function body.
