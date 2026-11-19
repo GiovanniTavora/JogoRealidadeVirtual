@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/robo/Robo404.png" id="17_dllp2"]
 [ext_resource type="Texture2D" uid="uid://5bmp5eullhxc" path="res://sprites/robo/robo_up.png" id="18_xjoyg"]
 [ext_resource type="AudioStream" uid="uid://ddfwqy4p7vnsn" path="res://efeitos sonoros/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="19_xjoyg"]
+[ext_resource type="Texture2D" uid="uid://bqi1v7qg0dkp3" path="res://sprites/desktop/estrelas/grey_star.png" id="20_lic2h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
@@ -101,6 +102,39 @@ animations = [{
 "loop": 1,
 "name": &"robo_idle",
 "speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wreh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_lic2h")
+}],
+"loop": 1,
+"name": &"apagada",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olahq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_lic2h")
+}],
+"loop": 1,
+"name": &"apagada",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4x52"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_lic2h")
+}],
+"loop": 1,
+"name": &"apagada",
+"speed": 5.0
 }]
 
 [node name="Firewall" type="Control" unique_id=1178059765]
@@ -206,6 +240,13 @@ text = "12:30
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1578452158]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 515.0
+offset_right = 1078.0
+offset_bottom = 597.0
 
 [node name="HUD" type="VBoxContainer" parent="." unique_id=1674870069]
 layout_mode = 1
@@ -375,6 +416,133 @@ animation = &"robo_idle"
 [node name="SomHover" type="AudioStreamPlayer" parent="." unique_id=1924214411]
 stream = ExtResource("19_xjoyg")
 bus = &"SFX"
+
+[node name="WindowStatus" type="Window" parent="." unique_id=1498513836]
+oversampling_override = 1.0
+position = Vector2i(756, 346)
+size = Vector2i(406, 344)
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("9_oktwg")
+theme_override_icons/close_pressed = ExtResource("10_ttykc")
+
+[node name="Base" type="NinePatchRect" parent="WindowStatus" unique_id=749447777]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_sxg1o")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="WindowStatus" unique_id=1133340921]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 144.0
+grow_horizontal = 2
+texture = ExtResource("12_pph8i")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="WindowStatus/Cabecalho" unique_id=355511848]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 70
+text = "Resultados"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="WindowStatus/Cabecalho" unique_id=1232411419]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 149.0
+offset_right = -17.0
+offset_bottom = 318.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowStatus/Cabecalho/Panel" unique_id=824760292]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container_CacaArquivo" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=2144896192]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelCacaArquivo" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo" unique_id=702189812]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 50
+text = " Caça-Arquivos:"
+
+[node name="CenterContainer" type="CenterContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo" unique_id=2079259996]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EstrelaCacaArquivos" type="AnimatedSprite2D" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo/CenterContainer" unique_id=1477060374]
+texture_filter = 1
+position = Vector2(4, 25)
+sprite_frames = SubResource("SpriteFrames_wreh7")
+animation = &"apagada"
+
+[node name="Container_Firewall" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=861356596]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelFirewall" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall" unique_id=1016076956]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 50
+text = "Firewall:"
+
+[node name="CenterContainer" type="CenterContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall" unique_id=1007963467]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EstrelaFirewall" type="AnimatedSprite2D" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall/CenterContainer" unique_id=1036706645]
+texture_filter = 1
+position = Vector2(4, 22)
+sprite_frames = SubResource("SpriteFrames_olahq")
+animation = &"apagada"
+
+[node name="Container_Interrupcao" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=2118551305]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelInterrupcao" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Interrupcao" unique_id=1160881833]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8dgsm")
+theme_override_font_sizes/font_size = 50
+text = "Interrupção:"
+
+[node name="CenterContainer" type="CenterContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Interrupcao" unique_id=598886955]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EstrelaInterrupcao" type="AnimatedSprite2D" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Interrupcao/CenterContainer" unique_id=1206685316]
+texture_filter = 1
+position = Vector2(4, 26)
+sprite_frames = SubResource("SpriteFrames_c4x52")
+animation = &"apagada"
 
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="mouse_entered" from="Window_Resultado/Cabecalho/Panel/BotaoContinuar" to="." method="_on_botao_continuar_mouse_entered"]
