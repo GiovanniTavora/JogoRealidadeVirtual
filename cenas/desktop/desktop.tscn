@@ -613,9 +613,11 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 85
-text = "Infelizmente esse programa não está
-disponível no momento! :(
-Por favor volte mais tarde! :)"
+text = "Conceda ou bloqueie as permissões 
+solicitadas pelos aplicativos.
+Tente bater a meta de 20 pontos!
+
+Permita apenas acessos seguros!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -778,9 +780,8 @@ audio_bus_name = "SFX"
 [node name="WindowFirewall" type="Window" parent="." unique_id=1513667915]
 oversampling_override = 1.0
 initial_position = 3
-size = Vector2i(1276, 680)
+size = Vector2i(894, 595)
 current_screen = 0
-visible = false
 borderless = true
 theme_override_constants/close_h_offset = 17
 theme_override_constants/close_v_offset = 23
@@ -846,27 +847,28 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 12.0
-offset_top = 179.0
+offset_top = 159.0
 offset_right = -23.0
-offset_bottom = 651.0
+offset_bottom = 581.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="WindowFirewall/Cabecalho/Panel" unique_id=952302078]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 17.0
-offset_bottom = 302.0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 371.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 52
-text = "Analise as solicitações de acesso 
-dos aplicativos e decida quais permissões devem ser
- concedidas ou bloqueadas. Tente bater a meta de 20 pontos!
+theme_override_font_sizes/font_size = 65
+text = "Conceda ou bloqueie as permissões 
+solicitadas pelos aplicativos e
+permita apenas acessos seguros!
 
-Cuidado: uma escolha errada 
-pode comprometer a segurança do sistema!"
+Tente bater a meta de 20 pontos!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -879,9 +881,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -183.0
-offset_top = 134.0
+offset_top = 137.0
 offset_right = 183.0
-offset_bottom = 193.0
+offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -1016,6 +1018,104 @@ bus = &"SFX"
 [node name="Close" type="AudioStreamPlayer" parent="." unique_id=1047237565]
 stream = ExtResource("16_x46sc")
 bus = &"SFX"
+
+[node name="WindowStatus" type="Window" parent="." unique_id=1551824067]
+oversampling_override = 1.0
+position = Vector2i(8, 4)
+size = Vector2i(406, 344)
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("5_4j4gs")
+theme_override_icons/close_pressed = ExtResource("6_v6ts4")
+
+[node name="Base" type="NinePatchRect" parent="WindowStatus" unique_id=286177494]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_f81va")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="WindowStatus" unique_id=80195333]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 144.0
+grow_horizontal = 2
+texture = ExtResource("9_cs8od")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="WindowStatus/Cabecalho" unique_id=2037998536]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 70
+text = "Resultados"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="WindowStatus/Cabecalho" unique_id=2035949693]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 149.0
+offset_right = -17.0
+offset_bottom = 318.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowStatus/Cabecalho/Panel" unique_id=567648146]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container_CacaArquivo" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=505143032]
+layout_mode = 2
+
+[node name="LabelCacaArquivo" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo" unique_id=1921183585]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 50
+text = "Caça-Arquivos:"
+
+[node name="EstrelaCacaArquivos" type="TextureRect" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo" unique_id=625264423]
+layout_mode = 2
+
+[node name="Container_Firewall" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=1340294441]
+layout_mode = 2
+
+[node name="LabelFirewall" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall" unique_id=626127123]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 50
+text = "Firewall:"
+
+[node name="EstrelaFirewall" type="TextureRect" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall" unique_id=492018018]
+layout_mode = 2
+
+[node name="Container_Interrupcao" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=1184299268]
+layout_mode = 2
+
+[node name="LabelInterrupcao" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Interrupcao" unique_id=1359975057]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 50
+text = "Interrupção:"
+
+[node name="EstrelaInterrupcao" type="TextureRect" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Interrupcao" unique_id=521485598]
+layout_mode = 2
 
 [connection signal="mouse_entered" from="Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_button_pressed"]
