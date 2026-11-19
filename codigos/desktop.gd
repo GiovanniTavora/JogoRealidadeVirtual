@@ -46,9 +46,8 @@ func _on_icone_meta_pressed() -> void:
 	$Click.play()
 
 func atualizar_progresso() -> void:
-	push_warning("ATUALIZAR_PROGRESso FOI EXECUTADA!")
 	var estrela_firewall = $WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall/CenterContainer/EstrelaFirewall
-	print("Pontuação Firewall: ", ProgressoJogo.pontuacao_firewall)
+
 	if ProgressoJogo.pontuacao_firewall >= ProgressoJogo.META_POR_MINIGAME:
 		estrela_firewall.play("concluida")
 	else:
