@@ -1346,7 +1346,7 @@ position = Vector2(4, 22)
 scale = Vector2(1.84, 1.84)
 sprite_frames = SubResource("SpriteFrames_51myg")
 animation = &"apagada"
-frame_progress = 0.016656272
+frame_progress = 0.038904637
 
 [node name="Container_Interrupcao" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=1184299268]
 layout_mode = 2

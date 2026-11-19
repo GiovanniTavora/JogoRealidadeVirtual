@@ -245,7 +245,7 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_left = 860.0
 offset_top = 515.0
-offset_right = 1078.0
+offset_right = 1088.0
 offset_bottom = 597.0
 
 [node name="HUD" type="VBoxContainer" parent="." unique_id=1674870069]
