@@ -178,7 +178,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1927677626]
-transform = Transform3D(0.99999994, -1.69798e-08, 2.1410426e-06, 0, 0.99996805, 0.00793037, -2.1411106e-06, -0.00793037, 0.99996805, -175.40643, 25.759771, -1292.0063)
+transform = Transform3D(0.99999994, -1.69798e-08, 2.1410424e-06, 0, 0.999968, 0.007930369, -2.1411106e-06, -0.007930369, 0.999968, -175.40643, 25.759771, -1292.0063)
 current = true
 fov = 60.0
 
@@ -378,16 +378,16 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3_4n3ki")
 theme_override_font_sizes/font_size = 45
 text = "-DESENVOLVEDORES-
--Líder de Projeto, Game Designer, Pixel-Art-
+-Líder de Projeto, Game Designer, Pixel-Art, Programação-
 Giovanni Távora Pereira Negrão
 
--Vice-Líder, Pixel Art, Minigame Designer-
+-Vice-Líder, Pixel Art, Minigame Designer, Programação-
 Pedro Arthur Ramos Dutra da Silva
 
--Pixel Art, Minigame Designer-
+-Pixel Art, Minigame Designer, Programação-
 Andryelly Silva de Castro
 
--Modelagem 3D, Minigame Designer-
+-Modelagem 3D, Minigame Designer, Programação-
 Arthur Alexandre Alves
 
 -ASSETS UTILIZADOS-

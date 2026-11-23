@@ -26,39 +26,6 @@
 shader = ExtResource("7_31k1a")
 shader_parameter/SCREEN_HEIGHT = 240.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ungyi"]
-bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu8j1"]
-texture = ExtResource("2_8pm13")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfd1l"]
-texture = ExtResource("3_ikb2v")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k25gi"]
-atlas = ExtResource("6_k25gi")
-region = Rect2(256.86853, 0, 63.63159, 63.236885)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tu8j1"]
-draw_center = false
-border_width_top = 6
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_am0fo"]
-texture = ExtResource("3_ikb2v")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k41lo"]
 texture = ExtResource("11_cs8od")
 texture_margin_left = 2.0
@@ -388,6 +355,39 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51myg"]
+bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lmtk"]
+draw_center = false
+border_width_top = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu8j1"]
+texture = ExtResource("2_8pm13")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfd1l"]
+texture = ExtResource("3_ikb2v")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k25gi"]
+atlas = ExtResource("6_k25gi")
+region = Rect2(256.86853, 0, 63.63159, 63.236885)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djeav"]
+texture = ExtResource("3_ikb2v")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
 [node name="desktop" type="Control" unique_id=467746139]
 layout_mode = 3
 anchors_preset = 15
@@ -416,77 +416,6 @@ anchor_bottom = 1.0
 offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="." unique_id=3686188]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -101.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ungyi")
-
-[node name="botao_voltar" type="Button" parent="Panel" unique_id=1335318282]
-texture_filter = 1
-layout_mode = 0
-offset_left = 34.0
-offset_top = 13.0
-offset_right = 382.0
-offset_bottom = 114.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 115
-theme_override_styles/normal = SubResource("StyleBoxTexture_tu8j1")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_pfd1l")
-theme_override_styles/hover = SubResource("StyleBoxTexture_pfd1l")
-text = "Sair"
-icon = SubResource("AtlasTexture_k25gi")
-expand_icon = true
-
-[node name="Panel" type="Panel" parent="Panel" unique_id=1515325339]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_right = 3.0
-offset_bottom = -114.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tu8j1")
-
-[node name="Panel2" type="Panel" parent="Panel" unique_id=1995106532]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -372.0
-offset_top = -99.0
-offset_right = -18.0
-offset_bottom = -12.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_am0fo")
-
-[node name="Label" type="Label" parent="Panel/Panel2" unique_id=474411572]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 52
-text = "12:30
-30/09/2026"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Window" type="Window" parent="." unique_id=1860288022]
 oversampling_override = 1.0
@@ -742,7 +671,7 @@ metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2044460175]
 texture_filter = 1
-position = Vector2(1576, 827)
+position = Vector2(1576, 804)
 scale = Vector2(5.825, 5.825)
 sprite_frames = SubResource("SpriteFrames_tbunc")
 animation = &"robo_idle"
@@ -827,13 +756,15 @@ grow_horizontal = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 64.0
-offset_bottom = 289.0
+offset_top = 45.0
+offset_bottom = 270.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 85
-text = "inserir texto"
+text = "Localize e instale o backup correto
+para reparar o arquivo corrompido
+e recuperar o computador!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1305,6 +1236,7 @@ theme_override_font_sizes/font_size = 70
 text = "Resultados"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="WindowStatus/Cabecalho" unique_id=2035949693]
 layout_mode = 1
@@ -1389,9 +1321,81 @@ scale = Vector2(1.86, 1.86)
 sprite_frames = SubResource("SpriteFrames_xqo3b")
 animation = &"apagada"
 
-[connection signal="mouse_entered" from="Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
-[connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
+[node name="Panel2" type="Panel" parent="." unique_id=950549569]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -126.0
+offset_bottom = 58.43994
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_51myg")
+
+[node name="Panel" type="Panel" parent="Panel2" unique_id=1608950054]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+offset_bottom = -22.439941
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4lmtk")
+metadata/_edit_lock_ = true
+
+[node name="botao_voltar" type="Button" parent="Panel2/Panel" unique_id=1335318282]
+texture_filter = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 13.0
+offset_right = 382.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 115
+theme_override_styles/normal = SubResource("StyleBoxTexture_tu8j1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pfd1l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pfd1l")
+text = "Sair"
+icon = SubResource("AtlasTexture_k25gi")
+expand_icon = true
+
+[node name="Panel2" type="Panel" parent="Panel2" unique_id=2009747673]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -160.43994
+offset_right = -18.0
+offset_bottom = -73.43994
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_djeav")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Panel2/Panel2" unique_id=1668425778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 52
+text = "12:30
+30/09/2026"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="pressed" from="Window/Cabecalho/sair_janela" to="." method="_on_button_pressed_x"]
 [connection signal="pressed" from="Window/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
@@ -1413,3 +1417,6 @@ animation = &"apagada"
 [connection signal="mouse_entered" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_mouse_entered"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
 [connection signal="pressed" from="WindowMeta/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="mouse_entered" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
+[connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]

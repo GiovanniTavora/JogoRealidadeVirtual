@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bko6re7rfwa5o"]
+
+[ext_resource type="Script" uid="uid://xxn72tbk8e3l" path="res://codigos/minigames/caca_arquivos/prompt_windows_98.gd" id="1_npcd6"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="2_wwsdk"]
+[ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/botoes/button x.png" id="4_4xl0u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mo76"]
+bg_color = Color(0.83137256, 0.8156863, 0.78431374, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbunc"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mon5"]
+bg_color = Color(0, 0, 0.5019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewpwv"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3wdxl"]
+
+[node name="JanelaPrompt" type="PanelContainer" unique_id=1058460002]
+offset_right = 800.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4mo76")
+script = ExtResource("1_npcd6")
+
+[node name="Margem" type="MarginContainer" parent="." unique_id=921749051]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="Margem" unique_id=688345753]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbunc")
+
+[node name="Conteudo" type="VBoxContainer" parent="Margem" unique_id=1098790991]
+layout_mode = 2
+alignment = 1
+
+[node name="BarraTitulo" type="PanelContainer" parent="Margem/Conteudo" unique_id=1424757080]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margem/Conteudo/BarraTitulo" unique_id=1738674449]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwsdk")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1mon5")
+text = "Prompt de Comando"
+horizontal_alignment = 1
+
+[node name="BotaoFechar" type="TextureButton" parent="Margem/Conteudo/BarraTitulo/Label" unique_id=1427011118]
+custom_minimum_size = Vector2(10, 32)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -16.5
+offset_bottom = 16.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("4_4xl0u")
+
+[node name="LabelAplicacao" type="Label" parent="Margem/Conteudo" unique_id=475080447]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwsdk")
+theme_override_font_sizes/font_size = 45
+text = "Microsoft Windows [versão Windows 98]"
+horizontal_alignment = 1
+
+[node name="LabelDesejaAcessar" type="Label" parent="Margem/Conteudo" unique_id=106772440]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwsdk")
+theme_override_font_sizes/font_size = 40
+text = " (c) Microsoft Corporation. Todos os direitos reservados."
+horizontal_alignment = 1
+
+[node name="LabelDescricao" type="Label" parent="Margem/Conteudo" unique_id=1155643079]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwsdk")
+theme_override_font_sizes/font_size = 45
+text = "Digite AJUDA para consultar os comandos."
+horizontal_alignment = 1
+
+[node name="LinhaComando" type="HBoxContainer" parent="Margem/Conteudo" unique_id=1871208183]
+layout_mode = 2
+
+[node name="PrefixoPrompt" type="Label" parent="Margem/Conteudo/LinhaComando" unique_id=1052658990]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwsdk")
+theme_override_font_sizes/font_size = 40
+text = "  C:\\>"
+
+[node name="EntradaComando" type="LineEdit" parent="Margem/Conteudo/LinhaComando" unique_id=482656207]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_wwsdk")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ewpwv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3wdxl")
+caret_blink = true

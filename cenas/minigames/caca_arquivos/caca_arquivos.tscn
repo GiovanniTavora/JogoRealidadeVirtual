@@ -1,0 +1,419 @@
+[gd_scene format=3 uid="uid://bw3b2hoa8wk5y"]
+
+[ext_resource type="Script" uid="uid://c3nrdhu0g7ai6" path="res://codigos/minigames/caca_arquivos/caca_arquivos.gd" id="1_fhi10"]
+[ext_resource type="Texture2D" uid="uid://v3ec4osr3tmy" path="res://sprites/desktop/icones/file_icons.png" id="2_2tywf"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_2tywf"]
+[ext_resource type="PackedScene" uid="uid://bko6re7rfwa5o" path="res://cenas/minigames/caca_arquivos/prompt_windows98.tscn" id="4_36wbj"]
+[ext_resource type="Texture2D" uid="uid://dke51btudqf4u" path="res://sprites/desktop/PatchRegular.png" id="5_u41bt"]
+[ext_resource type="Texture2D" uid="uid://b0rvjnpfci72y" path="res://sprites/desktop/PatchInverted.png" id="6_41352"]
+[ext_resource type="Texture2D" uid="uid://dpytwvxsfv3cg" path="res://sprites/desktop/botoes/buttons.png" id="7_aax8u"]
+[ext_resource type="Texture2D" uid="uid://c043fmoj12fb" path="res://sprites/robo/Robo404.png" id="8_aax8u"]
+[ext_resource type="Texture2D" uid="uid://5bmp5eullhxc" path="res://sprites/robo/robo_up.png" id="9_ysm01"]
+[ext_resource type="AudioStream" uid="uid://nqjicktphpun" path="res://musicas/WAV_Sidewalk.wav" id="10_ysm01"]
+[ext_resource type="Texture2D" uid="uid://kch7jk5vt5rb" path="res://sprites/desktop/CloseRegular.png" id="11_5avqh"]
+[ext_resource type="Texture2D" uid="uid://exxf00s6bs6s" path="res://sprites/desktop/ClosePressed.png" id="12_80ssd"]
+[ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="13_wfxrw"]
+[ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="14_rx8fc"]
+[ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="15_amqrt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tywf"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36wbj"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(33.15663, 32.771175, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axmfc"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(33.15663, 32.771175, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wdxl"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(33.15663, 32.771175, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewpwv"]
+atlas = ExtResource("2_2tywf")
+region = Rect2(33.15663, 32.771175, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysm01"]
+bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykvqy"]
+texture = ExtResource("5_u41bt")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxwce"]
+texture = ExtResource("6_41352")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73c3k"]
+atlas = ExtResource("7_aax8u")
+region = Rect2(256.86853, 0, 63.63159, 63.236885)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipf8f"]
+draw_center = false
+border_width_top = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5avqh"]
+texture = ExtResource("6_41352")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ykvqy"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("8_aax8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ysm01")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_aax8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ysm01")
+}],
+"loop": 1,
+"name": &"robo_idle",
+"speed": 2.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stk55"]
+texture = ExtResource("15_amqrt")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8ps1"]
+texture = ExtResource("15_amqrt")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c37lc"]
+texture = ExtResource("15_amqrt")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
+[node name="CacaArquivos" type="Control" unique_id=1044821151]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fhi10")
+icone_arquivo = SubResource("AtlasTexture_2tywf")
+
+[node name="JanelaArquivos" type="PanelContainer" parent="." unique_id=646625407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Conteudo" type="VBoxContainer" parent="JanelaArquivos" unique_id=972306933]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="BarraTitulo" type="HBoxContainer" parent="JanelaArquivos/Conteudo" unique_id=782631180]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Tempo" type="Label" parent="JanelaArquivos/Conteudo/BarraTitulo" unique_id=204741533]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 80
+text = "Tempo: 3:00"
+horizontal_alignment = 1
+
+[node name="Missao" type="RichTextLabel" parent="JanelaArquivos/Conteudo" unique_id=1412845470]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_2tywf")
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = " [b][font_size=26]Missão:[/font_size][/b] Faça a instalação do backup [b][font_size=22]config.sys.bak[/font_size][/b] e repare o arquivo [b][font_size=22]config.sys[/font_size][/b] para recuperar o computador."
+fit_content = true
+
+[node name="BarraCaminho" type="HBoxContainer" parent="JanelaArquivos/Conteudo" unique_id=1325446545]
+layout_mode = 2
+
+[node name="RotuloCaminho" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho" unique_id=1916155570]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 36
+text = " Local:"
+
+[node name="CaminhoAtual" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho" unique_id=322562435]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 37
+text = "C:\\"
+
+[node name="Voltar" type="Button" parent="JanelaArquivos/Conteudo" unique_id=1349358550]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 35
+text = "<- Voltar"
+
+[node name="ListaPastas" type="GridContainer" parent="JanelaArquivos/Conteudo" unique_id=1713506377]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="Windows" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=1176372947]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+text = "Windows"
+icon = SubResource("AtlasTexture_36wbj")
+
+[node name="Users" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=317589632]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+text = "Users"
+icon = SubResource("AtlasTexture_axmfc")
+
+[node name="Program Files" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=530006210]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+text = "Program Files"
+icon = SubResource("AtlasTexture_3wdxl")
+
+[node name="Temp" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=516493807]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+text = "Recovery"
+icon = SubResource("AtlasTexture_ewpwv")
+
+[node name="Panel" type="Panel" parent="." unique_id=1670952257]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -183.0
+offset_bottom = 1.4399414
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ysm01")
+
+[node name="botao_voltar" type="Button" parent="Panel" unique_id=1191835758]
+texture_filter = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 13.0
+offset_right = 382.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 115
+theme_override_styles/normal = SubResource("StyleBoxTexture_ykvqy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wxwce")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wxwce")
+text = "Sair"
+icon = SubResource("AtlasTexture_73c3k")
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=1406688695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+offset_bottom = -22.439941
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipf8f")
+metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="Panel" unique_id=555777471]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -160.43994
+offset_right = -18.0
+offset_bottom = -73.43994
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_5avqh")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Panel/Panel2" unique_id=416261323]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 52
+text = "12:30
+30/09/2026"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=409747763]
+texture_filter = 1
+position = Vector2(1576, 804)
+scale = Vector2(5.825, 5.825)
+sprite_frames = SubResource("SpriteFrames_ykvqy")
+animation = &"robo_idle"
+
+[node name="CamadaPrompt" type="CenterContainer" parent="." unique_id=70176147]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PromptWindows98" parent="CamadaPrompt" unique_id=1058460002 instance=ExtResource("4_36wbj")]
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2003446198]
+stream = ExtResource("10_ysm01")
+volume_db = -4.0
+autoplay = true
+bus = &"Music"
+
+[node name="Timer" type="Timer" parent="." unique_id=1708262170]
+wait_time = 180.0
+one_shot = true
+
+[node name="Window_Resultado" type="Window" parent="." unique_id=750847205]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(1266, 600)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("11_5avqh")
+theme_override_icons/close_pressed = ExtResource("12_80ssd")
+
+[node name="Base" type="NinePatchRect" parent="Window_Resultado" unique_id=1590090993]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_wfxrw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="Window_Resultado" unique_id=1336342778]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.8449707
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("14_rx8fc")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="CabecalhoResultado" type="Label" parent="Window_Resultado/Cabecalho" unique_id=141982901]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 85
+text = "Fim de jogo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Window_Resultado/Cabecalho" unique_id=356197462]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 565.0
+grow_horizontal = 2
+
+[node name="LabelPontuacaoFinal" type="Label" parent="Window_Resultado/Cabecalho/Panel" unique_id=1633794386]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -88.0
+offset_right = 285.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 85
+text = "Tempo esgotado... Tente novamente!"
+
+[node name="BotaoContinuar" type="Button" parent="Window_Resultado/Cabecalho/Panel" unique_id=175248034]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.5
+offset_top = 86.0
+offset_right = 198.5
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_stk55")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o8ps1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c37lc")
+text = "Voltar"
+
+[connection signal="pressed" from="JanelaArquivos/Conteudo/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Windows" to="." method="_on_windows_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Users" to="." method="_on_users_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Program Files" to="." method="_on_program_files_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Temp" to="." method="_on_temp_pressed"]
+[connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]

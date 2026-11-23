@@ -47,6 +47,7 @@ func _on_icone_meta_pressed() -> void:
 
 func atualizar_progresso() -> void:
 	var estrela_firewall = $WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall/CenterContainer/EstrelaFirewall
+	var estrela_caca_arquivos = $WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo/CenterContainer/EstrelaCacaArquivos
 
 	if ProgressoJogo.pontuacao_firewall >= ProgressoJogo.META_POR_MINIGAME:
 		estrela_firewall.play("concluida")
@@ -55,6 +56,13 @@ func atualizar_progresso() -> void:
 		estrela_firewall.animation = "apagada"
 		estrela_firewall.frame = 0
 
+	if ProgressoJogo.pontuacao_caca_arquivos >= ProgressoJogo.META_POR_MINIGAME:
+		estrela_caca_arquivos.play("concluida")
+	else:
+		estrela_caca_arquivos.stop()
+		estrela_caca_arquivos.animation = "apagada"
+		estrela_caca_arquivos.frame = 0
+
 
 func _on_iniciar_caca_arquivo_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://cenas/minigames/caca_arquivos/caca_arquivos.tscn")
