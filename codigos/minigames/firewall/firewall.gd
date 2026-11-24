@@ -110,7 +110,6 @@ var partida_encerrada := false
 
 
 func _ready() -> void:
-	$AnimatedSprite2D.play("robo_idle")
 	randomize()
 	solicitacoes_disponiveis = solicitacoes.duplicate()
 	_atualizar_pontuacao()
@@ -125,13 +124,14 @@ func _process(_delta: float) -> void:
 
 func _ao_tempo_esgotado() -> void:
 	partida_encerrada = true
+	$AnimatedSprite2D.finalizar(pontuacao >= ProgressoJogo.META_POR_MINIGAME)
 	ProgressoJogo.registrar_firewall(pontuacao)
 	label_tempo.text = "Tempo: 0s"
 	$AudioStreamPlayer.stop()
 	if pontuacao >= ProgressoJogo.META_POR_MINIGAME:
 		label_pontuacao_final.text = "Meta atingida! %d/20 pontos" % pontuacao
 	else:
-		label_pontuacao_final.text = "Meta não alcançada... Tente novamente!" % pontuacao
+		label_pontuacao_final.text = "Meta não alcançada... Tente novamente!"
 	$Window_Resultado.visible = true
 	for janela in area_jogo.get_children():
 		janela.queue_free()
@@ -156,7 +156,7 @@ func _criar_solicitacao() -> void:
 	var indice = randi_range(0, solicitacoes_disponiveis.size() - 1)
 	var solicitacao = solicitacoes_disponiveis[indice]
 	solicitacoes_disponiveis.remove_at(indice)
-	
+
 	janela.configurar_solicitacao(
 		solicitacao["aplicativo"],
 		solicitacao["recurso"],
@@ -169,10 +169,12 @@ func _ao_resolver_solicitacao(acertou: bool) -> void:
 	if acertou:
 		pontuacao += 1
 		som_positivo.play()
+		$AnimatedSprite2D.comemorar()
 	else:
 		som_negativo.play()
+		$AnimatedSprite2D.ficar_triste()
 	_atualizar_pontuacao()
-	
+
 	if partida_encerrada:
 		return
 
