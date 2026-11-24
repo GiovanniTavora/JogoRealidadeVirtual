@@ -617,7 +617,7 @@ layout_mode = 2
 theme_override_constants/separation = -9
 metadata/_edit_lock_ = true
 
-[node name="IconeMinigameArquivo" type="TextureButton" parent="minigame_interrupcao/VBoxContainer" unique_id=2113277600]
+[node name="IconeMinigameInterrupcao" type="TextureButton" parent="minigame_interrupcao/VBoxContainer" unique_id=2113277600]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -1066,6 +1066,121 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_u2h3j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_u2h3j")
 text = "Vamos lá!"
 
+[node name="WindowInterrupcao" type="Window" parent="." unique_id=211635421]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(894, 595)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("5_4j4gs")
+theme_override_icons/close_pressed = ExtResource("6_v6ts4")
+
+[node name="Base" type="NinePatchRect" parent="WindowInterrupcao" unique_id=1120882104]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_f81va")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="WindowInterrupcao" unique_id=913827308]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("9_cs8od")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="WindowInterrupcao/Cabecalho" unique_id=144204563]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 85
+text = "INTERRUPÇÃO!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sair_janela" type="Button" parent="WindowInterrupcao/Cabecalho" unique_id=89951099]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -37.0
+offset_right = -31.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_k41lo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cs8od")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s8abh")
+
+[node name="Panel" type="Panel" parent="WindowInterrupcao/Cabecalho" unique_id=2008725515]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 159.0
+offset_right = -23.0
+offset_bottom = 581.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="WindowInterrupcao/Cabecalho/Panel" unique_id=1806165938]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 371.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 65
+text = "Inserir texto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IniciarFirewall" type="Button" parent="WindowInterrupcao/Cabecalho/Panel" unique_id=1462309897]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = 137.0
+offset_right = 183.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_u2h3j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u2h3j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u2h3j")
+text = "Vamos lá!"
+
 [node name="WindowMeta" type="Window" parent="." unique_id=656892139]
 oversampling_override = 1.0
 initial_position = 1
@@ -1405,7 +1520,8 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_minigame_firewall_pressed"]
 [connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_firewall_pressed"]
 [connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="minigame_firewall/VBoxContainer/IconeFirewall" method="_on_pressed"]
-[connection signal="pressed" from="minigame_interrupcao/VBoxContainer/IconeMinigameArquivo" to="minigame_interrupcao/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
+[connection signal="pressed" from="minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" to="." method="_on_icone_minigame_interrupcao_pressed"]
+[connection signal="pressed" from="minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" to="minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" method="_on_pressed"]
 [connection signal="pressed" from="programa_meta/VBoxContainer/IconeMeta" to="." method="_on_icone_meta_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
@@ -1416,6 +1532,7 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="WindowFirewall/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="mouse_entered" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_mouse_entered"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
+[connection signal="pressed" from="WindowInterrupcao/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="pressed" from="WindowMeta/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="mouse_entered" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_button_pressed"]

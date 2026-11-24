@@ -20,6 +20,12 @@
 atlas = ExtResource("2_2tywf")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5avqh"]
+bg_color = Color(0.015686275, 0.35686275, 0.4117647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwhtl"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_36wbj"]
 atlas = ExtResource("2_2tywf")
 region = Rect2(33.15663, 32.771175, 32, 32)
@@ -132,6 +138,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5avqh")
 
 [node name="Conteudo" type="VBoxContainer" parent="JanelaArquivos" unique_id=972306933]
 layout_mode = 2
@@ -157,16 +164,20 @@ bbcode_enabled = true
 text = " [b][font_size=26]Missão:[/font_size][/b] Faça a instalação do backup [b][font_size=22]config.sys.bak[/font_size][/b] e repare o arquivo [b][font_size=22]config.sys[/font_size][/b] para recuperar o computador."
 fit_content = true
 
-[node name="BarraCaminho" type="HBoxContainer" parent="JanelaArquivos/Conteudo" unique_id=1325446545]
+[node name="BarraCaminho" type="PanelContainer" parent="JanelaArquivos/Conteudo" unique_id=1299125350]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwhtl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="JanelaArquivos/Conteudo/BarraCaminho" unique_id=1238670913]
 layout_mode = 2
 
-[node name="RotuloCaminho" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho" unique_id=1916155570]
+[node name="RotuloCaminho" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho/HBoxContainer" unique_id=1916155570]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2tywf")
 theme_override_font_sizes/font_size = 36
 text = " Local:"
 
-[node name="CaminhoAtual" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho" unique_id=322562435]
+[node name="CaminhoAtual" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho/HBoxContainer" unique_id=322562435]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2tywf")
 theme_override_font_sizes/font_size = 37

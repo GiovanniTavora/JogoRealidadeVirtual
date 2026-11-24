@@ -8,7 +8,7 @@ extends Control
 @onready var label_resultado = $Window_Resultado/Cabecalho/Panel/LabelPontuacaoFinal
 @onready var botao_continuar = $Window_Resultado/Cabecalho/Panel/BotaoContinuar
 
-@onready var caminho_atual = $JanelaArquivos/Conteudo/BarraCaminho/CaminhoAtual
+@onready var caminho_atual = $JanelaArquivos/Conteudo/BarraCaminho/HBoxContainer/CaminhoAtual
 @onready var botoes = [
 	get_node("JanelaArquivos/Conteudo/ListaPastas/Windows"),
 	get_node("JanelaArquivos/Conteudo/ListaPastas/Users"),
