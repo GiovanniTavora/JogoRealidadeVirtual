@@ -156,7 +156,10 @@ theme_override_font_sizes/font_size = 80
 text = "Tempo: 3:00"
 horizontal_alignment = 1
 
-[node name="Missao" type="RichTextLabel" parent="JanelaArquivos/Conteudo" unique_id=1412845470]
+[node name="PanelContainer" type="PanelContainer" parent="JanelaArquivos/Conteudo" unique_id=1452416887]
+layout_mode = 2
+
+[node name="Missao" type="RichTextLabel" parent="JanelaArquivos/Conteudo/PanelContainer" unique_id=1412845470]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_2tywf")
 theme_override_font_sizes/normal_font_size = 42
