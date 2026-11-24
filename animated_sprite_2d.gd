@@ -33,12 +33,21 @@ func finalizar(venceu: bool) -> void:
 		_tocar("dano")
 
 
-func _dancar() -> void:
-	for nome in ["dancando", "robo_idle"]:
+#func _dancar() -> void:
+	for nome in ["pulando", "dancando"]:
 		if sprite_frames.has_animation(nome):
 			play(nome)
 			return
 	print("PET: nenhuma animacao de danca encontrada")
+
+func _dancar() -> void:
+	print("PET: tentando iniciar pulando")
+
+	if sprite_frames.has_animation("pulando"):
+		play("pulando")
+		print("PET: animacao atual = ", animation)
+	else:
+		print("PET: animacao pulando nao encontrada")
 
 
 func _tocar(nome: String) -> void:

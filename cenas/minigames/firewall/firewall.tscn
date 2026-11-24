@@ -689,8 +689,7 @@ text = "Voltar"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1575448245]
 texture_filter = 1
-position = Vector2(1495, 719)
-scale = Vector2(1.5, 1.5)
+position = Vector2(1495, 777)
 sprite_frames = SubResource("SpriteFrames_lic2h")
 animation = &"pulando"
 script = ExtResource("24_c3gx2")

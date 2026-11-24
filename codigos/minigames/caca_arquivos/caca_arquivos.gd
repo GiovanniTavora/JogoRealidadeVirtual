@@ -136,7 +136,7 @@ func _diretorio_atual() -> Dictionary:
 
 
 func _montar_caminho() -> String:
-	var caminho = " C:\\"
+	var caminho = "C:\\"
 
 	for pasta in caminho_pastas:
 		if caminho != "C:\\":
@@ -144,7 +144,6 @@ func _montar_caminho() -> String:
 		caminho += pasta
 
 	return caminho
-
 
 func _atualizar_diretorio() -> void:
 	var diretorio = _diretorio_atual()

@@ -34,7 +34,7 @@ func finalizar(venceu: bool) -> void:
 
 
 func _dancar() -> void:
-	for nome in ["dancando", "robo_idle"]:
+	for nome in ["pulando"]:
 		if sprite_frames.has_animation(nome):
 			play(nome)
 			return
