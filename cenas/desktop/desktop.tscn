@@ -499,6 +499,48 @@ thickness = 6
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vts5"]
 bg_color = Color(0.5388762, 0.6314932, 0.97940415, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51myg"]
+bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lmtk"]
+draw_center = false
+border_width_top = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu8j1"]
+texture = ExtResource("2_8pm13")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfd1l"]
+texture = ExtResource("3_ikb2v")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k25gi"]
+atlas = ExtResource("6_k25gi")
+region = Rect2(256.86853, 0, 63.63159, 63.236885)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djeav"]
+texture = ExtResource("3_ikb2v")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbunc"]
+bg_color = Color(0.83137256, 0.8156863, 0.78431374, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwhtl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1e1h"]
+bg_color = Color(0, 0, 0.5019608, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqo3b"]
 atlas = ExtResource("21_51myg")
 region = Rect2(0, 0, 32, 32)
@@ -715,39 +757,6 @@ animations = [{
 "name": &"concluida",
 "speed": 10.0
 }]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51myg"]
-bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lmtk"]
-draw_center = false
-border_width_top = 6
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu8j1"]
-texture = ExtResource("2_8pm13")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfd1l"]
-texture = ExtResource("3_ikb2v")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k25gi"]
-atlas = ExtResource("6_k25gi")
-region = Rect2(256.86853, 0, 63.63159, 63.236885)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djeav"]
-texture = ExtResource("3_ikb2v")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
 
 [node name="desktop" type="Control" unique_id=467746139]
 layout_mode = 3
@@ -1542,118 +1551,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_u2h3j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_u2h3j")
 text = "Vamos lá!"
 
-[node name="WindowMeta" type="Window" parent="." unique_id=656892139]
-oversampling_override = 1.0
-initial_position = 1
-size = Vector2i(1100, 600)
-visible = false
-borderless = true
-theme_override_constants/close_h_offset = 17
-theme_override_constants/close_v_offset = 23
-theme_override_font_sizes/title_font_size = 4
-theme_override_icons/close = ExtResource("5_4j4gs")
-theme_override_icons/close_pressed = ExtResource("6_v6ts4")
-
-[node name="Base" type="NinePatchRect" parent="WindowMeta" unique_id=575638192]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_f81va")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-metadata/_edit_lock_ = true
-
-[node name="Cabecalho" type="NinePatchRect" parent="WindowMeta" unique_id=1095797426]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 142.0
-grow_horizontal = 2
-texture = ExtResource("9_cs8od")
-patch_margin_left = 4
-patch_margin_top = 3
-patch_margin_right = 4
-patch_margin_bottom = 32
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="WindowMeta/Cabecalho" unique_id=397304947]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 119.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 85
-text = "Meta de Pontos"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="sair_janela" type="Button" parent="WindowMeta/Cabecalho" unique_id=1335177692]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -93.0
-offset_top = -37.0
-offset_right = -31.0
-offset_bottom = 22.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_k41lo")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cs8od")
-theme_override_styles/hover = SubResource("StyleBoxTexture_s8abh")
-metadata/_edit_lock_ = true
-
-[node name="Panel" type="Panel" parent="WindowMeta/Cabecalho" unique_id=319347393]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 12.0
-offset_top = 179.0
-offset_right = -23.0
-offset_bottom = 565.0
-grow_horizontal = 2
-metadata/_edit_lock_ = true
-
-[node name="LabelPontuacoes" type="Label" parent="WindowMeta/Cabecalho/Panel" unique_id=1662147310]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = -5.0
-offset_bottom = 296.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 85
-text = "Caça-Arquivos: 0/20
-Firewall: 0/20
-Interrupção: 0/20
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LabelTotal" type="Label" parent="WindowMeta/Cabecalho/Panel" unique_id=886136569]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 163.0
-offset_bottom = 464.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 85
-text = "
-Meta Total: 0/60"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=842747466]
 stream = ExtResource("18_u2h3j")
 bus = &"SFX"
@@ -1665,137 +1562,6 @@ bus = &"SFX"
 [node name="Close" type="AudioStreamPlayer" parent="." unique_id=1047237565]
 stream = ExtResource("16_x46sc")
 bus = &"SFX"
-
-[node name="WindowStatus" type="Window" parent="." unique_id=1551824067]
-oversampling_override = 1.0
-position = Vector2i(8, 4)
-size = Vector2i(406, 344)
-borderless = true
-theme_override_constants/close_h_offset = 17
-theme_override_constants/close_v_offset = 23
-theme_override_font_sizes/title_font_size = 4
-theme_override_icons/close = ExtResource("5_4j4gs")
-theme_override_icons/close_pressed = ExtResource("6_v6ts4")
-
-[node name="Base" type="NinePatchRect" parent="WindowStatus" unique_id=286177494]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_f81va")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-
-[node name="Cabecalho" type="NinePatchRect" parent="WindowStatus" unique_id=80195333]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 144.0
-grow_horizontal = 2
-texture = ExtResource("9_cs8od")
-patch_margin_left = 4
-patch_margin_top = 3
-patch_margin_right = 4
-patch_margin_bottom = 32
-
-[node name="Label" type="Label" parent="WindowStatus/Cabecalho" unique_id=2037998536]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 119.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 70
-text = "Resultados"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="Panel" type="Panel" parent="WindowStatus/Cabecalho" unique_id=2035949693]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 10.0
-offset_top = 149.0
-offset_right = -17.0
-offset_bottom = 318.0
-grow_horizontal = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="WindowStatus/Cabecalho/Panel" unique_id=567648146]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Container_CacaArquivo" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=505143032]
-layout_mode = 2
-size_flags_vertical = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="LabelCacaArquivo" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo" unique_id=1921183585]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 50
-text = " Caça-Arquivos:"
-
-[node name="CenterContainer" type="CenterContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo" unique_id=1069854475]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-
-[node name="EstrelaCacaArquivos" type="AnimatedSprite2D" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo/CenterContainer" unique_id=1208520076]
-texture_filter = 1
-position = Vector2(4, 25)
-scale = Vector2(1.675, 1.675)
-sprite_frames = SubResource("SpriteFrames_3a0gk")
-animation = &"apagada"
-
-[node name="Container_Firewall" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=1340294441]
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="LabelFirewall" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall" unique_id=626127123]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 50
-text = "Firewall:"
-
-[node name="CenterContainer" type="CenterContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall" unique_id=2015478424]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-
-[node name="EstrelaFirewall" type="AnimatedSprite2D" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall/CenterContainer" unique_id=940132622]
-texture_filter = 1
-position = Vector2(4, 22)
-scale = Vector2(1.84, 1.84)
-sprite_frames = SubResource("SpriteFrames_51myg")
-animation = &"apagada"
-frame_progress = 0.9314039
-
-[node name="Container_Interrupcao" type="HBoxContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer" unique_id=1184299268]
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="LabelInterrupcao" type="Label" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Interrupcao" unique_id=1359975057]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 50
-text = "Interrupção:"
-
-[node name="CenterContainer" type="CenterContainer" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Interrupcao" unique_id=297510099]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-
-[node name="EstrelaInterrupcao" type="AnimatedSprite2D" parent="WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Interrupcao/CenterContainer" unique_id=2069179113]
-texture_filter = 1
-position = Vector2(4, 26)
-scale = Vector2(1.86, 1.86)
-sprite_frames = SubResource("SpriteFrames_xqo3b")
-animation = &"apagada"
 
 [node name="Panel2" type="Panel" parent="." unique_id=950549569]
 layout_mode = 1
@@ -1809,6 +1575,7 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 theme_override_styles/panel = SubResource("StyleBoxFlat_51myg")
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="Panel2" unique_id=1608950054]
 layout_mode = 1
@@ -1871,6 +1638,114 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1753299226]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 58.0
+offset_right = 466.25
+offset_bottom = 265.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbunc")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=929105453]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer" unique_id=476695199]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwhtl")
+metadata/_edit_lock_ = true
+
+[node name="Conteudo" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1347121970]
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BarraTitulo" type="PanelContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=1553842659]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Conteudo/BarraTitulo" unique_id=977992050]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_c1e1h")
+text = "Resultados"
+horizontal_alignment = 1
+
+[node name="Container_CacaArquivo" type="HBoxContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=508082422]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelCacaArquivo" type="Label" parent="PanelContainer/MarginContainer/Conteudo/Container_CacaArquivo" unique_id=1656764319]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 50
+text = " Caça-Arquivos:"
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Conteudo/Container_CacaArquivo" unique_id=188952732]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EstrelaCacaArquivos" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/Conteudo/Container_CacaArquivo/CenterContainer" unique_id=354539606]
+texture_filter = 1
+position = Vector2(4, 25)
+scale = Vector2(1.675, 1.675)
+sprite_frames = SubResource("SpriteFrames_3a0gk")
+animation = &"apagada"
+
+[node name="Container_Firewall" type="HBoxContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=213459942]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelFirewall" type="Label" parent="PanelContainer/MarginContainer/Conteudo/Container_Firewall" unique_id=1457194778]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 50
+text = "Firewall:"
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Conteudo/Container_Firewall" unique_id=1207160107]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EstrelaFirewall" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/Conteudo/Container_Firewall/CenterContainer" unique_id=1225391531]
+texture_filter = 1
+position = Vector2(4, 22)
+scale = Vector2(1.84, 1.84)
+sprite_frames = SubResource("SpriteFrames_51myg")
+animation = &"apagada"
+
+[node name="Container_Interrupcao" type="HBoxContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=1347004347]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelInterrupcao" type="Label" parent="PanelContainer/MarginContainer/Conteudo/Container_Interrupcao" unique_id=329740134]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 50
+text = "Interrupção:"
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Conteudo/Container_Interrupcao" unique_id=188323009]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EstrelaInterrupcao" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/Conteudo/Container_Interrupcao/CenterContainer" unique_id=1888255678]
+texture_filter = 1
+position = Vector2(4, 26)
+scale = Vector2(1.86, 1.86)
+sprite_frames = SubResource("SpriteFrames_xqo3b")
+animation = &"apagada"
+
+[node name="Conteudo" type="VBoxContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=707953089]
+layout_mode = 2
+alignment = 1
+
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="pressed" from="Window/Cabecalho/sair_janela" to="." method="_on_button_pressed_x"]
 [connection signal="pressed" from="Window/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
@@ -1893,7 +1768,6 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_entered" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_mouse_entered"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
 [connection signal="pressed" from="WindowInterrupcao/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
-[connection signal="pressed" from="WindowMeta/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="mouse_entered" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]

@@ -20,7 +20,6 @@ func _on_sair_janela_pressed() -> void:
 	$Window_Minigame_Arquivos.hide()
 	$Window_Config.hide()
 	$WindowFirewall.hide()
-	$WindowMeta.hide()
 	$Close.play()
 
 func _on_texture_button_config_pressed() -> void:
@@ -46,8 +45,8 @@ func _on_icone_meta_pressed() -> void:
 	$Click.play()
 
 func atualizar_progresso() -> void:
-	var estrela_firewall = $WindowStatus/Cabecalho/Panel/VBoxContainer/Container_Firewall/CenterContainer/EstrelaFirewall
-	var estrela_caca_arquivos = $WindowStatus/Cabecalho/Panel/VBoxContainer/Container_CacaArquivo/CenterContainer/EstrelaCacaArquivos
+	var estrela_firewall = $PanelContainer/MarginContainer/Conteudo/Container_Firewall/CenterContainer/EstrelaFirewall
+	var estrela_caca_arquivos = $PanelContainer/MarginContainer/Conteudo/Container_CacaArquivo/CenterContainer/EstrelaCacaArquivos
 
 	if ProgressoJogo.pontuacao_firewall >= ProgressoJogo.META_POR_MINIGAME:
 		estrela_firewall.play("concluida")

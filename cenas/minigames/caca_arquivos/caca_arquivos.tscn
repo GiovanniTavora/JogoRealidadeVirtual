@@ -491,9 +491,9 @@ icon = SubResource("AtlasTexture_ewpwv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=409747763]
 texture_filter = 1
-position = Vector2(1576, 776)
+position = Vector2(1576, 842)
 sprite_frames = SubResource("SpriteFrames_ykvqy")
-animation = &"comemorando"
+animation = &"andando"
 script = ExtResource("9_80ssd")
 
 [node name="CamadaPrompt" type="CenterContainer" parent="." unique_id=70176147]
