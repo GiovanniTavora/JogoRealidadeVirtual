@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://er5k7dw517l7" path="res://sprites/robo/andando.png" id="11_c1e1h"]
 [ext_resource type="Texture2D" uid="uid://cn4hllqnnmdv6" path="res://sprites/desktop/botoes/button x.png" id="11_cs8od"]
 [ext_resource type="Texture2D" uid="uid://cbksy6eylhmta" path="res://sprites/robo/caindo.png" id="12_2plmg"]
+[ext_resource type="Texture2D" uid="uid://d4hv1q5nf7p06" path="res://sprites/robo/caixa.png" id="13_2plmg"]
 [ext_resource type="Texture2D" uid="uid://cq1b2307s4mv7" path="res://sprites/robo/cansado.png" id="13_3f2vw"]
 [ext_resource type="Texture2D" uid="uid://v3ec4osr3tmy" path="res://sprites/desktop/icones/file_icons.png" id="13_k25gi"]
 [ext_resource type="Script" uid="uid://cakha4olcr784" path="res://cenas/desktop/animated_sprite_2d.gd" id="13_xqo3b"]
@@ -136,6 +137,26 @@ region = Rect2(960, 0, 320, 288)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17epq"]
 atlas = ExtResource("12_2plmg")
+region = Rect2(1280, 0, 320, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tqnu"]
+atlas = ExtResource("13_2plmg")
+region = Rect2(0, 0, 320, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8a5a"]
+atlas = ExtResource("13_2plmg")
+region = Rect2(320, 0, 320, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0te77"]
+atlas = ExtResource("13_2plmg")
+region = Rect2(640, 0, 320, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1anf"]
+atlas = ExtResource("13_2plmg")
+region = Rect2(960, 0, 320, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw84h"]
+atlas = ExtResource("13_2plmg")
 region = Rect2(1280, 0, 320, 288)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s865f"]
@@ -325,6 +346,26 @@ animations = [{
 }],
 "loop": 1,
 "name": &"caindo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tqnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8a5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0te77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1anf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw84h")
+}],
+"loop": 1,
+"name": &"caixa",
 "speed": 5.0
 }, {
 "frames": [{
@@ -882,9 +923,9 @@ vertical_alignment = 1
 [node name="minigame_arquivo" type="PanelContainer" parent="." unique_id=1868302682]
 layout_mode = 0
 offset_left = 590.0
-offset_top = 484.0
+offset_top = 571.0
 offset_right = 841.0
-offset_bottom = 638.0
+offset_bottom = 725.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="minigame_arquivo" unique_id=1381909338]
@@ -913,10 +954,10 @@ metadata/_edit_lock_ = true
 
 [node name="programa_opcoes" type="PanelContainer" parent="." unique_id=6477704]
 layout_mode = 0
-offset_left = 199.0
-offset_top = 700.0
-offset_right = 450.0
-offset_bottom = 854.0
+offset_left = 249.0
+offset_top = 743.0
+offset_right = 500.0
+offset_bottom = 897.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="programa_opcoes" unique_id=554431824]
@@ -943,11 +984,18 @@ autowrap_trim_flags = 128
 metadata/_edit_lock_ = true
 
 [node name="minigame_firewall" type="PanelContainer" parent="." unique_id=1064164909]
-layout_mode = 0
-offset_left = 824.0
-offset_top = 330.0
-offset_right = 1075.0
-offset_bottom = 484.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -77.0
+offset_right = 125.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="minigame_firewall" unique_id=694142880]
@@ -977,9 +1025,9 @@ metadata/_edit_lock_ = true
 [node name="minigame_interrupcao" type="PanelContainer" parent="." unique_id=684464098]
 layout_mode = 0
 offset_left = 1032.0
-offset_top = 484.0
+offset_top = 564.0
 offset_right = 1283.0
-offset_bottom = 638.0
+offset_bottom = 718.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="minigame_interrupcao" unique_id=1214364758]
@@ -1043,7 +1091,7 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 position = Vector2(1576, 837)
 sprite_frames = SubResource("SpriteFrames_tbunc")
-animation = &"andando"
+animation = &"caixa"
 script = ExtResource("13_xqo3b")
 
 [node name="Window_Minigame_Arquivos" type="Window" parent="." unique_id=1372139306]

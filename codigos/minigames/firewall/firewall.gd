@@ -56,8 +56,8 @@ var solicitacoes = [
 },
 {
 	"aplicativo": "Aplicativo de Clima",
-	"recurso": "localização",
-	"permitir_correto": true
+	"recurso": "dados pessoas",
+	"permitir_correto": false
 },
 {
 	"aplicativo": "Editor de Texto",
