@@ -21,7 +21,6 @@ func _on_sair_janela_pressed() -> void:
 	$Window_Config.hide()
 	$WindowFirewall.hide()
 	$WindowMeta.hide()
-	$WindowInterrupcao.hide()
 	$Close.play()
 
 func _on_texture_button_config_pressed() -> void:
@@ -67,8 +66,3 @@ func atualizar_progresso() -> void:
 
 func _on_iniciar_caca_arquivo_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/minigames/caca_arquivos/caca_arquivos.tscn")
-
-
-func _on_icone_minigame_interrupcao_pressed() -> void:
-	$WindowInterrupcao.popup_centered()
-	$Click.play()
