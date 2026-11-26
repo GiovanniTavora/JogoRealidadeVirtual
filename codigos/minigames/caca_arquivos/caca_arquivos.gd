@@ -8,12 +8,12 @@ extends Control
 @onready var label_resultado = $Window_Resultado/Cabecalho/Panel/LabelPontuacaoFinal
 @onready var botao_continuar = $Window_Resultado/Cabecalho/Panel/BotaoContinuar
 
-@onready var caminho_atual = $JanelaArquivos/Conteudo/BarraCaminho/HBoxContainer/CaminhoAtual
+@onready var caminho_atual = $JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/BarraCaminho/HBoxContainer/CaminhoAtual
 @onready var botoes = [
-	get_node("JanelaArquivos/Conteudo/ListaPastas/Windows"),
-	get_node("JanelaArquivos/Conteudo/ListaPastas/Users"),
-	get_node("JanelaArquivos/Conteudo/ListaPastas/Program Files"),
-	get_node("JanelaArquivos/Conteudo/ListaPastas/Temp")
+	get_node("JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Windows"),
+	get_node("JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Users"),
+	get_node("JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Program Files"),
+	get_node("JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Temp")
 ]
 
 @onready var camada_prompt = $CamadaPrompt

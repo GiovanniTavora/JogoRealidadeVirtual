@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c3nrdhu0g7ai6" path="res://codigos/minigames/caca_arquivos/caca_arquivos.gd" id="1_fhi10"]
 [ext_resource type="Texture2D" uid="uid://v3ec4osr3tmy" path="res://sprites/desktop/icones/file_icons.png" id="2_2tywf"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_2tywf"]
+[ext_resource type="Shader" uid="uid://bqyxafdgjegc7" path="res://cenas/desktop/desktop.gdshader" id="3_c37lc"]
 [ext_resource type="PackedScene" uid="uid://bko6re7rfwa5o" path="res://cenas/minigames/caca_arquivos/prompt_windows98.tscn" id="4_36wbj"]
 [ext_resource type="Texture2D" uid="uid://dke51btudqf4u" path="res://sprites/desktop/PatchRegular.png" id="5_u41bt"]
 [ext_resource type="Texture2D" uid="uid://b0rvjnpfci72y" path="res://sprites/desktop/PatchInverted.png" id="6_41352"]
@@ -28,6 +29,12 @@ region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5avqh"]
 bg_color = Color(0.015686275, 0.35686275, 0.4117647, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_do8sr"]
+shader = ExtResource("3_c37lc")
+shader_parameter/SCREEN_HEIGHT = 240.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c37lc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwhtl"]
 bg_color = Color(0, 0, 0, 1)
@@ -398,6 +405,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5avqh")
 
+[node name="ColorRect" type="ColorRect" parent="JanelaArquivos" unique_id=603130450]
+layout_mode = 2
+color = Color(0.576978, 0.1057185, 0.13483047, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="JanelaArquivos" unique_id=246357856]
+material = SubResource("ShaderMaterial_do8sr")
+layout_mode = 2
+
 [node name="Conteudo" type="VBoxContainer" parent="JanelaArquivos" unique_id=972306933]
 layout_mode = 2
 theme_override_constants/separation = 60
@@ -414,10 +429,10 @@ theme_override_font_sizes/font_size = 80
 text = "Tempo: 3:00"
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="JanelaArquivos/Conteudo" unique_id=1452416887]
+[node name="Missao" type="PanelContainer" parent="JanelaArquivos/Conteudo" unique_id=1452416887]
 layout_mode = 2
 
-[node name="Missao" type="RichTextLabel" parent="JanelaArquivos/Conteudo/PanelContainer" unique_id=1412845470]
+[node name="Missao" type="RichTextLabel" parent="JanelaArquivos/Conteudo/Missao" unique_id=1412845470]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_2tywf")
 theme_override_font_sizes/normal_font_size = 42
@@ -425,26 +440,40 @@ bbcode_enabled = true
 text = " [b][font_size=26]Missão:[/font_size][/b] Faça a instalação do backup [b][font_size=22]config.sys.bak[/font_size][/b] e repare o arquivo [b][font_size=22]config.sys[/font_size][/b] para recuperar o computador."
 fit_content = true
 
-[node name="BarraCaminho" type="PanelContainer" parent="JanelaArquivos/Conteudo" unique_id=1299125350]
+[node name="MarginContainer" type="MarginContainer" parent="JanelaArquivos/Conteudo" unique_id=1971455504]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 100
+
+[node name="JanelaExplorador" type="PanelContainer" parent="JanelaArquivos/Conteudo/MarginContainer" unique_id=169989017]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c37lc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador" unique_id=755005944]
+layout_mode = 2
+
+[node name="BarraCaminho" type="PanelContainer" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer" unique_id=1299125350]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wwhtl")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="JanelaArquivos/Conteudo/BarraCaminho" unique_id=1238670913]
+[node name="HBoxContainer" type="HBoxContainer" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/BarraCaminho" unique_id=1238670913]
 layout_mode = 2
 
-[node name="RotuloCaminho" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho/HBoxContainer" unique_id=1916155570]
+[node name="RotuloCaminho" type="Label" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/BarraCaminho/HBoxContainer" unique_id=1916155570]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2tywf")
 theme_override_font_sizes/font_size = 36
 text = " Local:"
 
-[node name="CaminhoAtual" type="Label" parent="JanelaArquivos/Conteudo/BarraCaminho/HBoxContainer" unique_id=322562435]
+[node name="CaminhoAtual" type="Label" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/BarraCaminho/HBoxContainer" unique_id=322562435]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2tywf")
 theme_override_font_sizes/font_size = 37
 text = "C:\\"
 
-[node name="Voltar" type="Button" parent="JanelaArquivos/Conteudo" unique_id=1349358550]
+[node name="Voltar" type="Button" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer" unique_id=1349358550]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -452,12 +481,12 @@ theme_override_fonts/font = ExtResource("3_2tywf")
 theme_override_font_sizes/font_size = 35
 text = "<- Voltar"
 
-[node name="ListaPastas" type="GridContainer" parent="JanelaArquivos/Conteudo" unique_id=1713506377]
+[node name="ListaPastas" type="GridContainer" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer" unique_id=1713506377]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 4
 
-[node name="Windows" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=1176372947]
+[node name="Windows" type="Button" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas" unique_id=1176372947]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2tywf")
@@ -465,7 +494,7 @@ theme_override_font_sizes/font_size = 55
 text = "Windows"
 icon = SubResource("AtlasTexture_36wbj")
 
-[node name="Users" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=317589632]
+[node name="Users" type="Button" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas" unique_id=317589632]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2tywf")
@@ -473,7 +502,7 @@ theme_override_font_sizes/font_size = 55
 text = "Users"
 icon = SubResource("AtlasTexture_axmfc")
 
-[node name="Program Files" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=530006210]
+[node name="Program Files" type="Button" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas" unique_id=530006210]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2tywf")
@@ -481,7 +510,7 @@ theme_override_font_sizes/font_size = 55
 text = "Program Files"
 icon = SubResource("AtlasTexture_3wdxl")
 
-[node name="Temp" type="Button" parent="JanelaArquivos/Conteudo/ListaPastas" unique_id=516493807]
+[node name="Temp" type="Button" parent="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas" unique_id=516493807]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2tywf")
@@ -689,9 +718,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="JanelaArquivos/Conteudo/Voltar" to="." method="_on_voltar_pressed"]
-[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Windows" to="." method="_on_windows_pressed"]
-[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Users" to="." method="_on_users_pressed"]
-[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Program Files" to="." method="_on_program_files_pressed"]
-[connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Temp" to="." method="_on_temp_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Windows" to="." method="_on_windows_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Users" to="." method="_on_users_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Program Files" to="." method="_on_program_files_pressed"]
+[connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Temp" to="." method="_on_temp_pressed"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]

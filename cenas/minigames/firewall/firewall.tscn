@@ -499,7 +499,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.015686275, 0.35686275, 0.4117647, 1)
+color = Color(0.2924742, 0.2640239, 0.5730313, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=423667183]
 material = SubResource("ShaderMaterial_66t6w")
