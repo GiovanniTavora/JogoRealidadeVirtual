@@ -48,39 +48,6 @@ region = Rect2(33.15663, 32.771175, 32, 32)
 atlas = ExtResource("2_2tywf")
 region = Rect2(33.15663, 32.771175, 32, 32)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysm01"]
-bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykvqy"]
-texture = ExtResource("5_u41bt")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxwce"]
-texture = ExtResource("6_41352")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_73c3k"]
-atlas = ExtResource("7_aax8u")
-region = Rect2(256.86853, 0, 63.63159, 63.236885)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipf8f"]
-draw_center = false
-border_width_top = 6
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5avqh"]
-texture = ExtResource("6_41352")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gjlo"]
 atlas = ExtResource("7_stk55")
 region = Rect2(0, 0, 320, 288)
@@ -379,6 +346,39 @@ texture_margin_top = 10.0
 texture_margin_right = 2.0
 texture_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8ps1"]
+bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_do8sr"]
+texture = ExtResource("5_u41bt")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3gjlo"]
+texture = ExtResource("6_41352")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiid8"]
+atlas = ExtResource("7_aax8u")
+region = Rect2(256.86853, 0, 63.63159, 63.236885)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psh8l"]
+draw_center = false
+border_width_top = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qh0jl"]
+texture = ExtResource("6_41352")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
 [node name="CacaArquivos" type="Control" unique_id=1044821151]
 layout_mode = 3
 anchors_preset = 15
@@ -488,81 +488,6 @@ theme_override_fonts/font = ExtResource("3_2tywf")
 theme_override_font_sizes/font_size = 55
 text = "Recovery"
 icon = SubResource("AtlasTexture_ewpwv")
-
-[node name="Panel" type="Panel" parent="." unique_id=1670952257]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -183.0
-offset_bottom = 1.4399414
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ysm01")
-
-[node name="botao_voltar" type="Button" parent="Panel" unique_id=1191835758]
-texture_filter = 1
-layout_mode = 0
-offset_left = 34.0
-offset_top = 13.0
-offset_right = 382.0
-offset_bottom = 114.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_2tywf")
-theme_override_font_sizes/font_size = 115
-theme_override_styles/normal = SubResource("StyleBoxTexture_ykvqy")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_wxwce")
-theme_override_styles/hover = SubResource("StyleBoxTexture_wxwce")
-text = "Sair"
-icon = SubResource("AtlasTexture_73c3k")
-expand_icon = true
-
-[node name="Panel" type="Panel" parent="Panel" unique_id=1406688695]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_right = 3.0
-offset_bottom = -22.439941
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ipf8f")
-metadata/_edit_lock_ = true
-
-[node name="Panel2" type="Panel" parent="Panel" unique_id=555777471]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -372.0
-offset_top = -160.43994
-offset_right = -18.0
-offset_bottom = -73.43994
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_5avqh")
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="Panel/Panel2" unique_id=416261323]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_2tywf")
-theme_override_font_sizes/font_size = 52
-text = "12:30
-30/09/2026"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=409747763]
 texture_filter = 1
@@ -690,6 +615,79 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_stk55")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_o8ps1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_c37lc")
 text = "Voltar"
+
+[node name="Panel" type="Panel" parent="." unique_id=292791233]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -121.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8ps1")
+
+[node name="botao_voltar" type="Button" parent="Panel" unique_id=533785618]
+texture_filter = 1
+layout_mode = 0
+offset_left = 162.0
+offset_top = 13.0
+offset_right = 248.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 115
+theme_override_styles/normal = SubResource("StyleBoxTexture_do8sr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3gjlo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3gjlo")
+icon = SubResource("AtlasTexture_fiid8")
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=1476771464]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+offset_bottom = -22.439941
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_psh8l")
+metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="Panel" unique_id=1855912425]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -237.0
+offset_top = -91.0
+offset_right = -67.51001
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qh0jl")
+
+[node name="Label" type="Label" parent="Panel/Panel2" unique_id=1012233099]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2tywf")
+theme_override_font_sizes/font_size = 35
+text = "12:30
+30/09/2026"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="JanelaArquivos/Conteudo/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="JanelaArquivos/Conteudo/ListaPastas/Windows" to="." method="_on_windows_pressed"]

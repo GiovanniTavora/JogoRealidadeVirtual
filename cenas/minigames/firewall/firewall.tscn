@@ -463,8 +463,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -183.0
-offset_bottom = 1.4399414
+offset_top = -121.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xjoyg")
@@ -472,17 +472,16 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xjoyg")
 [node name="botao_voltar" type="Button" parent="Panel" unique_id=401862417]
 texture_filter = 1
 layout_mode = 0
-offset_left = 34.0
+offset_left = 162.0
 offset_top = 13.0
-offset_right = 382.0
-offset_bottom = 114.0
+offset_right = 248.0
+offset_bottom = 104.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8dgsm")
 theme_override_font_sizes/font_size = 115
 theme_override_styles/normal = SubResource("StyleBoxTexture_lic2h")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wreh7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wreh7")
-text = "Sair"
 icon = SubResource("AtlasTexture_olahq")
 expand_icon = true
 
@@ -507,14 +506,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -372.0
-offset_top = -160.43994
-offset_right = -18.0
-offset_bottom = -73.43994
+offset_left = -237.0
+offset_top = -91.0
+offset_right = -67.51001
+offset_bottom = -22.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_5c1px")
-metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Panel/Panel2" unique_id=1839247797]
 layout_mode = 1
@@ -525,7 +523,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8dgsm")
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 35
 text = "12:30
 30/09/2026"
 horizontal_alignment = 1
@@ -689,9 +687,9 @@ text = "Voltar"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1575448245]
 texture_filter = 1
-position = Vector2(1495, 777)
+position = Vector2(1486, 838)
 sprite_frames = SubResource("SpriteFrames_lic2h")
-animation = &"pulando"
+animation = &"andando"
 script = ExtResource("24_c3gx2")
 
 [node name="SomHover" type="AudioStreamPlayer" parent="." unique_id=1924214411]
