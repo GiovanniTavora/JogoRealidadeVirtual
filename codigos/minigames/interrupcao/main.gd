@@ -8,6 +8,7 @@ const CELULA_SCRIPT = preload("res://codigos/minigames/interrupcao/celula.gd")
 @onready var musica_game_over: AudioStreamPlayer = $MusicaGameOver
 @onready var musica_interrupcao: AudioStreamPlayer = $MusicaInterrupcao
 @onready var musica_vitoria: AudioStreamPlayer = $MusicaVitoria
+@onready var som_click: AudioStreamPlayer = $Click
 
 const PASSO_CELULA := TAM_CELULA + ESPACO
 const LINHAS := 4
@@ -138,6 +139,7 @@ func _on_celula_clicada(celula):
 			for c in celulas:
 				if c.numero != 0:
 					c.ocultar_numero()
+		som_click.play()
 		celula.remover()
 		proximo += 1
 		if proximo > quantidade:

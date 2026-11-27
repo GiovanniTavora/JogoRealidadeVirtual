@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://exxf00s6bs6s" path="res://sprites/desktop/ClosePressed.png" id="18_x68l7"]
 [ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="19_nm8tv"]
 [ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="20_5qbxy"]
+[ext_resource type="AudioStream" uid="uid://cp8s2d2cfw6fp" path="res://efeitos sonoros/interrupcao/dragon-studio-single-key-press-393908.mp3" id="21_x68l7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8vek"]
 shader = ExtResource("4_hdtds")
@@ -678,6 +679,10 @@ layout_mode = 2
 [node name="Conteudo" type="VBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=297826266]
 layout_mode = 2
 alignment = 1
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1417599383]
+stream = ExtResource("21_x68l7")
+bus = &"SFX"
 
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
