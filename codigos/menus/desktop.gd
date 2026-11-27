@@ -1,11 +1,24 @@
 extends Control
+var janela_inicial_exibida := false
+@onready var pet_vitoria: AnimatedSprite2D = $WindowVitoria/Cabecalho/Panel/PetVitoria
+@onready var pet: AnimatedSprite2D = $AnimatedSprite2D
 
 func _process(delta: float) -> void:
 	pass
 
 func _ready():
 	atualizar_progresso()
-	$Window.show()
+	verificar_vitoria()
+	if not ProgressoJogo.janela_inicial_exibida:
+		$Window.show()
+		ProgressoJogo.janela_inicial_exibida = true
+
+func verificar_vitoria():
+	if ProgressoJogo.verificar_vitoria() and not ProgressoJogo.vitoria_exibida:
+		$WindowVitoria.popup_centered()
+		pet.hide()
+		pet_vitoria.play("dance")
+		ProgressoJogo.vitoria_exibida = true
 
 func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/menu_principal/menu_principal.tscn")
@@ -20,6 +33,7 @@ func _on_sair_janela_pressed() -> void:
 	$Window_Config.hide()
 	$WindowFirewall.hide()
 	$WindowInterrupcao.hide()
+	$WindowVitoria.hide()
 	$Close.play()
 
 func _on_texture_button_config_pressed() -> void:

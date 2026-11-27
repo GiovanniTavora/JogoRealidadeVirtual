@@ -1,6 +1,9 @@
 extends Control
 
 @export var cena_solicitacao: PackedScene
+@onready var musica_game_over: AudioStreamPlayer = $MusicaGameOver
+@onready var musica_firewall: AudioStreamPlayer = $MusicaFirewall
+@onready var musica_vitoria: AudioStreamPlayer = $MusicaVitoria
 
 var pontuacao := 0
 var solicitacoes = [
@@ -123,14 +126,18 @@ func _process(_delta: float) -> void:
 	label_tempo.text = "Tempo: %ds" % tempo_restante
 
 func _ao_tempo_esgotado() -> void:
+	musica_firewall.stop()
 	partida_encerrada = true
 	$AnimatedSprite2D.finalizar(pontuacao >= ProgressoJogo.META_POR_MINIGAME)
 	ProgressoJogo.registrar_firewall(pontuacao)
 	label_tempo.text = "Tempo: 0s"
-	$AudioStreamPlayer.stop()
 	if pontuacao >= ProgressoJogo.META_POR_MINIGAME:
+		musica_firewall.stop()
+		musica_vitoria.play()
 		label_pontuacao_final.text = "Meta atingida! %d/20 pontos" % pontuacao
 	else:
+		musica_firewall.stop()
+		musica_game_over.play()
 		label_pontuacao_final.text = "Meta não alcançada... Tente novamente!"
 	$Window_Resultado.visible = true
 	for janela in area_jogo.get_children():
@@ -192,3 +199,9 @@ func _on_botao_voltar_pressed() -> void:
 
 func _on_botao_continuar_mouse_entered() -> void:
 	$SomHover.play()
+
+
+func _on_button_pressed() -> void:
+	pontuacao = 20
+	partida_encerrada = true
+	ProgressoJogo.registrar_firewall(pontuacao)

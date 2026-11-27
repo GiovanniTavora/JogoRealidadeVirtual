@@ -3,14 +3,20 @@ extends Control
 const CELULA_SCRIPT = preload("res://codigos/minigames/interrupcao/celula.gd")
 
 @onready var info: Label = $Info
+@onready var som_positivo: AudioStreamPlayer = $SomPositivo
+@onready var som_negativo: AudioStreamPlayer = $SomNegativo
+@onready var musica_game_over: AudioStreamPlayer = $MusicaGameOver
+@onready var musica_interrupcao: AudioStreamPlayer = $MusicaInterrupcao
+@onready var musica_vitoria: AudioStreamPlayer = $MusicaVitoria
 
+const PASSO_CELULA := TAM_CELULA + ESPACO
 const LINHAS := 4
 const COLUNAS := 4
 const MAX_RODADAS := 9
 const TAM_CELULA := 100
 const ESPACO := 10
 const INTERVALO_GIRO := 3.0    # rodadas 4 a 6: as caixas giram a cada 3 s
-const INTERVALO_MOVER := 2.0   # rodadas 7 a 9: as caixas trocam de lugar a cada 2 s
+const INTERVALO_MOVER := 3.0   # rodadas 7 a 9: as caixas trocam de lugar a cada 2 s
 
 var rodada := 1
 var quantidade := 3
@@ -59,31 +65,29 @@ func _ready():
 # Calcula o ponto de cada uma das 16 casas, com a grade centralizada na tela
 func calcular_posicoes():
 	var tela = get_viewport_rect().size
-	var largura = COLUNAS * TAM_CELULA + (COLUNAS - 1) * ESPACO
-	var altura = LINHAS * TAM_CELULA + (LINHAS - 1) * ESPACO
-	var origem = Vector2((tela.x - largura) / 2.0, (tela.y - altura) / 2.0)
+	var tamanho = Vector2(COLUNAS * TAM_CELULA + (COLUNAS - 1) * ESPACO, LINHAS * TAM_CELULA + (LINHAS - 1) * ESPACO)
+	var origem = (tela - tamanho) / 2
+
 	for i in LINHAS * COLUNAS:
 		var col = i % COLUNAS
-		var lin = floori(float(i) / COLUNAS)
-		posicoes.append(origem + Vector2(col * (TAM_CELULA + ESPACO), lin * (TAM_CELULA + ESPACO)))
+		var lin = i / COLUNAS
+		posicoes.append(origem + Vector2(col, lin) * PASSO_CELULA)
 
 # Rodadas 1-3: normal | 4-6: giram | 7-9: se mexem
 func modo_da_rodada() -> String:
-	if rodada >= 7:
-		return "mover"
-	if rodada >= 4:
-		return "girar"
-	return "normal"
+	return "mover" if rodada >= 7 else "girar" if rodada >= 4 else "normal"
 
 func nova_rodada():
 	quantidade = rodada + 2   # rodada 1 = 3 números ... rodada 9 = 11 números
 	proximo = 1
 	temporizador.stop()
 	for i in celulas.size():
-		celulas[i].limpar()
-		celulas[i].position = posicoes[i]   # volta cada célula para a sua casa
-	var indices = range(celulas.size())
+		var celula = celulas[i]
+		celula.limpar()
+		celula.position = posicoes[i]
+	var indices = range(celulas.size()).duplicate()
 	indices.shuffle()
+
 	for n in quantidade:
 		celulas[indices[n]].definir_numero(n + 1)
 	jogando = true
@@ -105,10 +109,12 @@ func _on_temporizador():
 	if not jogando or proximo != 1:
 		temporizador.stop()
 		return
+
 	if modo_da_rodada() == "girar":
 		for c in celulas:
-			if c.numero != 0:
-				c.girar()
+			if c.numero == 0:
+				continue
+			c.girar()
 	else:
 		embaralhar_posicoes()
 
@@ -156,6 +162,7 @@ func reagir_acerto() -> void:
 
 func rodada_vencida():
 	jogando = false
+	som_positivo.play()
 	pontos += quantidade * 20  # bônus por completar a rodada
 	atualizar_info()
 	if rodada >= MAX_RODADAS:
@@ -171,6 +178,7 @@ func rodada_perdida():
 	jogando = false
 	temporizador.stop()
 	vidas -= 1
+	som_negativo.play()
 	atualizar_info()
 	for c in celulas:
 		c.mostrar_numero()  # mostra onde estavam os números
@@ -184,6 +192,8 @@ func rodada_perdida():
 
 func vitoria():
 	ProgressoJogo.registrar_interrupcao()
+	musica_interrupcao.stop()
+	musica_vitoria.play()
 	reagir_vitoria()
 	fala.text = "Você conseguiu!"
 	titulo_final.text = "VOCÊ VENCEU!"
@@ -192,6 +202,8 @@ func vitoria():
 	tela_final.visible = true
 
 func game_over():
+	musica_interrupcao.stop()
+	musica_game_over.play()
 	reagir_game_over()
 	fala.text = "Erro 404:\nvidas não encontradas"
 	titulo_final.text = "FIM DE JOGO"

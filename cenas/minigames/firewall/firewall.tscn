@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://decnmdhhiw8ae" path="res://sprites/robo/pulando.png" id="23_snjts"]
 [ext_resource type="Script" uid="uid://c0en4eamsv4yt" path="res://cenas/minigames/firewall/animated_sprite_2d.gd" id="24_c3gx2"]
 [ext_resource type="Texture2D" uid="uid://v3ec4osr3tmy" path="res://sprites/desktop/icones/file_icons.png" id="28_snjts"]
+[ext_resource type="AudioStream" uid="uid://bcnlxouf8s1bd" path="res://musicas/alphix-game-over-417465.mp3" id="29_rwo13"]
+[ext_resource type="AudioStream" uid="uid://cljyt2batu2ix" path="res://musicas/eaglaxle-gaming-victory-2-464017.mp3" id="30_oypme"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66t6w"]
 shader = ExtResource("3_gc8uk")
@@ -623,7 +625,7 @@ metadata/_edit_lock_ = true
 wait_time = 70.0
 one_shot = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=887185746]
+[node name="MusicaFirewall" type="AudioStreamPlayer" parent="." unique_id=887185746]
 stream = ExtResource("5_66t6w")
 volume_db = -4.0
 autoplay = true
@@ -1279,6 +1281,21 @@ vertical_alignment = 1
 autowrap_trim_flags = 128
 metadata/_edit_lock_ = true
 
+[node name="MusicaGameOver" type="AudioStreamPlayer" parent="." unique_id=1387533136]
+stream = ExtResource("29_rwo13")
+bus = &"Music"
+
+[node name="MusicaVitoria" type="AudioStreamPlayer" parent="." unique_id=511017922]
+stream = ExtResource("30_oypme")
+bus = &"Music"
+
+[node name="Button" type="Button" parent="." unique_id=1247552618]
+layout_mode = 0
+offset_left = 1674.0
+offset_top = 982.0
+offset_right = 1858.0
+offset_bottom = 1066.0
+
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="mouse_entered" from="Window_Resultado/Cabecalho/Panel/BotaoContinuar" to="." method="_on_botao_continuar_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/programa/VBoxContainer/Icone" to="VBoxContainer/programa/VBoxContainer/Icone" method="_on_pressed"]
@@ -1294,3 +1311,4 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="HBoxContainer/programa2/VBoxContainer/Icone2" to="HBoxContainer/programa2/VBoxContainer/Icone2" method="_on_pressed"]
 [connection signal="pressed" from="HBoxContainer/programa3/VBoxContainer/Icone3" to="HBoxContainer/programa3/VBoxContainer/Icone3" method="_on_pressed"]
 [connection signal="pressed" from="HBoxContainer/programa4/VBoxContainer/Icone4" to="HBoxContainer/programa4/VBoxContainer/Icone4" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

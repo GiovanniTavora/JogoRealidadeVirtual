@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://61exefv1jgdq" path="res://sprites/robo/interrupcao/Robo404_spritesheet.png" id="10_a8vek"]
 [ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="11_vhtln"]
 [ext_resource type="AudioStream" uid="uid://b1h1xgg7xbbk1" path="res://musicas/WAV_Chaotic_Periods.wav" id="12_c15ty"]
+[ext_resource type="AudioStream" uid="uid://7krrcwmqx6cn" path="res://efeitos sonoros/firewall/u_o8xh7gwsrj-flower_pickup_positive-476369.mp3" id="13_rkulv"]
+[ext_resource type="AudioStream" uid="uid://bdwnpuv3oxcam" path="res://efeitos sonoros/firewall/soundshelfstudio-ui-error-pop-515668.mp3" id="14_xii2p"]
+[ext_resource type="AudioStream" uid="uid://bcnlxouf8s1bd" path="res://musicas/alphix-game-over-417465.mp3" id="15_xii2p"]
+[ext_resource type="AudioStream" uid="uid://cljyt2batu2ix" path="res://musicas/eaglaxle-gaming-victory-2-464017.mp3" id="16_8nutt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8vek"]
 shader = ExtResource("4_hdtds")
@@ -425,16 +429,31 @@ text = "Voltar ao Desktop"
 
 [node name="Button" type="Button" parent="." unique_id=1961677958]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 741.0
-offset_right = 557.0
-offset_bottom = 877.0
-text = "ganhar"
+offset_left = 1672.0
+offset_top = 973.0
+offset_right = 1869.0
+offset_bottom = 1072.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=508056]
+[node name="MusicaInterrupcao" type="AudioStreamPlayer" parent="." unique_id=508056]
 stream = ExtResource("12_c15ty")
 volume_db = -4.0
 autoplay = true
+bus = &"Music"
+
+[node name="SomPositivo" type="AudioStreamPlayer" parent="." unique_id=426622654]
+stream = ExtResource("13_rkulv")
+bus = &"SFX"
+
+[node name="SomNegativo" type="AudioStreamPlayer" parent="." unique_id=1546329546]
+stream = ExtResource("14_xii2p")
+bus = &"SFX"
+
+[node name="MusicaGameOver" type="AudioStreamPlayer" parent="." unique_id=1704676421]
+stream = ExtResource("15_xii2p")
+bus = &"Music"
+
+[node name="MusicaVitoria" type="AudioStreamPlayer" parent="." unique_id=769326717]
+stream = ExtResource("16_8nutt")
 bus = &"Music"
 
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]

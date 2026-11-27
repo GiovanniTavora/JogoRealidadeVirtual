@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="13_wfxrw"]
 [ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="14_rx8fc"]
 [ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="15_amqrt"]
+[ext_resource type="AudioStream" uid="uid://bcnlxouf8s1bd" path="res://musicas/alphix-game-over-417465.mp3" id="23_do8sr"]
+[ext_resource type="AudioStream" uid="uid://cljyt2batu2ix" path="res://musicas/eaglaxle-gaming-victory-2-464017.mp3" id="24_3gjlo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tywf"]
 atlas = ExtResource("2_2tywf")
@@ -537,7 +539,7 @@ grow_vertical = 2
 [node name="PromptWindows98" parent="CamadaPrompt" unique_id=1058460002 instance=ExtResource("4_36wbj")]
 layout_mode = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2003446198]
+[node name="MusicaCacaArquivo" type="AudioStreamPlayer" parent="." unique_id=2003446198]
 stream = ExtResource("10_ysm01")
 volume_db = -4.0
 autoplay = true
@@ -719,9 +721,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="MusicaGameOver" type="AudioStreamPlayer" parent="." unique_id=669614650]
+stream = ExtResource("23_do8sr")
+bus = &"Music"
+
+[node name="MusicaVitoria" type="AudioStreamPlayer" parent="." unique_id=775666175]
+stream = ExtResource("24_3gjlo")
+bus = &"Music"
+
+[node name="Button" type="Button" parent="." unique_id=121238346]
+layout_mode = 0
+offset_left = 1679.0
+offset_top = 985.0
+offset_right = 1855.0
+offset_bottom = 1061.0
+
 [connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Windows" to="." method="_on_windows_pressed"]
 [connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Users" to="." method="_on_users_pressed"]
 [connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Program Files" to="." method="_on_program_files_pressed"]
 [connection signal="pressed" from="JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/ListaPastas/Temp" to="." method="_on_temp_pressed"]
 [connection signal="pressed" from="Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

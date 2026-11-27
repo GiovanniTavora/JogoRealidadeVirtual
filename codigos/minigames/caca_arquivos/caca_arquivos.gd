@@ -7,6 +7,10 @@ extends Control
 @onready var janela_resultado = $Window_Resultado
 @onready var label_resultado = $Window_Resultado/Cabecalho/Panel/LabelPontuacaoFinal
 @onready var botao_continuar = $Window_Resultado/Cabecalho/Panel/BotaoContinuar
+@onready var musica_game_over: AudioStreamPlayer = $MusicaGameOver
+@onready var musica_caca_arquivo: AudioStreamPlayer = $MusicaCacaArquivo
+@onready var musica_vitoria: AudioStreamPlayer = $MusicaVitoria
+
 
 @onready var caminho_atual = $JanelaArquivos/Conteudo/MarginContainer/JanelaExplorador/VBoxContainer/BarraCaminho/HBoxContainer/CaminhoAtual
 @onready var botoes = [
@@ -117,6 +121,8 @@ func _ao_tempo_esgotado() -> void:
 
 	for botao in botoes:
 		botao.disabled = true
+		musica_caca_arquivo.stop()
+		musica_game_over.play()
 	_mostrar_resultado("Tempo esgotado... Tente novamente!")
 
 func _on_botao_continuar_pressed() -> void:
@@ -190,7 +196,6 @@ func _clicar_entrada(indice: int) -> void:
 		# Arquivos incorretos não encerram o jogo.
 		return
 
-
 func _abrir_prompt(tipo_arquivo: String) -> void:
 	arquivo_selecionado = tipo_arquivo
 	prefixo_prompt.text = _montar_caminho() + ">"
@@ -199,7 +204,6 @@ func _abrir_prompt(tipo_arquivo: String) -> void:
 	entrada_comando.clear()
 	camada_prompt.show()
 	entrada_comando.grab_focus()
-
 
 func _ao_enviar_comando(texto: String) -> void:
 	if jogo_encerrado:
@@ -243,11 +247,12 @@ func _registrar_erro(mensagem: String) -> void:
 	saida_prompt.text = mensagem
 	entrada_comando.grab_focus()
 
-
 func _vitoria() -> void:
+	ProgressoJogo.registrar_caca_arquivos()
+	musica_caca_arquivo.stop()
+	musica_vitoria.play()
 	jogo_encerrado = true
 	timer_partida.stop()
-	ProgressoJogo.registrar_caca_arquivos()
 	saida_prompt.text = "Você conseguiu!\nComputador recuperado."
 	entrada_comando.editable = false
 
@@ -255,27 +260,21 @@ func _vitoria() -> void:
 		botao.disabled = true
 	_mostrar_resultado("Computador recuperado!\nVocê venceu!")
 
-
 func _fechar_prompt() -> void:
 	camada_prompt.hide()
 	entrada_comando.clear()
 
-
 func _on_windows_pressed() -> void:
 	_clicar_entrada(0)
-
 
 func _on_users_pressed() -> void:
 	_clicar_entrada(1)
 
-
 func _on_program_files_pressed() -> void:
 	_clicar_entrada(2)
 
-
 func _on_temp_pressed() -> void:
 	_clicar_entrada(3)
-
 
 func _on_voltar_pressed() -> void:
 	if jogo_encerrado:
@@ -287,3 +286,6 @@ func _on_voltar_pressed() -> void:
 
 func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
+
+func _on_button_pressed() -> void:
+	_vitoria()
