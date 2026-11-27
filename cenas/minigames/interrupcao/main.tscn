@@ -1,12 +1,185 @@
 [gd_scene format=3 uid="uid://b5a1wot8muynn"]
 
 [ext_resource type="Script" uid="uid://2vdnnp4hcmiv" path="res://codigos/minigames/interrupcao/main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://opdgotf2e1j" path="res://cenas/minigames/interrupcao/personagem.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bvtougbfg8612" path="res://cenas/minigames/interrupcao/celula.tscn" id="2_h2yge"]
+[ext_resource type="Shader" uid="uid://bqyxafdgjegc7" path="res://cenas/desktop/desktop.gdshader" id="4_hdtds"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="4_i7j65"]
 [ext_resource type="Texture2D" uid="uid://dke51btudqf4u" path="res://sprites/desktop/PatchRegular.png" id="5_acjnp"]
+[ext_resource type="Texture2D" uid="uid://catkqjqgn10o4" path="res://sprites/robo/interrupcao/pet_comemoracao.png" id="5_c15ty"]
 [ext_resource type="Texture2D" uid="uid://b0rvjnpfci72y" path="res://sprites/desktop/PatchInverted.png" id="6_hdtds"]
 [ext_resource type="Texture2D" uid="uid://dpytwvxsfv3cg" path="res://sprites/desktop/botoes/buttons.png" id="7_a8vek"]
+[ext_resource type="Texture2D" uid="uid://c8u5w7jq3mxco" path="res://sprites/robo/interrupcao/pet_explosao.png" id="7_eebmp"]
+[ext_resource type="Script" uid="uid://c6eanxqumw8v6" path="res://cenas/minigames/interrupcao/botao_voltar.gd" id="8_acjnp"]
+[ext_resource type="Texture2D" uid="uid://61exefv1jgdq" path="res://sprites/robo/interrupcao/Robo404_spritesheet.png" id="10_a8vek"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8vek"]
+shader = ExtResource("4_hdtds")
+shader_parameter/SCREEN_HEIGHT = 240.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkulv"]
+atlas = ExtResource("5_c15ty")
+region = Rect2(0, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nutt"]
+atlas = ExtResource("5_c15ty")
+region = Rect2(62, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg0ef"]
+atlas = ExtResource("5_c15ty")
+region = Rect2(124, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5q0g"]
+atlas = ExtResource("5_c15ty")
+region = Rect2(186, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1mbb"]
+atlas = ExtResource("5_c15ty")
+region = Rect2(248, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q38hj"]
+atlas = ExtResource("5_c15ty")
+region = Rect2(310, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3elh"]
+atlas = ExtResource("10_a8vek")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_114o1"]
+atlas = ExtResource("10_a8vek")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn376"]
+atlas = ExtResource("10_a8vek")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7k75"]
+atlas = ExtResource("10_a8vek")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvt02"]
+atlas = ExtResource("10_a8vek")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk4oa"]
+atlas = ExtResource("10_a8vek")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogp2y"]
+atlas = ExtResource("10_a8vek")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgyiu"]
+atlas = ExtResource("10_a8vek")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x68l7"]
+atlas = ExtResource("7_eebmp")
+region = Rect2(0, 0, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm8tv"]
+atlas = ExtResource("7_eebmp")
+region = Rect2(54, 0, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qbxy"]
+atlas = ExtResource("7_eebmp")
+region = Rect2(108, 0, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttttc"]
+atlas = ExtResource("7_eebmp")
+region = Rect2(162, 0, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uow1"]
+atlas = ExtResource("7_eebmp")
+region = Rect2(216, 0, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etyam"]
+atlas = ExtResource("7_eebmp")
+region = Rect2(270, 0, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utw5m"]
+atlas = ExtResource("7_eebmp")
+region = Rect2(324, 0, 54, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbunc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkulv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nutt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg0ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5q0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1mbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q38hj")
+}],
+"loop": 1,
+"name": &"comemoracao",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3elh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_114o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn376")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7k75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvt02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk4oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogp2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgyiu")
+}],
+"loop": 1,
+"name": &"dance",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x68l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm8tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qbxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttttc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uow1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etyam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utw5m")
+}],
+"loop": 1,
+"name": &"explosao",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhtln"]
 bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
@@ -50,7 +223,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
 celula_cena = ExtResource("2_h2yge")
-personagem_cena = ExtResource("2_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=830326287]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.38050905, 0.22851115, 0.53294927, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=929179388]
+material = SubResource("ShaderMaterial_a8vek")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=844890541]
 layout_mode = 1
@@ -67,11 +260,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Info" type="Label" parent="." unique_id=1073630722]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 49.0
+grow_horizontal = 2
 text = "
 "
+
+[node name="Personagem" type="AnimatedSprite2D" parent="." unique_id=1843632889]
+texture_filter = 1
+position = Vector2(302, 517)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_tbunc")
+animation = &"dance"
 
 [node name="Panel2" type="Panel" parent="." unique_id=1243089243]
 layout_mode = 1
@@ -80,7 +285,6 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -124.0
-offset_bottom = -3.5600586
 grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
@@ -115,6 +319,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_rkulv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rkulv")
 icon = SubResource("AtlasTexture_xii2p")
 expand_icon = true
+script = ExtResource("8_acjnp")
 
 [node name="Panel2" type="Panel" parent="Panel2" unique_id=255623812]
 layout_mode = 1
@@ -146,3 +351,61 @@ text = "12:30
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="Fala" type="Label" parent="." unique_id=968371995]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=710247600]
+
+[node name="TelaFinal" type="ColorRect" parent="." unique_id=1119969781]
+visible = false
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3019608)
+
+[node name="Centro" type="CenterContainer" parent="TelaFinal" unique_id=1408683469]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caixa" type="VBoxContainer" parent="TelaFinal/Centro" unique_id=1218400583]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TituloFinal" type="Label" parent="TelaFinal/Centro/Caixa" unique_id=1308732735]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 70
+text = "TituloFinal"
+horizontal_alignment = 1
+
+[node name="TextoFinal" type="Label" parent="TelaFinal/Centro/Caixa" unique_id=1022871678]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 50
+text = "TextoFinal"
+horizontal_alignment = 1
+
+[node name="BotaoVoltar" type="Button" parent="TelaFinal/Centro/Caixa" unique_id=1065917792]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 45
+text = "Voltar ao Desktop"
+
+[connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]

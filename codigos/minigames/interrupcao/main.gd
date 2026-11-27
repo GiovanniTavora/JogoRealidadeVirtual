@@ -1,7 +1,6 @@
 extends Control
 
 @export var celula_cena: PackedScene
-@export var personagem_cena: PackedScene
 
 @onready var info = $Info
 
@@ -24,18 +23,22 @@ var posicoes := []
 var jogando := false
 
 var tabuleiro: Control
-var temporizador: Timer
-var personagem
-var fala: Label
-var tela_final: ColorRect
-var titulo_final: Label
-var texto_final: Label
+@onready var temporizador: Timer = $Timer
+@onready var personagem: AnimatedSprite2D = $Personagem
+
+var posicao_inicial_personagem := Vector2(150, 360)
+@onready var fala: Label = $Fala
+@onready var tela_final: ColorRect = $TelaFinal
+@onready var titulo_final: Label = $TelaFinal/Centro/Caixa/TituloFinal
+@onready var texto_final: Label = $TelaFinal/Centro/Caixa/TextoFinal
+@onready var botao_voltar: Button = $TelaFinal/Centro/Caixa/BotaoVoltar
 
 var frases_acerto = ["Boa!", "Isso aí!", "Mandou bem!", "Memória de elefante!"]
 var frases_erro = ["Ops!", "Quase!", "Tenta de novo!", "Erro 404: acerto não encontrado"]
 
 func _ready():
 	calcular_posicoes()
+	botao_voltar.pressed.connect(_on_botao_voltar_pressed)
 
 	tabuleiro = Control.new()
 	tabuleiro.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -49,14 +52,10 @@ func _ready():
 		c.clicada.connect(_on_celula_clicada)
 		celulas.append(c)
 
-	temporizador = Timer.new()
 	temporizador.timeout.connect(_on_temporizador)
-	add_child(temporizador)
 
 	# A ordem importa: a tela final fica atrás do pet e da fala
-	criar_tela_final()
-	criar_pet()
-	criar_fala()
+	configurar_personagem()
 	nova_rodada()
 
 # Calcula o ponto de cada uma das 16 casas, com a grade centralizada na tela
@@ -69,52 +68,6 @@ func calcular_posicoes():
 		var col = i % COLUNAS
 		var lin = floori(float(i) / COLUNAS)
 		posicoes.append(origem + Vector2(col * (TAM_CELULA + ESPACO), lin * (TAM_CELULA + ESPACO)))
-
-func criar_pet():
-	personagem = personagem_cena.instantiate()
-	add_child(personagem)
-	personagem.iniciar(POS_PET)
-
-func criar_fala():
-	fala = Label.new()
-	fala.add_theme_font_size_override("font_size", 26)
-	fala.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	fala.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	fala.custom_minimum_size = Vector2(260, 0)
-	fala.position = POS_PET + Vector2(-130, -150)
-	add_child(fala)
-
-# Tela usada tanto para game over quanto para vitória
-func criar_tela_final():
-	tela_final = ColorRect.new()
-	tela_final.color = Color(0, 0, 0, 0.75)
-	tela_final.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	tela_final.visible = false
-	add_child(tela_final)
-
-	var centro = CenterContainer.new()
-	centro.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	tela_final.add_child(centro)
-
-	var caixa = VBoxContainer.new()
-	caixa.add_theme_constant_override("separation", 20)
-	centro.add_child(caixa)
-
-	titulo_final = Label.new()
-	titulo_final.add_theme_font_size_override("font_size", 56)
-	titulo_final.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	caixa.add_child(titulo_final)
-
-	texto_final = Label.new()
-	texto_final.add_theme_font_size_override("font_size", 30)
-	texto_final.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	caixa.add_child(texto_final)
-
-	var botao = Button.new()
-	botao.text = "Jogar de novo"
-	botao.add_theme_font_size_override("font_size", 28)
-	botao.pressed.connect(func(): get_tree().reload_current_scene())
-	caixa.add_child(botao)
 
 # Rodadas 1-3: normal | 4-6: giram | 7-9: se mexem
 func modo_da_rodada() -> String:
@@ -189,6 +142,20 @@ func _on_celula_clicada(celula):
 		rodada_perdida()
 	atualizar_info()
 
+func reagir_acerto() -> void:
+	personagem.modulate = Color(1, 1, 1)
+	personagem.speed_scale = 2.5
+
+	var t = create_tween()
+	t.tween_property(personagem, "position:y", posicao_inicial_personagem.y - 40, 0.15)
+	t.tween_property(personagem, "position:y", posicao_inicial_personagem.y, 0.15)
+	t.tween_property(personagem, "position:y", posicao_inicial_personagem.y - 25, 0.12)
+	t.tween_property(personagem, "position:y", posicao_inicial_personagem.y, 0.12)
+
+	await t.finished
+	personagem.speed_scale = 1.0
+
+
 func rodada_vencida():
 	jogando = false
 	pontos += quantidade * 20  # bônus por completar a rodada
@@ -196,7 +163,7 @@ func rodada_vencida():
 	if rodada >= MAX_RODADAS:
 		vitoria()
 		return
-	personagem.reagir_acerto()
+	reagir_acerto()
 	falar(frases_acerto.pick_random())
 	await get_tree().create_timer(1.0).timeout
 	rodada += 1
@@ -212,13 +179,13 @@ func rodada_perdida():
 	if vidas <= 0:
 		game_over()
 		return
-	personagem.reagir_erro()
+	reagir_erro()
 	falar(frases_erro.pick_random())
 	await get_tree().create_timer(1.5).timeout
 	nova_rodada()   # repete a mesma rodada
 
 func vitoria():
-	personagem.reagir_vitoria()
+	reagir_vitoria()
 	fala.text = "Você conseguiu!"
 	titulo_final.text = "VOCÊ VENCEU!"
 	texto_final.text = "Pontos: %d\nVidas restantes: %d" % [pontos, vidas]
@@ -226,7 +193,7 @@ func vitoria():
 	tela_final.visible = true
 
 func game_over():
-	personagem.reagir_game_over()
+	reagir_game_over()
 	fala.text = "Erro 404:\nvidas não encontradas"
 	titulo_final.text = "FIM DE JOGO"
 	texto_final.text = "Pontos: %d\nChegou na rodada %d de %d" % [pontos, rodada, MAX_RODADAS]
@@ -241,3 +208,42 @@ func falar(texto: String, segundos := 1.2):
 
 func atualizar_info():
 	info.text = "Pontos: %d    Rodada: %d/%d    Vidas: %d" % [pontos, rodada, MAX_RODADAS, vidas]
+
+#CÓDIGO NOVO
+func _on_botao_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
+
+func configurar_personagem() -> void:
+	personagem.scale = Vector2(4, 4)
+	personagem.position = posicao_inicial_personagem
+	personagem.play("dance")
+	fala.position = posicao_inicial_personagem + Vector2(-130, -150)
+
+func reagir_erro() -> void:
+	personagem.speed_scale = 0.0
+	personagem.modulate = Color(1, 0.4, 0.4)
+
+	var t = create_tween()
+	for i in 4:
+		t.tween_property(personagem, "position:x", posicao_inicial_personagem.x + 8, 0.05)
+		t.tween_property(personagem, "position:x", posicao_inicial_personagem.x - 8, 0.05)
+
+	t.tween_property(personagem, "position:x", posicao_inicial_personagem.x, 0.05)
+
+	await t.finished
+	await get_tree().create_timer(0.5).timeout
+
+	personagem.modulate = Color(1, 1, 1)
+	personagem.speed_scale = 1.0
+
+func reagir_game_over() -> void:
+	personagem.speed_scale = 1.0
+	personagem.modulate = Color(1, 1, 1)
+	personagem.position = posicao_inicial_personagem
+	personagem.play("explosao")
+
+func reagir_vitoria() -> void:
+	personagem.speed_scale = 1.0
+	personagem.modulate = Color(1, 1, 1)
+	personagem.position = posicao_inicial_personagem
+	personagem.play("comemoracao")
