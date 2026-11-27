@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bqi1v7qg0dkp3" path="res://sprites/desktop/estrelas/grey_star.png" id="20_4gedv"]
 [ext_resource type="Texture2D" uid="uid://n4y5t6hkkmli" path="res://sprites/desktop/estrelas/Star_animated.png" id="21_51myg"]
 [ext_resource type="AudioStream" uid="uid://p6q4i6tfv4ff" path="res://musicas/WAV_Blessing.wav" id="23_7j74r"]
+[ext_resource type="Script" uid="uid://26m43vyisr7" path="res://cenas/menu_principal/botao_tela_cheia.gd" id="25_h2gjv"]
 [ext_resource type="Texture2D" uid="uid://61exefv1jgdq" path="res://sprites/robo/interrupcao/Robo404_spritesheet.png" id="31_3f2vw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ungyi"]
@@ -1311,7 +1312,6 @@ oversampling_override = 1.0
 initial_position = 3
 size = Vector2i(1100, 600)
 current_screen = 0
-visible = false
 borderless = true
 theme_override_constants/close_h_offset = 17
 theme_override_constants/close_v_offset = 23
@@ -1399,8 +1399,8 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 92.0
-offset_bottom = 180.5
+offset_top = 40.0
+offset_bottom = 128.5
 grow_horizontal = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_2vts5")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_u2h3j")
@@ -1416,9 +1416,9 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 14.0
-offset_top = 52.5
-offset_right = 222.0
-offset_bottom = -251.5
+offset_top = -4.0
+offset_right = 228.0
+offset_bottom = -308.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 95
@@ -1430,9 +1430,9 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 14.0
-offset_top = 214.0
+offset_top = 140.0
 offset_right = 513.0
-offset_bottom = -90.0
+offset_bottom = -164.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 95
@@ -1444,9 +1444,9 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 5.0
-offset_top = 270.0
+offset_top = 204.0
 offset_right = -12.0
-offset_bottom = 358.5
+offset_bottom = 292.5
 grow_horizontal = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_x46sc")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_2vts5")
@@ -1456,6 +1456,20 @@ step = 0.05
 value = 1.0
 script = ExtResource("15_x46sc")
 audio_bus_name = "SFX"
+
+[node name="botao_tela_cheia" type="CheckButton" parent="Window_Config/Cabecalho/Panel" unique_id=87413189]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 13.0
+offset_top = 264.0
+offset_right = -575.5
+offset_bottom = 354.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 95
+text = "Tela cheia:"
+script = ExtResource("25_h2gjv")
 
 [node name="WindowFirewall" type="Window" parent="." unique_id=1513667915]
 oversampling_override = 1.0
@@ -2335,6 +2349,7 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Window_Config/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="value_changed" from="Window_Config/Cabecalho/Panel/volume_audio" to="Window_Config/Cabecalho/Panel/volume_audio" method="_on_value_changed"]
 [connection signal="value_changed" from="Window_Config/Cabecalho/Panel/volume_SFX" to="Window_Config/Cabecalho/Panel/volume_SFX" method="_on_value_changed"]
+[connection signal="toggled" from="Window_Config/Cabecalho/Panel/botao_tela_cheia" to="Window_Config/Cabecalho/Panel/botao_tela_cheia" method="_on_toggled"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="mouse_entered" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_mouse_entered"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
