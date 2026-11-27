@@ -33,9 +33,9 @@ var jogando := false
 const POSICAO_INICIAL_PERSONAGEM := Vector2(302, 517)
 @onready var fala: Label = $Fala
 @onready var tela_final: ColorRect = $TelaFinal
-@onready var titulo_final: Label = $TelaFinal/Centro/PanelContainer/Caixa/TituloFinal
-@onready var texto_final: Label = $TelaFinal/Centro/PanelContainer/Caixa/TextoFinal
-@onready var botao_voltar: Button = $TelaFinal/Centro/PanelContainer/Caixa/BotaoVoltar
+@onready var titulo_final: Label = $Window_Resultado/Cabecalho/TituloFinal
+@onready var texto_final: Label = $Window_Resultado/Cabecalho/Panel/TextoFinal
+@onready var botao_voltar: Button = $Window_Resultado/Cabecalho/Panel/BotaoVoltar
 
 const FRASES_ACERTO := ["Boa!", "Isso aí!", "Mandou bem!", "Memória de elefante!"]
 const FRASES_ERRO := ["Ops!", "Quase!", "Tenta de novo!", "Erro 404: acerto não encontrado"]
@@ -200,6 +200,7 @@ func vitoria():
 	texto_final.text = "Pontos: %d\nVidas restantes: %d" % [pontos, vidas]
 	await get_tree().create_timer(1.5).timeout
 	tela_final.visible = true
+	$Window_Resultado.show()
 
 func game_over():
 	musica_interrupcao.stop()
@@ -210,6 +211,7 @@ func game_over():
 	texto_final.text = "Pontos: %d\nChegou na rodada %d de %d" % [pontos, rodada, MAX_RODADAS]
 	await get_tree().create_timer(1.5).timeout
 	tela_final.visible = true
+	$Window_Resultado.show()
 
 func falar(texto: String, segundos := 1.2):
 	fala.text = texto

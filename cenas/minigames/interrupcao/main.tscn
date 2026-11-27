@@ -16,6 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://bdwnpuv3oxcam" path="res://efeitos sonoros/firewall/soundshelfstudio-ui-error-pop-515668.mp3" id="14_xii2p"]
 [ext_resource type="AudioStream" uid="uid://bcnlxouf8s1bd" path="res://musicas/alphix-game-over-417465.mp3" id="15_xii2p"]
 [ext_resource type="AudioStream" uid="uid://cljyt2batu2ix" path="res://musicas/eaglaxle-gaming-victory-2-464017.mp3" id="16_8nutt"]
+[ext_resource type="Texture2D" uid="uid://kch7jk5vt5rb" path="res://sprites/desktop/CloseRegular.png" id="17_q38hj"]
+[ext_resource type="Texture2D" uid="uid://exxf00s6bs6s" path="res://sprites/desktop/ClosePressed.png" id="18_x68l7"]
+[ext_resource type="Texture2D" uid="uid://drfgcrjhgxr45" path="res://sprites/desktop/Window_Base.png" id="19_nm8tv"]
+[ext_resource type="Texture2D" uid="uid://ca320opygr5c2" path="res://sprites/desktop/Window_Header.png" id="20_5qbxy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8vek"]
 shader = ExtResource("4_hdtds")
@@ -240,6 +244,27 @@ texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttttc"]
+texture = ExtResource("11_vhtln")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uow1"]
+texture = ExtResource("11_vhtln")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etyam"]
+texture = ExtResource("11_vhtln")
+texture_margin_left = 3.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
+
 [node name="interrupcao" type="Control" unique_id=1193062953]
 layout_mode = 3
 anchors_preset = 15
@@ -455,6 +480,105 @@ bus = &"Music"
 [node name="MusicaVitoria" type="AudioStreamPlayer" parent="." unique_id=769326717]
 stream = ExtResource("16_8nutt")
 bus = &"Music"
+
+[node name="Window_Resultado" type="Window" parent="." unique_id=820312841]
+oversampling_override = 1.0
+initial_position = 3
+size = Vector2i(904, 600)
+current_screen = 0
+visible = false
+borderless = true
+theme_override_constants/close_h_offset = 17
+theme_override_constants/close_v_offset = 23
+theme_override_font_sizes/title_font_size = 4
+theme_override_icons/close = ExtResource("17_q38hj")
+theme_override_icons/close_pressed = ExtResource("18_x68l7")
+
+[node name="Base" type="NinePatchRect" parent="Window_Resultado" unique_id=1507226246]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_nm8tv")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Cabecalho" type="NinePatchRect" parent="Window_Resultado" unique_id=607764143]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.8449707
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("20_5qbxy")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 32
+
+[node name="TituloFinal" type="Label" parent="Window_Resultado/Cabecalho" unique_id=736303660]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 85
+text = "Fim de jogo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Window_Resultado/Cabecalho" unique_id=1783933433]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 179.0
+offset_right = -23.0
+offset_bottom = 565.0
+grow_horizontal = 2
+
+[node name="TextoFinal" type="Label" parent="Window_Resultado/Cabecalho/Panel" unique_id=767092364]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -88.0
+offset_right = 285.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 85
+text = "Pontos: %d
+Chegou na rodada %d de %d"
+
+[node name="BotaoVoltar" type="Button" parent="Window_Resultado/Cabecalho/Panel" unique_id=1591537127]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.5
+offset_top = 86.0
+offset_right = 198.5
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_ttttc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2uow1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_etyam")
+text = "Voltar"
 
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

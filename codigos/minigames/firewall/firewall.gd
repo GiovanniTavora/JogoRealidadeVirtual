@@ -138,7 +138,7 @@ func _ao_tempo_esgotado() -> void:
 	else:
 		musica_firewall.stop()
 		musica_game_over.play()
-		label_pontuacao_final.text = "Meta não alcançada... Tente novamente!"
+		label_pontuacao_final.text = "Meta não alcançada...\nTente novamente!"
 	$Window_Resultado.visible = true
 	for janela in area_jogo.get_children():
 		janela.queue_free()
