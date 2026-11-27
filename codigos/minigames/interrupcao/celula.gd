@@ -12,7 +12,8 @@ func _ready():
 func configurar(tamanho: float):
 	custom_minimum_size = Vector2(tamanho, tamanho)
 	size = Vector2(tamanho, tamanho)
-	pivot_offset = size / 2.0   # gira em torno do centro
+	pivot_offset = size / 2.0
+	add_theme_font_size_override("font_size", 50)
 
 func _on_pressed():
 	clicada.emit(self)

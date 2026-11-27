@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b5a1wot8muynn"]
 
 [ext_resource type="Script" uid="uid://2vdnnp4hcmiv" path="res://codigos/minigames/interrupcao/main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://bvtougbfg8612" path="res://cenas/minigames/interrupcao/celula.tscn" id="2_h2yge"]
 [ext_resource type="Shader" uid="uid://bqyxafdgjegc7" path="res://cenas/desktop/desktop.gdshader" id="4_hdtds"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="4_i7j65"]
 [ext_resource type="Texture2D" uid="uid://dke51btudqf4u" path="res://sprites/desktop/PatchRegular.png" id="5_acjnp"]
@@ -222,7 +221,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-celula_cena = ExtResource("2_h2yge")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=830326287]
 layout_mode = 1
@@ -254,10 +252,13 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
 offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 410.0
+offset_bottom = 410.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
 
 [node name="Info" type="Label" parent="." unique_id=1073630722]
 layout_mode = 1
@@ -268,8 +269,9 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 49.0
 grow_horizontal = 2
-text = "
-"
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 100
+text = "Pontos: %d    Rodada: %d/%d    Vidas: %d"
 
 [node name="Personagem" type="AnimatedSprite2D" parent="." unique_id=1843632889]
 texture_filter = 1

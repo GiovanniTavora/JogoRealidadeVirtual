@@ -1,6 +1,6 @@
 extends Control
 
-@export var celula_cena: PackedScene
+const CELULA_SCRIPT = preload("res://codigos/minigames/interrupcao/celula.gd")
 
 @onready var info = $Info
 
@@ -45,7 +45,7 @@ func _ready():
 	add_child(tabuleiro)
 
 	for i in LINHAS * COLUNAS:
-		var c = celula_cena.instantiate()
+		var c = CELULA_SCRIPT.new()
 		tabuleiro.add_child(c)
 		c.configurar(TAM_CELULA)
 		c.position = posicoes[i]
