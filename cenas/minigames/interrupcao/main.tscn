@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://b5a1wot8muynn"]
+
+[ext_resource type="Script" uid="uid://2vdnnp4hcmiv" path="res://codigos/minigames/interrupcao/main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://opdgotf2e1j" path="res://cenas/minigames/interrupcao/personagem.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bvtougbfg8612" path="res://cenas/minigames/interrupcao/celula.tscn" id="2_h2yge"]
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="4_i7j65"]
+[ext_resource type="Texture2D" uid="uid://dke51btudqf4u" path="res://sprites/desktop/PatchRegular.png" id="5_acjnp"]
+[ext_resource type="Texture2D" uid="uid://b0rvjnpfci72y" path="res://sprites/desktop/PatchInverted.png" id="6_hdtds"]
+[ext_resource type="Texture2D" uid="uid://dpytwvxsfv3cg" path="res://sprites/desktop/botoes/buttons.png" id="7_a8vek"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhtln"]
+bg_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c15ty"]
+draw_center = false
+border_width_top = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eebmp"]
+texture = ExtResource("5_acjnp")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkulv"]
+texture = ExtResource("6_hdtds")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xii2p"]
+atlas = ExtResource("7_a8vek")
+region = Rect2(256.86853, 0, 63.63159, 63.236885)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8nutt"]
+texture = ExtResource("6_hdtds")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="interrupcao" type="Control" unique_id=1193062953]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+celula_cena = ExtResource("2_h2yge")
+personagem_cena = ExtResource("2_0xm2m")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=844890541]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Info" type="Label" parent="." unique_id=1073630722]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "
+"
+
+[node name="Panel2" type="Panel" parent="." unique_id=1243089243]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -124.0
+offset_bottom = -3.5600586
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_vhtln")
+
+[node name="Panel" type="Panel" parent="Panel2" unique_id=2001628807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+offset_bottom = -22.439941
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c15ty")
+metadata/_edit_lock_ = true
+
+[node name="botao_voltar" type="Button" parent="Panel2/Panel" unique_id=1759382789]
+texture_filter = 1
+layout_mode = 0
+offset_left = 162.0
+offset_top = 13.0
+offset_right = 248.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 115
+theme_override_styles/normal = SubResource("StyleBoxTexture_eebmp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rkulv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rkulv")
+icon = SubResource("AtlasTexture_xii2p")
+expand_icon = true
+
+[node name="Panel2" type="Panel" parent="Panel2" unique_id=255623812]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -237.0
+offset_top = -91.43994
+offset_right = -67.51001
+offset_bottom = -22.439941
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8nutt")
+
+[node name="Label" type="Label" parent="Panel2/Panel2" unique_id=585058510]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 35
+text = "12:30
+30/09/2026"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true

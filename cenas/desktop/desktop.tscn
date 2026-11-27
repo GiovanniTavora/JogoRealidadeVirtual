@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bbswthkbfvu6o"]
 
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="1_iqmm2"]
-[ext_resource type="Script" uid="uid://c0ltpcg7eu6d1" path="res://codigos/desktop.gd" id="1_v6ts4"]
+[ext_resource type="Script" uid="uid://c0ltpcg7eu6d1" path="res://codigos/menus/desktop.gd" id="1_v6ts4"]
 [ext_resource type="Texture2D" uid="uid://dke51btudqf4u" path="res://sprites/desktop/PatchRegular.png" id="2_8pm13"]
 [ext_resource type="Texture2D" uid="uid://b0rvjnpfci72y" path="res://sprites/desktop/PatchInverted.png" id="3_ikb2v"]
 [ext_resource type="Texture2D" uid="uid://kch7jk5vt5rb" path="res://sprites/desktop/CloseRegular.png" id="5_4j4gs"]

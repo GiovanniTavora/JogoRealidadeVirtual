@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://opdgotf2e1j"]
+
+[ext_resource type="Texture2D" uid="uid://61exefv1jgdq" path="res://sprites/robo/interrupcao/Robo404_spritesheet.png" id="1_vvf27"]
+[ext_resource type="Script" uid="uid://cngshewljq0o0" path="res://codigos/minigames/interrupcao/personagem.gd" id="2_k0c8s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3elh"]
+atlas = ExtResource("1_vvf27")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_114o1"]
+atlas = ExtResource("1_vvf27")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn376"]
+atlas = ExtResource("1_vvf27")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7k75"]
+atlas = ExtResource("1_vvf27")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvt02"]
+atlas = ExtResource("1_vvf27")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk4oa"]
+atlas = ExtResource("1_vvf27")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogp2y"]
+atlas = ExtResource("1_vvf27")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgyiu"]
+atlas = ExtResource("1_vvf27")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b1lj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3elh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_114o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn376")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7k75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvt02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk4oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogp2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgyiu")
+}],
+"loop": 1,
+"name": &"dance",
+"speed": 5.0
+}]
+
+[node name="Personagem" type="AnimatedSprite2D" unique_id=612312752]
+sprite_frames = SubResource("SpriteFrames_b1lj4")
+animation = &"dance"
+script = ExtResource("2_k0c8s")

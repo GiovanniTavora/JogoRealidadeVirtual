@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cf333muffdx1p"]
 
-[ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menu_principal.gd" id="1_ck6fg"]
+[ext_resource type="Script" uid="uid://xag88t6x63fv" path="res://codigos/menus/menu_principal.gd" id="1_ck6fg"]
 [ext_resource type="PackedScene" uid="uid://djp0hubtbpvvr" path="res://cenario.glb" id="2_5xvxb"]
 [ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="3_4n3ki"]
 [ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="4_dsa2e"]
@@ -178,7 +178,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1927677626]
-transform = Transform3D(0.99999994, -1.6979799e-08, 2.1410422e-06, 0, 0.9999679, 0.007930368, -2.1411106e-06, -0.007930368, 0.9999679, -175.40643, 25.759771, -1292.0063)
+transform = Transform3D(0.99999994, -1.6979797e-08, 2.141042e-06, 0, 0.9999678, 0.007930368, -2.1411106e-06, -0.007930368, 0.9999678, -175.40643, 25.759771, -1292.0063)
 current = true
 fov = 60.0
 

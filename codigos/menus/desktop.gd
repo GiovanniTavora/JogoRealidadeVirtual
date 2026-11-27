@@ -5,7 +5,6 @@ func _process(delta: float) -> void:
 
 func _ready():
 	atualizar_progresso()
-	$AnimatedSprite2D.play("robo_idle")
 	$Window.show()
 
 func _on_botao_voltar_pressed() -> void:
