@@ -12,11 +12,11 @@ const CELULA_SCRIPT = preload("res://codigos/minigames/interrupcao/celula.gd")
 const PASSO_CELULA := TAM_CELULA + ESPACO
 const LINHAS := 4
 const COLUNAS := 4
-const MAX_RODADAS := 9
+const MAX_RODADAS := 7
 const TAM_CELULA := 100
 const ESPACO := 10
-const INTERVALO_GIRO := 3.0    # rodadas 4 a 6: as caixas giram a cada 3 s
-const INTERVALO_MOVER := 3.0   # rodadas 7 a 9: as caixas trocam de lugar a cada 2 s
+const INTERVALO_GIRO := 3.0    # rodadas 4 a 6: as caixas giram a cada X s
+const INTERVALO_MOVER := 3.0   # rodadas 7 a 9: as caixas trocam de lugar a cada X s
 
 var rodada := 1
 var quantidade := 3

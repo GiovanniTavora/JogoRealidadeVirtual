@@ -78,24 +78,20 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a0gk"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(159.45027, 63.765255, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg7fa"]
+atlas = ExtResource("6_k25gi")
+region = Rect2(128.16855, 1.57341, 65.174484, 57.643204)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pg7fa"]
 load_path = "res://.godot/imported/file_icons.png-5f34927eba2da23dd6eea1728d173e2a.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gedv"]
 atlas = SubResource("CompressedTexture2D_pg7fa")
 region = Rect2(127.73573, 1.9050074, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pg7fa"]
-atlas = ExtResource("6_k25gi")
-region = Rect2(128.16855, 1.57341, 65.174484, 57.643204)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3a0gk"]
-atlas = ExtResource("13_k25gi")
-region = Rect2(159.45027, 63.765255, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x46sc"]
-atlas = SubResource("CompressedTexture2D_pg7fa")
-region = Rect2(62.42469, 97.32698, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lmtk"]
 atlas = ExtResource("11_c1e1h")
@@ -864,6 +860,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7j74r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw21q"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(133.3627, 98.566345, 21.107391, 26.765198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baaxl"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(37.348583, 98.260864, 21.092537, 27.179733)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qqos"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(65.674644, 66.26976, 27.701775, 29.388565)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q0k5"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(2.8379965, 1.833951, 26.39666, 28.324429)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkq5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3c2c"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(101.832275, 98.86339, 20.178925, 26.208427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4owhf"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(2.5888176, 38.781864, 26.716146, 20.515297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13ja2"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(101.85964, 2.8944547, 20.305138, 26.212088)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgvmo"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(5.809107, 130.72984, 20.392454, 26.411911)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ovfhh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etp30"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(163.30087, 5.537758, 25.41806, 20.808544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjgp1"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(96.519714, 64.513054, 30.711487, 30.46962)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qngai"]
+atlas = ExtResource("13_k25gi")
+region = Rect2(67.06017, 1.3095589, 27.421265, 27.694536)
+
 [node name="desktop" type="Control" unique_id=467746139]
 layout_mode = 3
 anchors_preset = 15
@@ -901,6 +947,7 @@ oversampling_override = 1.0
 initial_position = 3
 size = Vector2i(1100, 600)
 current_screen = 0
+visible = false
 borderless = true
 theme_override_constants/close_h_offset = 17
 theme_override_constants/close_v_offset = 23
@@ -981,26 +1028,38 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 85
-text = "Seja bem-vindo ao System Fixer!
-Basta clicar em um dos ícones para
-ser levado ao minigame!"
+text = "Bem-vindo ao System Fixer!
+Clique em um dos três ícones de 
+minigames para começar!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="minigame_arquivo" type="PanelContainer" parent="." unique_id=1868302682]
-layout_mode = 0
-offset_left = 590.0
-offset_top = 571.0
-offset_right = 841.0
-offset_bottom = 725.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1580192178]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -314.0
+offset_top = 52.5
+offset_right = 314.0
+offset_bottom = 155.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
 
-[node name="VBoxContainer" type="VBoxContainer" parent="minigame_arquivo" unique_id=1381909338]
+[node name="minigame_arquivo" type="PanelContainer" parent="HBoxContainer2" unique_id=1868302682]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/minigame_arquivo" unique_id=1381909338]
 layout_mode = 2
 theme_override_constants/separation = -9
 metadata/_edit_lock_ = true
 
-[node name="IconeMinigameArquivo" type="TextureButton" parent="minigame_arquivo/VBoxContainer" unique_id=1655211219]
+[node name="IconeMinigameArquivo" type="TextureButton" parent="HBoxContainer2/minigame_arquivo/VBoxContainer" unique_id=1655211219]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -1009,7 +1068,7 @@ stretch_mode = 5
 script = SubResource("GDScript_pg7fa")
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="minigame_arquivo/VBoxContainer" unique_id=268992729]
+[node name="Label" type="Label" parent="HBoxContainer2/minigame_arquivo/VBoxContainer" unique_id=268992729]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 55
@@ -1019,90 +1078,17 @@ vertical_alignment = 1
 autowrap_trim_flags = 128
 metadata/_edit_lock_ = true
 
-[node name="programa_opcoes" type="PanelContainer" parent="." unique_id=6477704]
-layout_mode = 0
-offset_left = 249.0
-offset_top = 743.0
-offset_right = 500.0
-offset_bottom = 897.0
+[node name="minigame_interrupcao" type="PanelContainer" parent="HBoxContainer2" unique_id=684464098]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="programa_opcoes" unique_id=554431824]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/minigame_interrupcao" unique_id=1214364758]
 layout_mode = 2
 theme_override_constants/separation = -9
 metadata/_edit_lock_ = true
 
-[node name="TextureButtonConfig" type="TextureButton" parent="programa_opcoes/VBoxContainer" unique_id=748698974]
-texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_4gedv")
-stretch_mode = 5
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="programa_opcoes/VBoxContainer" unique_id=496342118]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 55
-text = "Configurações"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_trim_flags = 128
-metadata/_edit_lock_ = true
-
-[node name="minigame_firewall" type="PanelContainer" parent="." unique_id=1064164909]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.5
-offset_top = -77.0
-offset_right = 125.5
-offset_bottom = 77.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="minigame_firewall" unique_id=694142880]
-layout_mode = 2
-theme_override_constants/separation = -9
-metadata/_edit_lock_ = true
-
-[node name="IconeFirewall" type="TextureButton" parent="minigame_firewall/VBoxContainer" unique_id=1553410640]
-texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_pg7fa")
-stretch_mode = 5
-script = SubResource("GDScript_pg7fa")
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="minigame_firewall/VBoxContainer" unique_id=769842402]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 55
-text = " Firewall"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_trim_flags = 128
-metadata/_edit_lock_ = true
-
-[node name="minigame_interrupcao" type="PanelContainer" parent="." unique_id=684464098]
-layout_mode = 0
-offset_left = 1032.0
-offset_top = 564.0
-offset_right = 1283.0
-offset_bottom = 718.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="minigame_interrupcao" unique_id=1214364758]
-layout_mode = 2
-theme_override_constants/separation = -9
-metadata/_edit_lock_ = true
-
-[node name="IconeMinigameInterrupcao" type="TextureButton" parent="minigame_interrupcao/VBoxContainer" unique_id=2113277600]
+[node name="IconeMinigameInterrupcao" type="TextureButton" parent="HBoxContainer2/minigame_interrupcao/VBoxContainer" unique_id=2113277600]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -1111,7 +1097,7 @@ stretch_mode = 5
 script = SubResource("GDScript_pg7fa")
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="minigame_interrupcao/VBoxContainer" unique_id=895326107]
+[node name="Label" type="Label" parent="HBoxContainer2/minigame_interrupcao/VBoxContainer" unique_id=895326107]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 55
@@ -1121,34 +1107,73 @@ vertical_alignment = 1
 autowrap_trim_flags = 128
 metadata/_edit_lock_ = true
 
-[node name="programa_meta" type="PanelContainer" parent="." unique_id=715677320]
-visible = false
-layout_mode = 0
-offset_left = 795.0
-offset_top = 706.0
-offset_right = 1046.0
-offset_bottom = 860.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=194079244]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -88.5
+offset_right = 124.0
+offset_bottom = 312.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 195
 
-[node name="VBoxContainer" type="VBoxContainer" parent="programa_meta" unique_id=77397369]
+[node name="minigame_firewall" type="PanelContainer" parent="VBoxContainer3" unique_id=1064164909]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer3/minigame_firewall" unique_id=694142880]
 layout_mode = 2
 theme_override_constants/separation = -9
 metadata/_edit_lock_ = true
 
-[node name="IconeMeta" type="TextureButton" parent="programa_meta/VBoxContainer" unique_id=1242628986]
+[node name="IconeFirewall" type="TextureButton" parent="VBoxContainer3/minigame_firewall/VBoxContainer" unique_id=1553410640]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_x46sc")
+texture_normal = SubResource("AtlasTexture_pg7fa")
 stretch_mode = 5
+script = SubResource("GDScript_pg7fa")
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="programa_meta/VBoxContainer" unique_id=1088454931]
+[node name="Label" type="Label" parent="VBoxContainer3/minigame_firewall/VBoxContainer" unique_id=769842402]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 55
-text = "Meta dos 
-Pontos"
+text = " Firewall"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa_opcoes" type="PanelContainer" parent="VBoxContainer3" unique_id=6477704]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o85c1")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer3/programa_opcoes" unique_id=554431824]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="TextureButtonConfig" type="TextureButton" parent="VBoxContainer3/programa_opcoes/VBoxContainer" unique_id=748698974]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_4gedv")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer3/programa_opcoes/VBoxContainer" unique_id=496342118]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+text = "Configurações"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_trim_flags = 128
@@ -1556,7 +1581,6 @@ oversampling_override = 1.0
 initial_position = 3
 size = Vector2i(894, 595)
 current_screen = 0
-visible = false
 borderless = true
 theme_override_constants/close_h_offset = 17
 theme_override_constants/close_v_offset = 23
@@ -1638,7 +1662,7 @@ offset_bottom = 371.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_iqmm2")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 80
 text = "Memorize a sequência numérica
 e encontre os números 
 na ordem correta!"
@@ -1961,18 +1985,349 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_wwhtl")
 animation = &"dance"
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1035436827]
+layout_mode = 0
+offset_left = 1757.0
+offset_top = 408.0
+offset_right = 1939.0
+offset_bottom = 1127.0
+theme_override_constants/separation = 51
+
+[node name="programa" type="PanelContainer" parent="VBoxContainer2" unique_id=1065135106]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7j74r")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/programa" unique_id=1246336778]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone" type="TextureButton" parent="VBoxContainer2/programa/VBoxContainer" unique_id=1186382904]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_rw21q")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer2/programa/VBoxContainer" unique_id=1339863192]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa2" type="PanelContainer" parent="VBoxContainer2" unique_id=1875346388]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7j74r")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/programa2" unique_id=700710613]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone2" type="TextureButton" parent="VBoxContainer2/programa2/VBoxContainer" unique_id=543041635]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_baaxl")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer2/programa2/VBoxContainer" unique_id=551146592]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa3" type="PanelContainer" parent="VBoxContainer2" unique_id=1174936684]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7j74r")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/programa3" unique_id=860788539]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone3" type="TextureButton" parent="VBoxContainer2/programa3/VBoxContainer" unique_id=1580334582]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_3qqos")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer2/programa3/VBoxContainer" unique_id=2137479977]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa4" type="PanelContainer" parent="VBoxContainer2" unique_id=762716699]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7j74r")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/programa4" unique_id=161036107]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone4" type="TextureButton" parent="VBoxContainer2/programa4/VBoxContainer" unique_id=1451373004]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_3q0k5")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer2/programa4/VBoxContainer" unique_id=1890419673]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=483349722]
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 64.0
+offset_right = 1631.0
+offset_bottom = 167.0
+theme_override_constants/separation = 51
+
+[node name="programa" type="PanelContainer" parent="HBoxContainer" unique_id=703123939]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bkq5v")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/programa" unique_id=176410727]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone" type="TextureButton" parent="HBoxContainer/programa/VBoxContainer" unique_id=1842439784]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_v3c2c")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/programa/VBoxContainer" unique_id=1559843543]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa2" type="PanelContainer" parent="HBoxContainer" unique_id=1578910863]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bkq5v")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/programa2" unique_id=523960732]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone2" type="TextureButton" parent="HBoxContainer/programa2/VBoxContainer" unique_id=857267106]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_4owhf")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/programa2/VBoxContainer" unique_id=601234562]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa3" type="PanelContainer" parent="HBoxContainer" unique_id=1033577159]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bkq5v")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/programa3" unique_id=1389424595]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone3" type="TextureButton" parent="HBoxContainer/programa3/VBoxContainer" unique_id=348090186]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_13ja2")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/programa3/VBoxContainer" unique_id=1235182770]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa4" type="PanelContainer" parent="HBoxContainer" unique_id=1944070723]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bkq5v")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/programa4" unique_id=1994388709]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone4" type="TextureButton" parent="HBoxContainer/programa4/VBoxContainer" unique_id=364033077]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_cgvmo")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/programa4/VBoxContainer" unique_id=1148423839]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=641813804]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 360.0
+offset_right = 186.0
+offset_bottom = 1079.0
+theme_override_constants/separation = 51
+
+[node name="programa" type="PanelContainer" parent="VBoxContainer" unique_id=57272044]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ovfhh")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/programa" unique_id=899427404]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone" type="TextureButton" parent="VBoxContainer/programa/VBoxContainer" unique_id=1151813644]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_etp30")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer/programa/VBoxContainer" unique_id=1552988020]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa3" type="PanelContainer" parent="VBoxContainer" unique_id=932990518]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ovfhh")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/programa3" unique_id=780476792]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone3" type="TextureButton" parent="VBoxContainer/programa3/VBoxContainer" unique_id=48197213]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_cjgp1")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer/programa3/VBoxContainer" unique_id=1824333152]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
+[node name="programa5" type="PanelContainer" parent="VBoxContainer" unique_id=1925595809]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ovfhh")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/programa5" unique_id=1552899229]
+layout_mode = 2
+theme_override_constants/separation = -9
+metadata/_edit_lock_ = true
+
+[node name="Icone5" type="TextureButton" parent="VBoxContainer/programa5/VBoxContainer" unique_id=1749191032]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture_normal = SubResource("AtlasTexture_qngai")
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer/programa5/VBoxContainer" unique_id=1582928501]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqmm2")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+metadata/_edit_lock_ = true
+
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="pressed" from="Window/Cabecalho/sair_janela" to="." method="_on_button_pressed_x"]
 [connection signal="pressed" from="Window/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
-[connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="." method="_on_icone_minigame_arquivo_pressed"]
-[connection signal="pressed" from="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="minigame_arquivo/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
-[connection signal="pressed" from="programa_opcoes/VBoxContainer/TextureButtonConfig" to="." method="_on_texture_button_config_pressed"]
-[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_minigame_firewall_pressed"]
-[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_firewall_pressed"]
-[connection signal="pressed" from="minigame_firewall/VBoxContainer/IconeFirewall" to="minigame_firewall/VBoxContainer/IconeFirewall" method="_on_pressed"]
-[connection signal="pressed" from="minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" to="." method="_on_icone_minigame_interrupcao_pressed"]
-[connection signal="pressed" from="minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" to="minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" method="_on_pressed"]
-[connection signal="pressed" from="programa_meta/VBoxContainer/IconeMeta" to="." method="_on_icone_meta_pressed"]
+[connection signal="pressed" from="HBoxContainer2/minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="." method="_on_icone_minigame_arquivo_pressed"]
+[connection signal="pressed" from="HBoxContainer2/minigame_arquivo/VBoxContainer/IconeMinigameArquivo" to="HBoxContainer2/minigame_arquivo/VBoxContainer/IconeMinigameArquivo" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer2/minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" to="." method="_on_icone_minigame_interrupcao_pressed"]
+[connection signal="pressed" from="HBoxContainer2/minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" to="HBoxContainer2/minigame_interrupcao/VBoxContainer/IconeMinigameInterrupcao" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer3/minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_minigame_firewall_pressed"]
+[connection signal="pressed" from="VBoxContainer3/minigame_firewall/VBoxContainer/IconeFirewall" to="." method="_on_icone_firewall_pressed"]
+[connection signal="pressed" from="VBoxContainer3/minigame_firewall/VBoxContainer/IconeFirewall" to="VBoxContainer3/minigame_firewall/VBoxContainer/IconeFirewall" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer3/programa_opcoes/VBoxContainer/TextureButtonConfig" to="." method="_on_texture_button_config_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
 [connection signal="pressed" from="Window_Minigame_Arquivos/Cabecalho/Panel/IniciarCacaArquivo" to="." method="_on_iniciar_caca_arquivo_pressed"]
@@ -1988,3 +2343,14 @@ animation = &"dance"
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="pressed" from="WindowVitoria/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="pressed" from="VBoxContainer2/programa/VBoxContainer/Icone" to="VBoxContainer2/programa/VBoxContainer/Icone" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer2/programa2/VBoxContainer/Icone2" to="VBoxContainer2/programa2/VBoxContainer/Icone2" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer2/programa3/VBoxContainer/Icone3" to="VBoxContainer2/programa3/VBoxContainer/Icone3" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer2/programa4/VBoxContainer/Icone4" to="VBoxContainer2/programa4/VBoxContainer/Icone4" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/programa/VBoxContainer/Icone" to="HBoxContainer/programa/VBoxContainer/Icone" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/programa2/VBoxContainer/Icone2" to="HBoxContainer/programa2/VBoxContainer/Icone2" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/programa3/VBoxContainer/Icone3" to="HBoxContainer/programa3/VBoxContainer/Icone3" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/programa4/VBoxContainer/Icone4" to="HBoxContainer/programa4/VBoxContainer/Icone4" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/programa/VBoxContainer/Icone" to="VBoxContainer/programa/VBoxContainer/Icone" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/programa3/VBoxContainer/Icone3" to="VBoxContainer/programa3/VBoxContainer/Icone3" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/programa5/VBoxContainer/Icone5" to="VBoxContainer/programa5/VBoxContainer/Icone5" method="_on_pressed"]
