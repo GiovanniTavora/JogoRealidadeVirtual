@@ -10,10 +10,11 @@ func _ready():
 	pressed.connect(_on_pressed)
 
 func configurar(tamanho: float):
+	theme = preload("res://themes/theme_celulas.tres")
 	custom_minimum_size = Vector2(tamanho, tamanho)
 	size = Vector2(tamanho, tamanho)
 	pivot_offset = size / 2.0
-	add_theme_font_size_override("font_size", 50)
+	add_theme_font_size_override("font_size", 100)
 
 func _on_pressed():
 	clicada.emit(self)

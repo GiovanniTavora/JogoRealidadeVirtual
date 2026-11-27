@@ -1,0 +1,44 @@
+[gd_resource type="Theme" format=3 uid="uid://cmq81nrhafotx"]
+
+[ext_resource type="FontFile" uid="uid://bko8ekct74bsr" path="res://fontes/BridgeParapet.ttf" id="1_ac8rw"]
+[ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="2_qdyw5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdyw5"]
+texture = ExtResource("2_qdyw5")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8dum"]
+texture = ExtResource("2_qdyw5")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j58k0"]
+texture = ExtResource("2_qdyw5")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ap05g"]
+texture = ExtResource("2_qdyw5")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_ac8rw")
+Button/styles/disabled = SubResource("StyleBoxTexture_qdyw5")
+Button/styles/hover = SubResource("StyleBoxTexture_m8dum")
+Button/styles/normal = SubResource("StyleBoxTexture_j58k0")
+Button/styles/pressed = SubResource("StyleBoxTexture_ap05g")
