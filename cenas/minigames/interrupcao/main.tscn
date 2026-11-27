@@ -422,4 +422,13 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_xii2p")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rg0ef")
 text = "Voltar ao Desktop"
 
+[node name="Button" type="Button" parent="." unique_id=1961677958]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 741.0
+offset_right = 557.0
+offset_bottom = 877.0
+text = "ganhar"
+
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

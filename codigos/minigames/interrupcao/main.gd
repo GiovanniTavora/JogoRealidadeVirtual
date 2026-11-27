@@ -246,3 +246,7 @@ func reagir_vitoria() -> void:
 	personagem.modulate = Color(1, 1, 1)
 	personagem.position = posicao_inicial_personagem
 	personagem.play("comemoracao")
+
+
+func _on_button_pressed() -> void:
+	vitoria()

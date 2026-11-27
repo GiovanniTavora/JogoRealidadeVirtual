@@ -57,6 +57,12 @@ func atualizar_progresso() -> void:
 		estrela_caca_arquivos.stop()
 		estrela_caca_arquivos.animation = "apagada"
 		estrela_caca_arquivos.frame = 0
+	if ProgressoJogo.pontuacao_interrupcao >= ProgressoJogo.META_POR_MINIGAME:
+		estrela_interrupcao.play("concluida")
+	else:
+		estrela_interrupcao.stop()
+		estrela_interrupcao.animation = "apagada"
+		estrela_interrupcao.frame = 0
 
 
 func _on_iniciar_caca_arquivo_pressed() -> void:
