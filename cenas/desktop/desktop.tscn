@@ -1575,11 +1575,13 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 65
-text = "Inserir texto"
+text = "Memorize a sequência numérica
+e encontre os números 
+na ordem correta!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IniciarFirewall" type="Button" parent="WindowInterrupcao/Cabecalho/Panel" unique_id=1462309897]
+[node name="IniciarInterrupcao" type="Button" parent="WindowInterrupcao/Cabecalho/Panel" unique_id=1462309897]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -1688,7 +1690,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1753299226]
+[node name="Metas" type="PanelContainer" parent="." unique_id=1753299226]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 58.0
@@ -1696,7 +1698,7 @@ offset_right = 466.25
 offset_bottom = 265.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tbunc")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=929105453]
+[node name="MarginContainer" type="MarginContainer" parent="Metas" unique_id=929105453]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -1704,20 +1706,20 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer" unique_id=476695199]
+[node name="Panel" type="Panel" parent="Metas/MarginContainer" unique_id=476695199]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wwhtl")
 metadata/_edit_lock_ = true
 
-[node name="Conteudo" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1347121970]
+[node name="Conteudo" type="VBoxContainer" parent="Metas/MarginContainer" unique_id=1347121970]
 layout_mode = 2
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="BarraTitulo" type="PanelContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=1553842659]
+[node name="BarraTitulo" type="PanelContainer" parent="Metas/MarginContainer/Conteudo" unique_id=1553842659]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Conteudo/BarraTitulo" unique_id=977992050]
+[node name="Label" type="Label" parent="Metas/MarginContainer/Conteudo/BarraTitulo" unique_id=977992050]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 45
@@ -1725,74 +1727,74 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_c1e1h")
 text = "-Resultados-"
 horizontal_alignment = 1
 
-[node name="Container_CacaArquivo" type="HBoxContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=508082422]
+[node name="Container_CacaArquivo" type="HBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=508082422]
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="LabelCacaArquivo" type="Label" parent="PanelContainer/MarginContainer/Conteudo/Container_CacaArquivo" unique_id=1656764319]
+[node name="LabelCacaArquivo" type="Label" parent="Metas/MarginContainer/Conteudo/Container_CacaArquivo" unique_id=1656764319]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 50
 text = " Caça-Arquivos:"
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Conteudo/Container_CacaArquivo" unique_id=188952732]
+[node name="CenterContainer" type="CenterContainer" parent="Metas/MarginContainer/Conteudo/Container_CacaArquivo" unique_id=188952732]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="EstrelaCacaArquivos" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/Conteudo/Container_CacaArquivo/CenterContainer" unique_id=354539606]
+[node name="EstrelaCacaArquivos" type="AnimatedSprite2D" parent="Metas/MarginContainer/Conteudo/Container_CacaArquivo/CenterContainer" unique_id=354539606]
 texture_filter = 1
 position = Vector2(4, 25)
 scale = Vector2(1.675, 1.675)
 sprite_frames = SubResource("SpriteFrames_3a0gk")
 animation = &"apagada"
 
-[node name="Container_Firewall" type="HBoxContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=213459942]
+[node name="Container_Firewall" type="HBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=213459942]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="LabelFirewall" type="Label" parent="PanelContainer/MarginContainer/Conteudo/Container_Firewall" unique_id=1457194778]
+[node name="LabelFirewall" type="Label" parent="Metas/MarginContainer/Conteudo/Container_Firewall" unique_id=1457194778]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 50
 text = "Firewall:"
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Conteudo/Container_Firewall" unique_id=1207160107]
+[node name="CenterContainer" type="CenterContainer" parent="Metas/MarginContainer/Conteudo/Container_Firewall" unique_id=1207160107]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="EstrelaFirewall" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/Conteudo/Container_Firewall/CenterContainer" unique_id=1225391531]
+[node name="EstrelaFirewall" type="AnimatedSprite2D" parent="Metas/MarginContainer/Conteudo/Container_Firewall/CenterContainer" unique_id=1225391531]
 texture_filter = 1
 position = Vector2(4, 22)
 scale = Vector2(1.84, 1.84)
 sprite_frames = SubResource("SpriteFrames_51myg")
 animation = &"apagada"
 
-[node name="Container_Interrupcao" type="HBoxContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=1347004347]
+[node name="Container_Interrupcao" type="HBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=1347004347]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="LabelInterrupcao" type="Label" parent="PanelContainer/MarginContainer/Conteudo/Container_Interrupcao" unique_id=329740134]
+[node name="LabelInterrupcao" type="Label" parent="Metas/MarginContainer/Conteudo/Container_Interrupcao" unique_id=329740134]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqmm2")
 theme_override_font_sizes/font_size = 50
 text = "Interrupção:"
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Conteudo/Container_Interrupcao" unique_id=188323009]
+[node name="CenterContainer" type="CenterContainer" parent="Metas/MarginContainer/Conteudo/Container_Interrupcao" unique_id=188323009]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="EstrelaInterrupcao" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/Conteudo/Container_Interrupcao/CenterContainer" unique_id=1888255678]
+[node name="EstrelaInterrupcao" type="AnimatedSprite2D" parent="Metas/MarginContainer/Conteudo/Container_Interrupcao/CenterContainer" unique_id=1888255678]
 texture_filter = 1
 position = Vector2(4, 26)
 scale = Vector2(1.86, 1.86)
 sprite_frames = SubResource("SpriteFrames_xqo3b")
 animation = &"apagada"
 
-[node name="Conteudo" type="VBoxContainer" parent="PanelContainer/MarginContainer/Conteudo" unique_id=707953089]
+[node name="Conteudo" type="VBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=707953089]
 layout_mode = 2
 alignment = 1
 
@@ -1818,6 +1820,7 @@ alignment = 1
 [connection signal="mouse_entered" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_mouse_entered"]
 [connection signal="pressed" from="WindowFirewall/Cabecalho/Panel/IniciarFirewall" to="." method="_on_iniciar_firewall_pressed"]
 [connection signal="pressed" from="WindowInterrupcao/Cabecalho/sair_janela" to="." method="_on_sair_janela_pressed"]
+[connection signal="pressed" from="WindowInterrupcao/Cabecalho/Panel/IniciarInterrupcao" to="." method="_on_iniciar_interrupcao_pressed"]
 [connection signal="mouse_entered" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_mouse_entered"]
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]

@@ -11,27 +11,25 @@ const TAM_CELULA := 100
 const ESPACO := 10
 const INTERVALO_GIRO := 3.0    # rodadas 4 a 6: as caixas giram a cada 3 s
 const INTERVALO_MOVER := 2.0   # rodadas 7 a 9: as caixas trocam de lugar a cada 2 s
-const POS_PET := Vector2(150, 360)
 
 var rodada := 1
 var quantidade := 3
 var proximo := 1
-var vidas := 3
+var vidas := 5
 var pontos := 0
 var celulas := []
 var posicoes := []
 var jogando := false
 
-var tabuleiro: Control
 @onready var temporizador: Timer = $Timer
 @onready var personagem: AnimatedSprite2D = $Personagem
 
 var posicao_inicial_personagem := Vector2(150, 360)
 @onready var fala: Label = $Fala
 @onready var tela_final: ColorRect = $TelaFinal
-@onready var titulo_final: Label = $TelaFinal/Centro/Caixa/TituloFinal
-@onready var texto_final: Label = $TelaFinal/Centro/Caixa/TextoFinal
-@onready var botao_voltar: Button = $TelaFinal/Centro/Caixa/BotaoVoltar
+@onready var titulo_final: Label = $TelaFinal/Centro/PanelContainer/Caixa/TituloFinal
+@onready var texto_final: Label = $TelaFinal/Centro/PanelContainer/Caixa/TextoFinal
+@onready var botao_voltar: Button = $TelaFinal/Centro/PanelContainer/Caixa/BotaoVoltar
 
 var frases_acerto = ["Boa!", "Isso aí!", "Mandou bem!", "Memória de elefante!"]
 var frases_erro = ["Ops!", "Quase!", "Tenta de novo!", "Erro 404: acerto não encontrado"]
@@ -40,7 +38,7 @@ func _ready():
 	calcular_posicoes()
 	botao_voltar.pressed.connect(_on_botao_voltar_pressed)
 
-	tabuleiro = Control.new()
+	var tabuleiro = Control.new()
 	tabuleiro.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(tabuleiro)
 
@@ -185,6 +183,7 @@ func rodada_perdida():
 	nova_rodada()   # repete a mesma rodada
 
 func vitoria():
+	ProgressoJogo.registrar_interrupcao()
 	reagir_vitoria()
 	fala.text = "Você conseguiu!"
 	titulo_final.text = "VOCÊ VENCEU!"

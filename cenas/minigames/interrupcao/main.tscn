@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c8u5w7jq3mxco" path="res://sprites/robo/interrupcao/pet_explosao.png" id="7_eebmp"]
 [ext_resource type="Script" uid="uid://c6eanxqumw8v6" path="res://cenas/minigames/interrupcao/botao_voltar.gd" id="8_acjnp"]
 [ext_resource type="Texture2D" uid="uid://61exefv1jgdq" path="res://sprites/robo/interrupcao/Robo404_spritesheet.png" id="10_a8vek"]
+[ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="11_vhtln"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8vek"]
 shader = ExtResource("4_hdtds")
@@ -213,6 +214,27 @@ texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c15ty"]
+texture = ExtResource("11_vhtln")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xii2p"]
+texture = ExtResource("11_vhtln")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rg0ef"]
+texture = ExtResource("11_vhtln")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
 [node name="interrupcao" type="Control" unique_id=1193062953]
 layout_mode = 3
 anchors_preset = 15
@@ -242,23 +264,6 @@ offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
-
-[node name="GridContainer" type="GridContainer" parent="." unique_id=844890541]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 410.0
-offset_bottom = 410.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 4
 
 [node name="Info" type="Label" parent="." unique_id=1073630722]
 layout_mode = 1
@@ -385,29 +390,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Caixa" type="VBoxContainer" parent="TelaFinal/Centro" unique_id=1218400583]
+[node name="PanelContainer" type="PanelContainer" parent="TelaFinal/Centro" unique_id=1226379278]
+layout_mode = 2
+
+[node name="Caixa" type="VBoxContainer" parent="TelaFinal/Centro/PanelContainer" unique_id=1218400583]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TituloFinal" type="Label" parent="TelaFinal/Centro/Caixa" unique_id=1308732735]
+[node name="TituloFinal" type="Label" parent="TelaFinal/Centro/PanelContainer/Caixa" unique_id=1308732735]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_i7j65")
 theme_override_font_sizes/font_size = 70
 text = "TituloFinal"
 horizontal_alignment = 1
 
-[node name="TextoFinal" type="Label" parent="TelaFinal/Centro/Caixa" unique_id=1022871678]
+[node name="TextoFinal" type="Label" parent="TelaFinal/Centro/PanelContainer/Caixa" unique_id=1022871678]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_i7j65")
 theme_override_font_sizes/font_size = 50
 text = "TextoFinal"
 horizontal_alignment = 1
 
-[node name="BotaoVoltar" type="Button" parent="TelaFinal/Centro/Caixa" unique_id=1065917792]
+[node name="BotaoVoltar" type="Button" parent="TelaFinal/Centro/PanelContainer/Caixa" unique_id=1065917792]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_i7j65")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_c15ty")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xii2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rg0ef")
 text = "Voltar ao Desktop"
 
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
