@@ -38,7 +38,7 @@ const POSICAO_INICIAL_PERSONAGEM := Vector2(302, 517)
 @onready var botao_voltar: Button = $Window_Resultado/Cabecalho/Panel/BotaoVoltar
 
 const FRASES_ACERTO := ["Boa!", "Isso aí!", "Mandou bem!", "Memória de elefante!"]
-const FRASES_ERRO := ["Ops!", "Quase!", "Tenta de novo!", "Erro 404: acerto não encontrado"]
+const FRASES_ERRO := ["Ops!", "Quase!", "Tenta de novo!", "Erro 404: acerto não encontrado..."]
 
 func _ready():
 	calcular_posicoes()
@@ -206,7 +206,7 @@ func game_over():
 	musica_interrupcao.stop()
 	musica_game_over.play()
 	reagir_game_over()
-	fala.text = "Erro 404:\nvidas não encontradas"
+	fala.text = "Erro 404: vidas não encontradas..."
 	titulo_final.text = "FIM DE JOGO"
 	texto_final.text = "Pontos: %d\nChegou na rodada %d de %d" % [pontos, rodada, MAX_RODADAS]
 	await get_tree().create_timer(1.5).timeout
@@ -227,7 +227,7 @@ func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/desktop/desktop.tscn")
 
 func configurar_personagem() -> void:
-	personagem.scale = Vector2(4, 4)
+	personagem.scale = Vector2(5, 5)
 	personagem.position = POSICAO_INICIAL_PERSONAGEM
 	personagem.play("dance")
 	fala.position = POSICAO_INICIAL_PERSONAGEM + Vector2(-130, -150)

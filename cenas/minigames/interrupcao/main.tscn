@@ -265,6 +265,15 @@ texture_margin_top = 10.0
 texture_margin_right = 2.0
 texture_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q38hj"]
+bg_color = Color(0.83137256, 0.8156863, 0.78431374, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x68l7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm8tv"]
+bg_color = Color(0, 0, 0.5019608, 1)
+
 [node name="interrupcao" type="Control" unique_id=1193062953]
 layout_mode = 3
 anchors_preset = 15
@@ -579,6 +588,96 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ttttc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2uow1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_etyam")
 text = "Voltar"
+
+[node name="Metas" type="PanelContainer" parent="." unique_id=454970174]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 596.0
+offset_right = 534.0
+offset_bottom = 803.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q38hj")
+
+[node name="MarginContainer" type="MarginContainer" parent="Metas" unique_id=1684534185]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Metas/MarginContainer" unique_id=444916708]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x68l7")
+metadata/_edit_lock_ = true
+
+[node name="Conteudo" type="VBoxContainer" parent="Metas/MarginContainer" unique_id=1941832709]
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BarraTitulo" type="PanelContainer" parent="Metas/MarginContainer/Conteudo" unique_id=928973547]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Metas/MarginContainer/Conteudo/BarraTitulo" unique_id=293592256]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_nm8tv")
+text = "-Diagnóstico-"
+horizontal_alignment = 1
+
+[node name="Container_CacaArquivo" type="HBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=334954821]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelCacaArquivo" type="Label" parent="Metas/MarginContainer/Conteudo/Container_CacaArquivo" unique_id=1082517152]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 50
+text = "Memória: ATIVA"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Metas/MarginContainer/Conteudo/Container_CacaArquivo" unique_id=1591428086]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Container_Firewall" type="HBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=2018346238]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelFirewall" type="Label" parent="Metas/MarginContainer/Conteudo/Container_Firewall" unique_id=1478462421]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 50
+text = "Sequência: ALEATÓRIA"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Metas/MarginContainer/Conteudo/Container_Firewall" unique_id=101517090]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Container_Interrupcao" type="HBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=1646405865]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelFirewall" type="Label" parent="Metas/MarginContainer/Conteudo/Container_Interrupcao" unique_id=897678474]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i7j65")
+theme_override_font_sizes/font_size = 50
+text = "Status: EM EXECUÇÃO"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Metas/MarginContainer/Conteudo/Container_Interrupcao" unique_id=264972742]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Conteudo" type="VBoxContainer" parent="Metas/MarginContainer/Conteudo" unique_id=297826266]
+layout_mode = 2
+alignment = 1
 
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
