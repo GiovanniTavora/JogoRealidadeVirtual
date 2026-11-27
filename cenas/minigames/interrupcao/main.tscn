@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c6eanxqumw8v6" path="res://cenas/minigames/interrupcao/botao_voltar.gd" id="8_acjnp"]
 [ext_resource type="Texture2D" uid="uid://61exefv1jgdq" path="res://sprites/robo/interrupcao/Robo404_spritesheet.png" id="10_a8vek"]
 [ext_resource type="Texture2D" uid="uid://bxswj2004jnm3" path="res://sprites/menu_principal/Windows_Button_Pressed.png" id="11_vhtln"]
+[ext_resource type="AudioStream" uid="uid://b1h1xgg7xbbk1" path="res://musicas/WAV_Chaotic_Periods.wav" id="12_c15ty"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8vek"]
 shader = ExtResource("4_hdtds")
@@ -429,6 +430,12 @@ offset_top = 741.0
 offset_right = 557.0
 offset_bottom = 877.0
 text = "ganhar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=508056]
+stream = ExtResource("12_c15ty")
+volume_db = -4.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Panel2/Panel/botao_voltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

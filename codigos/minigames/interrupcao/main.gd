@@ -2,7 +2,7 @@ extends Control
 
 const CELULA_SCRIPT = preload("res://codigos/minigames/interrupcao/celula.gd")
 
-@onready var info = $Info
+@onready var info: Label = $Info
 
 const LINHAS := 4
 const COLUNAS := 4
@@ -17,22 +17,22 @@ var quantidade := 3
 var proximo := 1
 var vidas := 5
 var pontos := 0
-var celulas := []
-var posicoes := []
+var celulas: Array = []
+var posicoes: Array[Vector2] = []
 var jogando := false
 
 @onready var temporizador: Timer = $Timer
 @onready var personagem: AnimatedSprite2D = $Personagem
 
-var posicao_inicial_personagem := Vector2(150, 360)
+const POSICAO_INICIAL_PERSONAGEM := Vector2(302, 517)
 @onready var fala: Label = $Fala
 @onready var tela_final: ColorRect = $TelaFinal
 @onready var titulo_final: Label = $TelaFinal/Centro/PanelContainer/Caixa/TituloFinal
 @onready var texto_final: Label = $TelaFinal/Centro/PanelContainer/Caixa/TextoFinal
 @onready var botao_voltar: Button = $TelaFinal/Centro/PanelContainer/Caixa/BotaoVoltar
 
-var frases_acerto = ["Boa!", "Isso aí!", "Mandou bem!", "Memória de elefante!"]
-var frases_erro = ["Ops!", "Quase!", "Tenta de novo!", "Erro 404: acerto não encontrado"]
+const FRASES_ACERTO := ["Boa!", "Isso aí!", "Mandou bem!", "Memória de elefante!"]
+const FRASES_ERRO := ["Ops!", "Quase!", "Tenta de novo!", "Erro 404: acerto não encontrado"]
 
 func _ready():
 	calcular_posicoes()
@@ -145,10 +145,10 @@ func reagir_acerto() -> void:
 	personagem.speed_scale = 2.5
 
 	var t = create_tween()
-	t.tween_property(personagem, "position:y", posicao_inicial_personagem.y - 40, 0.15)
-	t.tween_property(personagem, "position:y", posicao_inicial_personagem.y, 0.15)
-	t.tween_property(personagem, "position:y", posicao_inicial_personagem.y - 25, 0.12)
-	t.tween_property(personagem, "position:y", posicao_inicial_personagem.y, 0.12)
+	t.tween_property(personagem, "position:y", POSICAO_INICIAL_PERSONAGEM.y - 40, 0.15)
+	t.tween_property(personagem, "position:y", POSICAO_INICIAL_PERSONAGEM.y, 0.15)
+	t.tween_property(personagem, "position:y", POSICAO_INICIAL_PERSONAGEM.y - 25, 0.12)
+	t.tween_property(personagem, "position:y", POSICAO_INICIAL_PERSONAGEM.y, 0.12)
 
 	await t.finished
 	personagem.speed_scale = 1.0
@@ -162,7 +162,7 @@ func rodada_vencida():
 		vitoria()
 		return
 	reagir_acerto()
-	falar(frases_acerto.pick_random())
+	falar(FRASES_ACERTO.pick_random())
 	await get_tree().create_timer(1.0).timeout
 	rodada += 1
 	nova_rodada()
@@ -178,7 +178,7 @@ func rodada_perdida():
 		game_over()
 		return
 	reagir_erro()
-	falar(frases_erro.pick_random())
+	falar(FRASES_ERRO.pick_random())
 	await get_tree().create_timer(1.5).timeout
 	nova_rodada()   # repete a mesma rodada
 
@@ -214,9 +214,9 @@ func _on_botao_voltar_pressed() -> void:
 
 func configurar_personagem() -> void:
 	personagem.scale = Vector2(4, 4)
-	personagem.position = posicao_inicial_personagem
+	personagem.position = POSICAO_INICIAL_PERSONAGEM
 	personagem.play("dance")
-	fala.position = posicao_inicial_personagem + Vector2(-130, -150)
+	fala.position = POSICAO_INICIAL_PERSONAGEM + Vector2(-130, -150)
 
 func reagir_erro() -> void:
 	personagem.speed_scale = 0.0
@@ -224,10 +224,10 @@ func reagir_erro() -> void:
 
 	var t = create_tween()
 	for i in 4:
-		t.tween_property(personagem, "position:x", posicao_inicial_personagem.x + 8, 0.05)
-		t.tween_property(personagem, "position:x", posicao_inicial_personagem.x - 8, 0.05)
+		t.tween_property(personagem, "position:x", POSICAO_INICIAL_PERSONAGEM.x + 8, 0.05)
+		t.tween_property(personagem, "position:x", POSICAO_INICIAL_PERSONAGEM.x - 8, 0.05)
 
-	t.tween_property(personagem, "position:x", posicao_inicial_personagem.x, 0.05)
+	t.tween_property(personagem, "position:x", POSICAO_INICIAL_PERSONAGEM.x, 0.05)
 
 	await t.finished
 	await get_tree().create_timer(0.5).timeout
@@ -238,13 +238,13 @@ func reagir_erro() -> void:
 func reagir_game_over() -> void:
 	personagem.speed_scale = 1.0
 	personagem.modulate = Color(1, 1, 1)
-	personagem.position = posicao_inicial_personagem
+	personagem.position = POSICAO_INICIAL_PERSONAGEM
 	personagem.play("explosao")
 
 func reagir_vitoria() -> void:
 	personagem.speed_scale = 1.0
 	personagem.modulate = Color(1, 1, 1)
-	personagem.position = posicao_inicial_personagem
+	personagem.position = POSICAO_INICIAL_PERSONAGEM
 	personagem.play("comemoracao")
 
 
